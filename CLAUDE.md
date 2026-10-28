@@ -168,6 +168,9 @@ pnpm linkedin:login               # once, separate LinkedIn account
 ```
 Without `OPENALEX_API_KEY` OpenAlex returns 429 after ~100 calls (shared free budget).
 
+Dry runs no longer need Gmail: if `GMAIL_*` is unset the inbox check is skipped with a warning
+(live runs and `--stages inbox` still require it).
+
 ### Tested (2026-10-28, against Neon; nothing sent)
 OpenAlex 115 profs · NSF 102 profs · directory sweeps Princeton + Cornell (8 each, real emails,
 grant signals) · profiler 2 · dossier+draft (review 88, deleted) · strategist run 9 (boosts + 5
@@ -197,7 +200,7 @@ confirmation; targets.json topics refocused to match (BCI dropped, A/B kept as c
 - [x] Dashboard shows dossier on professor page; site is dark
 - [x] Pipeline parallelism, Track A/B finders, wealthy universities, strategist + autonomous learner (2026-10-28)
 - [ ] Tamanna: Gmail app password into `agent/.env`; `RUN_AS` set; free OpenAlex API key
-- [ ] First full `pnpm dry`, read drafts together, then `pnpm night`
+- [~] First full dry run started 2026-10-28 11:24 (run #10, 2h, 16 parallel, started as bhsam787@gmail.com; log `agent/state/dry-run.log`). Next: read drafts together, then `pnpm night` (needs Gmail).
 - [ ] Optional: `pnpm linkedin:login` with the separate account, then `LINKEDIN_ENABLED=1`
 
 ## Her papers (2026-10-28)

@@ -258,14 +258,16 @@ async function main() {
     console.error(`Run #${other.id} is already running on ${other.machine}. Wait for it, or pass --force if it crashed.`);
     process.exit(1);
   }
-  const needsMail = !stages || stages.includes("inbox") || (live && stages.includes("send"));
+  // A dry run sends nothing, so it may run before Gmail is set up (inbox is skipped).
+  const needsMail = live || stages?.includes("inbox");
+  const mailOn = mailConfigured();
   if (needsMail) {
     if (!mailConfigured()) {
       console.error("Gmail is not set up. Fill GMAIL_USER and GMAIL_APP_PASSWORD in agent/.env (see agent/.env.example).");
       process.exit(1);
     }
     await verifyMail();
-  }
+  } else if (mailOn) await verifyMail();
 
   const [user] = cfg.runAs ? await db.select({ id: t.users.id }).from(t.users).where(eq(t.users.email, cfg.runAs.toLowerCase())) : [];
   const [run] = await db.insert(t.agentRuns).values({ startedBy: user?.id ?? null, machine: os.hostname().replace(/\.local$/, ""), dryRun }).returning();
@@ -280,11 +282,12 @@ async function main() {
   try {
     if (stages) await batch(stages, run.id, dryRun);
     else {
-      await readReplies();
+      if (mailOn) await readReplies();
+      else await log("inbox", "Gmail not set up yet: inbox check skipped (dry run)", { level: "warn" });
       await strategize(run.id);
       await writeFollowUps();
       await pipeline(run.id, dryRun);
-      await readReplies();
+      if (mailOn) await readReplies();
       if (dryRun) stats.would_send = await countReadyDrafts();
       await learnFromRun(run.id);
       await reweight(run.id);

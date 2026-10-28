@@ -117,3 +117,7 @@ Every prompt given to Claude in this project, newest last. Secrets are redacted 
 ## 2026-10-28 11:22 +06 — bhshiam@B’s MacBook Air
 
 > i didnt understand citation part
+
+## 2026-10-28 11:24 +06 — bhshiam@B’s MacBook Air
+
+> run this project
