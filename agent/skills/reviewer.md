@@ -24,3 +24,4 @@ Give concrete, fixable issues the writer can apply.
 
 ## Learned rules
 <!-- The learner appends approved rules below. -->
+- **Hold emails that need applicant-only data** — When the posted instructions require something the profile lacks (a GRE score, a confirmed research statement, references), return 'HOLD: needs applicant input' and name the exact item, instead of sending the email back to the writer, which cannot fix it. _(strategist, run 11)_

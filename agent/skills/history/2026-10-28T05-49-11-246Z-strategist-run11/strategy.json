@@ -1,0 +1,29 @@
+{
+  "_note": "Written by the strategist agent. Layered on top of targets.json (which humans own). Every change is snapshotted and can be reverted on the dashboard's Learnings page.",
+  "addQueries": [],
+  "dropQueries": [],
+  "addGrantKeywords": [
+    "social engineering",
+    "scam detection"
+  ],
+  "countryPriority": [],
+  "countryBoost": {
+    "SE": 2,
+    "NO": 2,
+    "DK": 2,
+    "FI": 2,
+    "NL": 2,
+    "CH": 2,
+    "DE": 1,
+    "AU": 1
+  },
+  "topicBoost": {
+    "phishing detection": 3,
+    "spam detection": 2,
+    "federated learning": 2,
+    "intrusion detection": 1,
+    "adversarial machine learning": 1
+  },
+  "updatedAt": "2026-10-28T05:25:12.488Z",
+  "lastAssessment": "There is still almost no usable outcome data: 233 candidates found, none shortlisted and none emailed, so the topic and country plan stays as it is. The clearest new signal is wasted research effort. Of the 49 candidates researched so far, 47 were in countries outside the target list (CN 14, IN 7, SA 4, AE 4, BD 3 and others), and none produced a fit or funding score. Allowed countries with candidates waiting, such as GB (10), AU, CA, KR (4 each), SG, HK and JP (3 each), had nothing researched. Only US (fit 45, funding 9) and Norway (fit 60, funding 32) produced scores, and the Norway grant (Research Council of Norway) is the only strong funding evidence so far. That supports the existing boosts for countries with salaried PhD posts. Rate-limit, profiler-schema and null-replace failures are code problems, not strategy problems, and need fixing before the next run can show anything. I am making one small, reversible addition: an AU +1 boost. Australia's RTP and university scholarships cover international PhD students in full, and the applicant's warm network (UniSQ, CDU, UniSA) is there. Those contacts stay manual."
+}

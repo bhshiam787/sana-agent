@@ -2,7 +2,7 @@ import { query, type McpServerConfig } from "@anthropic-ai/claude-agent-sdk";
 import { mkdirSync } from "node:fs";
 import { z } from "zod";
 import { cfg } from "./config.ts";
-import { bump } from "./log.ts";
+import { bump, log } from "./log.ts";
 import { Semaphore } from "./sem.ts";
 
 /** Thrown when the Claude plan's usage limit (or rate limit) stops the run. Next run resumes. */
@@ -42,16 +42,39 @@ function noteUsage(utilization: number | null | undefined, resetsAt?: number | s
   if (resetsAt != null) planUsage.resetsAt = typeof resetsAt === "string" ? Date.parse(resetsAt) : resetsAt < 1e12 ? resetsAt * 1000 : resetsAt;
 }
 
-/** Refuses new sessions once the 5-hour window passes USAGE_STOP_PERCENT; in-flight sessions finish. */
-function checkBudget() {
-  if (planUsage.fiveHour != null && planUsage.fiveHour >= cfg.usageStopPercent) {
-    const reset = planUsage.resetsAt ? ` (window resets ${new Date(planUsage.resetsAt).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })})` : "";
-    throw new UsageLimitError(`5-hour Claude usage at ${Math.round(planUsage.fiveHour)}%, stop threshold ${cfg.usageStopPercent}%${reset}`);
+let pausing: Promise<void> | null = null;
+let pausedTotal = 0;
+/** Milliseconds spent paused for the usage window; run deadlines are extended by this. */
+export const pausedMs = () => pausedTotal;
+const hhmm = (ms: number) => new Date(ms).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" });
+
+/**
+ * Before a new session: once the 5-hour window passes USAGE_STOP_PERCENT, wait
+ * until it resets (all callers share one wait), then continue. In-flight
+ * sessions finish. With RESUME_AFTER_RESET=0 the run stops instead.
+ */
+async function waitForBudget() {
+  while (planUsage.fiveHour != null && planUsage.fiveHour >= cfg.usageStopPercent) {
+    const used = Math.round(planUsage.fiveHour);
+    if (!cfg.resumeAfterReset)
+      throw new UsageLimitError(`5-hour Claude usage at ${used}%, stop threshold ${cfg.usageStopPercent}%${planUsage.resetsAt ? ` (resets ${hhmm(planUsage.resetsAt)})` : ""}`);
+    pausing ??= (async () => {
+      // Unknown reset time: re-check in 30 minutes.
+      const until = Math.max(Date.now() + 60_000, (planUsage.resetsAt ?? Date.now() + 30 * 60_000) + 60_000);
+      await log("run", `Claude 5-hour usage at ${used}% (limit ${cfg.usageStopPercent}%): pausing new work until ${hhmm(until)}, then resuming automatically`, { level: "warn" });
+      const start = Date.now();
+      await new Promise((res) => setTimeout(res, until - start));
+      pausedTotal += Date.now() - start;
+      planUsage.fiveHour = null; // re-measured by the next session
+      planUsage.checkedAt = 0;
+      await log("run", "Usage window reset: resuming");
+    })().finally(() => (pausing = null));
+    await pausing;
   }
 }
 
-async function askNow<S extends z.ZodType>(o: AskOpts<S>): Promise<z.infer<S>> {
-  checkBudget();
+async function askNow<S extends z.ZodType>(o: AskOpts<S>, retried = false): Promise<z.infer<S>> {
+  await waitForBudget();
   mkdirSync(cfg.workDir, { recursive: true });
   const allowed = [...(o.tools ?? []), ...Object.keys(o.mcpServers ?? {}).map((s) => `mcp__${s}`)];
   let result: Awaited<ReturnType<typeof firstResult>>;
@@ -75,16 +98,23 @@ async function askNow<S extends z.ZodType>(o: AskOpts<S>): Promise<z.infer<S>> {
     );
   } catch (e) {
     const msg = (e as Error).message ?? String(e);
-    if (LIMIT_RE.test(msg)) throw new UsageLimitError(msg);
+    if (LIMIT_RE.test(msg)) return hitLimit(o, retried, msg);
     throw e;
   }
   bump("claude_calls");
   if (result.subtype !== "success" || result.is_error) {
     const why = "errors" in result ? result.errors.join("; ") : result.result;
-    if (result.api_error_status === 429 || LIMIT_RE.test(why ?? "")) throw new UsageLimitError(why);
+    if (result.api_error_status === 429 || LIMIT_RE.test(why ?? "")) return hitLimit(o, retried, why ?? "rate limited");
     throw new Error(`Claude session failed (${result.subtype}): ${why}`);
   }
   return o.schema.parse(result.structured_output);
+}
+
+/** Claude refused for a limit: treat the window as full, wait for the reset, retry once. */
+async function hitLimit<S extends z.ZodType>(o: AskOpts<S>, retried: boolean, msg: string): Promise<z.infer<S>> {
+  if (!cfg.resumeAfterReset || retried) throw new UsageLimitError(msg);
+  planUsage.fiveHour = Math.max(planUsage.fiveHour ?? 0, 100);
+  return askNow(o, true);
 }
 
 // The CLI's validator rejects the "$schema" meta key zod adds.

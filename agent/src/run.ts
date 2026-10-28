@@ -10,7 +10,7 @@ import os from "node:os";
 import { setTimeout as sleep } from "node:timers/promises";
 import { cfg } from "./config.ts";
 import { db, t, and, eq, sql } from "./db.ts";
-import { planUsage, sessions, UsageLimitError } from "./llm.ts";
+import { pausedMs, planUsage, sessions, UsageLimitError } from "./llm.ts";
 import { log, setRunId, stats } from "./log.ts";
 import { mailConfigured, verifyMail } from "./mail.ts";
 import { nextUniversity, seedUniversities, sweepUniversity } from "./stages/directory.ts";
@@ -72,7 +72,8 @@ async function stage<T>(o: {
     return p;
   };
   const worker = async () => {
-    while (!stopped && Date.now() < o.deadline) {
+    // Time paused for the usage window does not count against the run's hours.
+    while (!stopped && Date.now() - pausedMs() < o.deadline) {
       if (o.gate && !(await o.gate())) {
         if (o.upstreamDone()) return;
         await sleep(30_000);

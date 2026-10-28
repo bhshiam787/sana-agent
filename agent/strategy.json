@@ -1,12 +1,42 @@
 {
   "_note": "Written by the strategist agent. Layered on top of targets.json (which humans own). Every change is snapshotted and can be reverted on the dashboard's Learnings page.",
-  "addQueries": [],
-  "dropQueries": [],
+  "addQueries": [
+    "privacy-preserving machine learning secure aggregation differential privacy PhD position",
+    "security and privacy of machine learning PhD vacancy Europe",
+    "robust federated learning poisoning Byzantine PhD position"
+  ],
+  "dropQueries": [
+    "causal inference online experiments",
+    "vertical federated learning fraud detection"
+  ],
   "addGrantKeywords": [
     "social engineering",
-    "scam detection"
+    "scam detection",
+    "secure aggregation",
+    "robust machine learning",
+    "LLM security"
   ],
-  "countryPriority": [],
+  "countryPriority": [
+    "US",
+    "CA",
+    "DE",
+    "NL",
+    "SE",
+    "FI",
+    "CH",
+    "NO",
+    "DK",
+    "GB",
+    "HK",
+    "SG",
+    "KR",
+    "AT",
+    "BE",
+    "LU",
+    "IS",
+    "AU",
+    "JP"
+  ],
   "countryBoost": {
     "SE": 2,
     "NO": 2,
@@ -14,16 +44,19 @@
     "FI": 2,
     "NL": 2,
     "CH": 2,
-    "DE": 1,
-    "AU": 1
+    "DE": 2,
+    "AU": 1,
+    "CA": 1
   },
   "topicBoost": {
     "phishing detection": 3,
     "spam detection": 2,
     "federated learning": 2,
+    "privacy-preserving machine learning": 2,
+    "secure aggregation": 2,
     "intrusion detection": 1,
     "adversarial machine learning": 1
   },
-  "updatedAt": "2026-10-28T05:25:12.488Z",
-  "lastAssessment": "There is still almost no usable outcome data: 233 candidates found, none shortlisted and none emailed, so the topic and country plan stays as it is. The clearest new signal is wasted research effort. Of the 49 candidates researched so far, 47 were in countries outside the target list (CN 14, IN 7, SA 4, AE 4, BD 3 and others), and none produced a fit or funding score. Allowed countries with candidates waiting, such as GB (10), AU, CA, KR (4 each), SG, HK and JP (3 each), had nothing researched. Only US (fit 45, funding 9) and Norway (fit 60, funding 32) produced scores, and the Norway grant (Research Council of Norway) is the only strong funding evidence so far. That supports the existing boosts for countries with salaried PhD posts. Rate-limit, profiler-schema and null-replace failures are code problems, not strategy problems, and need fixing before the next run can show anything. I am making one small, reversible addition: an AU +1 boost. Australia's RTP and university scholarships cover international PhD students in full, and the applicant's warm network (UniSQ, CDU, UniSA) is there. Those contacts stay manual."
+  "updatedAt": "2026-10-28T05:49:11.249Z",
+  "lastAssessment": "The pipeline now produces results: 40 candidates are shortlisted, but none has been emailed. DE has the strongest funding evidence (funding 84, 15 recruiting), with CA (fit 73, funding 77), NL (funding 91) and the Nordics close behind. Where candidates come from matters a lot. Lab pages and job portals gave 28 shortlisted out of 85 (avg fit 69), while NSF grants gave 1 out of 217 and OpenAlex gave 0 out of 115. Of the hot areas, privacy-preserving ML, secure aggregation for FL, DP and adversarial robustness fit her FL review and are well funded and recruiting. Machine unlearning and watermarking are funded too, but her own work does not support them. The main bottleneck is now writing, not finding candidates. The Yiwei Lu email was blocked four times for the same fixable problems: an old address, the university not named, attachments claimed but not sent, and a promised research statement that is still a draft. The Rui Hu email is blocked on applicant data the profile does not have (GRE, a confirmed statement). The next moves are small: fix the writer and reviewer loop, lean on lab-page and job-portal sourcing, and raise DE and CA slightly."
 }

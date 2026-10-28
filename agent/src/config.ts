@@ -23,6 +23,8 @@ export const cfg = {
   parallel: num(process.env.PARALLEL, 16),
   // Stop starting new Claude sessions once the 5-hour plan window is this full (percent).
   usageStopPercent: num(process.env.USAGE_STOP_PERCENT, 85),
+  // Wait for the 5-hour window to reset and continue, instead of ending the run.
+  resumeAfterReset: process.env.RESUME_AFTER_RESET !== "0",
   scoutPerQuery: num(process.env.SCOUT_PER_QUERY, 40),
   profilePerRun: num(process.env.PROFILE_PER_RUN, 40),
   shortlistMin: num(process.env.SHORTLIST_MIN_PRIORITY, 60),
