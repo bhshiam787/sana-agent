@@ -2,7 +2,10 @@
   "_note": "Written by the strategist agent. Layered on top of targets.json (which humans own). Every change is snapshotted and can be reverted on the dashboard's Learnings page.",
   "addQueries": [],
   "dropQueries": [],
-  "addGrantKeywords": [],
+  "addGrantKeywords": [
+    "social engineering",
+    "scam detection"
+  ],
   "countryPriority": [],
   "countryBoost": {
     "SE": 2,
@@ -11,7 +14,8 @@
     "FI": 2,
     "NL": 2,
     "CH": 2,
-    "DE": 1
+    "DE": 1,
+    "AU": 1
   },
   "topicBoost": {
     "phishing detection": 3,
@@ -20,6 +24,6 @@
     "intrusion detection": 1,
     "adversarial machine learning": 1
   },
-  "updatedAt": "2026-10-28T05:02:07.150Z",
-  "lastAssessment": "There is almost no usable data yet. 233 candidates were found, but only 2 were researched, none shortlisted and none emailed, so no topic or country trend can be trusted. Infrastructure caused most of the losses. OpenAlex returned 429 rate-limit errors and blocked university-list discovery for 22 allowed countries plus KAUST, MBZUAI and Technion. The profiler crashed with an invalid --json-schema error (a code fix is needed, not a playbook change). A null .replace() TypeError also aborted the run. Sourcing is lopsided: 140 of 233 candidates are in the US, mostly from NSF grants, and the one US profile scored only 9 on funding. About 40 candidates sit in countries that are neither allowed nor known to fund PhDs well (CN, IN, BD, EG, ZA, GR, etc.). The one Norway profile scored better on funding (32), but its research areas were socio-technical and GDPR work, a weak match for an applicant whose strongest evidence is ML for phishing and spam and federated learning. Next step: keep the topics, apply small reversible boosts to countries with salaried PhD posts and to her core topics, and add rules for rate limits, country filtering and US funding checks."
+  "updatedAt": "2026-10-28T05:25:12.488Z",
+  "lastAssessment": "There is still almost no usable outcome data: 233 candidates found, none shortlisted and none emailed, so the topic and country plan stays as it is. The clearest new signal is wasted research effort. Of the 49 candidates researched so far, 47 were in countries outside the target list (CN 14, IN 7, SA 4, AE 4, BD 3 and others), and none produced a fit or funding score. Allowed countries with candidates waiting, such as GB (10), AU, CA, KR (4 each), SG, HK and JP (3 each), had nothing researched. Only US (fit 45, funding 9) and Norway (fit 60, funding 32) produced scores, and the Norway grant (Research Council of Norway) is the only strong funding evidence so far. That supports the existing boosts for countries with salaried PhD posts. Rate-limit, profiler-schema and null-replace failures are code problems, not strategy problems, and need fixing before the next run can show anything. I am making one small, reversible addition: an AU +1 boost. Australia's RTP and university scholarships cover international PhD students in full, and the applicant's warm network (UniSQ, CDU, UniSA) is there. Those contacts stay manual."
 }

@@ -49,6 +49,9 @@ export function codeChecks(d: z.infer<typeof Draft>, p: Prof): string[] {
   if (/(published|accepted|appeared)[^.]{0,80}PLOS ONE|PLOS ONE[^.]{0,40}(published|accepted)/i.test(d.body))
     issues.push("The PLOS ONE phishing paper is under review; do not call it published/accepted.");
   if (d.subject.length > 110) issues.push("Subject too long.");
+  // Only the CV is ever attached.
+  if (/attach[a-z]*[^.]{0,80}(transcript|paper|statement|score|certificate|letter)/i.test(d.body))
+    issues.push("Only the CV is attached; link papers by DOI and offer other documents on request.");
   return issues;
 }
 

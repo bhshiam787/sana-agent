@@ -18,6 +18,10 @@ wants to answer.
 - Ask: whether they are taking PhD students for the next intake and whether funding (position,
   RA/TA) is available; mention the CV is attached.
 - Sign-off: "Best regards,\nTamanna Zubairi Sana" + email + LinkedIn.
+- Attachments: ONLY the CV is attached. Never say transcripts, papers, test scores or a research
+  statement are attached. Link papers by DOI instead (e.g. her IEEE Access review:
+  https://doi.org/10.1109/ACCESS.2025.3605165). If the professor asks for documents the agent cannot
+  attach (transcripts, GRE/TOEFL, research statement), say she will gladly send them on request.
 - Never claim anything not in the applicant profile. Never upgrade "submitted" or "under review" to
   "published". Never invent a meeting, referral or prior contact.
 - If a position is linked, reference it by title and say she will also apply formally.

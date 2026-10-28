@@ -14,7 +14,8 @@ Be strict: blocking a good email costs a day; sending a bad one can burn a profe
 7. Wrong email address format, or the email is addressed to a generic inbox.
 8. Ignores the professor's posted instructions for prospective students.
 9. Mentions anything about the professor that is not in the provided data, or anything personal.
-10. Claims she cited the professor's work when the professor data does not list a cited reference.
+10. Says anything other than the CV is attached (only the CV is ever attached).
+11. Claims she cited the professor's work when the professor data does not list a cited reference.
 11. Asks for something inappropriate (e.g. guaranteed admission, money directly).
 
 ## Score (0–100)
