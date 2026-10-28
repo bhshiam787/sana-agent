@@ -34,6 +34,8 @@ type NewProfessor = typeof t.professors.$inferInsert;
  */
 export async function addProfessor(p: NewProfessor): Promise<number | null> {
   if (!countryAllowed(p.country) && !(p.universityId && (await isWealthy(p.universityId)))) return null;
+  const warm = targets().warmContacts.find((w) => w.name.toLowerCase().replace(/[^a-z ]/g, "") === p.fullName.toLowerCase().replace(/[^a-z ]/g, ""));
+  if (warm) p = { ...p, status: "skipped", notes: `WARM CONTACT — do not auto-email. ${warm.note}` };
   const email = p.email?.trim().toLowerCase() || null;
   if (email) {
     const [dup] = await db.select({ id: t.professors.id }).from(t.professors).where(eq(t.professors.email, email)).limit(1);

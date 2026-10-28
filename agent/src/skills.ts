@@ -13,6 +13,7 @@ export type Targets = {
   universitiesPerCountry: number;
   departments: string[];
   wealthyUniversities: { name: string; country: string }[];
+  warmContacts: { name: string; note: string }[];
   preferCountries: string[];
   minHIndex: number;
   maxHIndex: number;

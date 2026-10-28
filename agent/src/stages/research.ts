@@ -3,6 +3,7 @@ import { cfg } from "../config.ts";
 import { db, t, and, desc, eq, isNull } from "../db.ts";
 import { ask, UsageLimitError } from "../llm.ts";
 import { bump, log } from "../log.ts";
+import { citationNote } from "../citations.ts";
 import { pool } from "../pool.ts";
 import { applicantProfile, skill } from "../skills.ts";
 
@@ -47,7 +48,7 @@ export async function researchOne({ p, uni }: Row) {
   try {
     const d = await ask({
       system: `You are a meticulous academic researcher preparing a briefing on one professor's professional public record.\n\n${skill("researcher")}`,
-      prompt: `Applicant (for finding hooks):\n${profile}\n\nProfessor: ${p.fullName}, ${p.title ?? ""} ${uni ? `at ${uni}` : ""} (${p.country ?? "?"}).\nHomepage: ${p.homepage ?? "unknown"} · Lab: ${p.labUrl ?? "unknown"} · Scholar: ${p.scholarUrl ?? "unknown"}\nWhat we know: ${p.summary ?? ""}\nToday is ${new Date().toISOString().slice(0, 10)}.`,
+      prompt: `Applicant (for finding hooks):\n${profile}\n\nProfessor: ${p.fullName}, ${p.title ?? ""} ${uni ? `at ${uni}` : ""} (${p.country ?? "?"}).\nHomepage: ${p.homepage ?? "unknown"} · Lab: ${p.labUrl ?? "unknown"} · Scholar: ${p.scholarUrl ?? "unknown"}\nWhat we know: ${p.summary ?? ""}\n${citationNote(p.fullName)}\nToday is ${new Date().toISOString().slice(0, 10)}.`,
       schema: DossierOut,
       tools: ["WebSearch", "WebFetch"],
       maxTurns: 45,

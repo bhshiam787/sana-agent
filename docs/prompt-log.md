@@ -101,3 +101,11 @@ Every prompt given to Claude in this project, newest last. Secrets are redacted 
 > ==> Mainly AI related, python, machine learing, cyber secrutiy, data science, differetn modle of AI etc ..
 > 
 > is it helpful? and soemthing relabant , I am not aware of everything
+
+## 2026-10-28 11:15 +06 — bhshiam@B’s MacBook Air
+
+> can youd ownload her research paper in th paper folder? you can read it and make some improvement on our agents
+
+## 2026-10-28 11:18 +06 — bhshiam@B’s MacBook Air
+
+> I want everything to push one git repository, maybe here two git  initiated

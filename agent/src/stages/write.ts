@@ -3,6 +3,7 @@ import { cfg } from "../config.ts";
 import { db, t, and, desc, eq, inArray, isNotNull, sql } from "../db.ts";
 import { ask, UsageLimitError } from "../llm.ts";
 import { bump, log } from "../log.ts";
+import { citationNote } from "../citations.ts";
 import { pool } from "../pool.ts";
 import { applicantProfile, skill } from "../skills.ts";
 
@@ -27,6 +28,7 @@ async function professorContext(p: Prof) {
     `Current research: ${p.summary ?? ""}`,
     `Why the applicant fits: ${p.whyMatch ?? ""}`,
     `Recruiting evidence: ${p.recruitingEvidence ?? "none found"}`,
+    citationNote(p.fullName),
     `Recent papers (the ONLY papers you may mention):\n${papers.map((x) => `- "${x.title}" (${x.year ?? "?"}${x.venue ? `, ${x.venue}` : ""}): ${x.summary ?? ""}`).join("\n") || "- none collected"}`,
     p.contactInstructions ? `THEIR INSTRUCTIONS FOR PROSPECTIVE STUDENTS (must follow): ${p.contactInstructions}` : "",
     p.dossier

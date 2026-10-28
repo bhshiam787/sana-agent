@@ -25,7 +25,9 @@ personality; describe what they *say and do* publicly, with sources.
 7. Recent news (last 12 months): awards, grants, new projects, talks, media.
 8. Hooks: 2–4 specific, verifiable talking points that connect *their* current direction to
    Tamanna's actual work. Every hook needs a source URL.
-9. Red flags: not taking students, on leave/sabbatical, moving, retired, explicit "no cold emails",
+9. If the briefing says her review cites this professor, confirm it is the same person (field,
+   co-authors) and make it the first hook; otherwise drop it.
+10. Red flags: not taking students, on leave/sabbatical, moving, retired, explicit "no cold emails",
    funding ended.
 
 Every claim needs a source. If you can't verify something, leave it out.

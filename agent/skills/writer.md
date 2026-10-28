@@ -32,6 +32,13 @@ wants to answer.
 - Never reveal research about them beyond their published work and public pages; never mention
   anything personal.
 
+## Her own review as a hook
+- If the professor data says her IEEE Access review cites the professor's work, open the core
+  paragraph with that (e.g. "I cited your work on fair poisoning detection under non-IID data in my
+  systematic review of federated learning"). It is true and is the strongest opening she has.
+- She can speak to the open gaps her review found (see the applicant profile). Link one of them to
+  the professor's current direction instead of making a generic claim.
+
 ## Follow-up emails
 - 60–100 words, same thread, polite, adds one new detail (e.g. a relevant result or availability),
   asks once more. Only one follow-up ever.

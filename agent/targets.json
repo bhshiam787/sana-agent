@@ -10,7 +10,9 @@
     "explainable AI for cybersecurity",
     "large language model security prompt injection",
     "AI-generated phishing detection",
-    "causal inference online experiments"
+    "causal inference online experiments",
+    "poisoning attacks robust aggregation federated learning",
+    "vertical federated learning fraud detection"
   ],
   "grantKeywords": [
     "phishing",
@@ -24,7 +26,9 @@
     "differential privacy",
     "AI security",
     "trustworthy AI",
-    "usable security"
+    "usable security",
+    "poisoning",
+    "Byzantine"
   ],
   "allowCountries": [
     "US",
@@ -441,6 +445,28 @@
     {
       "name": "Mohamed bin Zayed University of Artificial Intelligence",
       "country": "AE"
+    }
+  ],
+  "warmContacts": [
+    {
+      "name": "Shahab Abdulla",
+      "note": "Co-author (IEEE Access 2025). Assoc. Prof., UniSQ, Australia; supervises 20+ PhD/MSc; bio says expressions of interest from prospective research students are welcome. Tamanna should email personally."
+    },
+    {
+      "name": "Asif Karim",
+      "note": "Co-author (IEEE Access 2025). Lecturer, Charles Darwin University, Australia. Tamanna should email personally."
+    },
+    {
+      "name": "Md. Mehedi Hassan",
+      "note": "Co-author; now on a fully funded PhD at University of South Australia. Ask for advice/referral personally."
+    },
+    {
+      "name": "Anindya Nag",
+      "note": "Co-author on two papers (Bangladesh). Possible recommender."
+    },
+    {
+      "name": "Ayontika Das",
+      "note": "Co-author on two papers."
     }
   ]
 }

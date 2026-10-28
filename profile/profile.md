@@ -69,6 +69,38 @@ Cyber-Physical Systems). Google Scholar: https://scholar.google.com/citations?us
    A review of ML for human activity recognition (vision and non-vision sensors) and brain signal
    decoding.
 
+### What she can discuss in depth (read from the full IEEE Access paper, 2026-10-28)
+- Method: PRISMA 2020 systematic review; 591,007 records from IEEE Xplore, SpringerLink,
+  ScienceDirect and MDPI (2017–2024) screened down to 186 studies, plus 19 from backward and
+  forward snowballing, giving 205 studies. Four research questions: state of the art and domains;
+  FL combined with transfer, reinforcement and cryptographic learning; scaling bottlenecks;
+  emerging domains and future work.
+- Findings she can cite: healthcare is 25% of FL studies, IoT/IIoT 18%, blockchain 12%, smart cities
+  10%, autonomous vehicles 8%, edge 7%, cybersecurity (intrusion/anomaly detection) 6%. Privacy
+  preservation appears in 30% of studies, scalability in 25%, security in 18%.
+- Topics the paper covers: FL for intrusion detection, anomaly detection, malware detection and
+  fraud detection; blockchain-based FL; poisoning and membership-inference attacks; robust
+  aggregation (Krum, trimmed mean, median) and its weakness under non-IID data and Sybil attacks;
+  differential privacy, homomorphic encryption and SMPC trade-offs; non-IID data and
+  personalization; vertical FL.
+- Open gaps she named (good PhD hooks): poisoning-robust aggregation under realistic non-IID
+  data; federated XAI for auditable, compliant FL; vertical FL for fraud and credit scoring;
+  security in open FL environments; resource-aware FL on edge devices.
+- References: `profile/papers/fl_review_references.json` (211 refs). If a professor wrote one of
+  them, she can truthfully say she cited their work in her review.
+
+### Network (warm contacts: never auto-emailed; Tamanna writes to them herself)
+- **Shahab Abdulla**: Associate Professor, UniSQ College, University of Southern Queensland,
+  Australia; co-author (corresponding). His bio in the paper: supervises 20+ PhD/MSc students,
+  leads the Advanced Data Analytics Modeling Research Simulation Group, and "expressions of
+  interest from potential higher degree applicants to study in his group are particularly
+  welcome". **Highest-probability lead.**
+- **Asif Karim**: research-active Lecturer, Charles Darwin University, Australia; co-author.
+- **Md. Mehedi Hassan**: co-author, now on a fully funded PhD at the University of South Australia
+  (since 2025). Ask him for advice or an introduction.
+- **Anindya Nag** (Lecturer, NUBT Khulna) and **Ayontika Das**: co-authors on two papers; possible
+  recommenders.
+
 ### Under review
 - A Hybrid Model for Phishing Detection using Convolution Neural Network and Long Short-Term
   Memory — submitted to *PLOS ONE* (per CV; not yet found in indexes).

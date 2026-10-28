@@ -1,0 +1,2475 @@
+[
+ {
+  "n": 1,
+  "authors": [
+   "H. Kim",
+   "J. Park",
+   "M. Bennis",
+   "S.-L. Kim"
+  ],
+  "title": "Blockchained on-device federated learning",
+  "raw": "H. Kim, J. Park, M. Bennis, and S.-L. Kim, ‘‘Blockchained on-device federated learning,’’ IEEE Commun. Lett., vol. 24, no. 6, pp. 1279–1283, Jun. 2020, doi: 10.1109/LCOMM.2019.2921755."
+ },
+ {
+  "n": 2,
+  "authors": [
+   "D. Li",
+   "D. Han",
+   "T.-H. Weng",
+   "Z. Zheng",
+   "H. Li",
+   "H. Liu",
+   "A. Castiglione",
+   "K.-C. Li"
+  ],
+  "title": "Blockchain for federated learning toward secure distributed machine learning systems: A systemic survey",
+  "raw": "D. Li, D. Han, T.-H. Weng, Z. Zheng, H. Li, H. Liu, A. Castiglione, and K.-C. Li, ‘‘Blockchain for federated learning toward secure distributed machine learning systems: A systemic survey,’’ Soft Comput., vol. 26, no. 9, pp. 4423–4440, Nov. 2021, doi: 10.1007/s00500-021-06496-5."
+ },
+ {
+  "n": 3,
+  "authors": [
+   "M. A. Ferrag",
+   "O. Friha",
+   "L. Maglaras",
+   "H. Janicke",
+   "L. Shu"
+  ],
+  "title": "Federated deep learning for cyber security in the Internet of Things: Concepts, applications, and experimental analysis",
+  "raw": "M. A. Ferrag, O. Friha, L. Maglaras, H. Janicke, and L. Shu, ‘‘Federated deep learning for cyber security in the Internet of Things: Concepts, applications, and experimental analysis,’’ IEEE Access, vol. 9, pp. 138509–138542, 2021, doi: 10.1109/ACCESS.2021.3118642."
+ },
+ {
+  "n": 4,
+  "authors": [
+   "Y. Lu",
+   "X. Huang",
+   "Y. Dai",
+   "S. Maharjan",
+   "Y. Zhang"
+  ],
+  "title": "Blockchain and federated learning for privacy-preserved data sharing in industrial IoT",
+  "raw": "Y. Lu, X. Huang, Y. Dai, S. Maharjan, and Y. Zhang, ‘‘Blockchain and federated learning for privacy-preserved data sharing in industrial IoT,’’ IEEE Trans. Ind. Informat., vol. 16, no. 6, pp. 4177–4186, Jun. 2020, doi: 10.1109/TII.2019.2942190."
+ },
+ {
+  "n": 5,
+  "authors": [
+   "U. Majeed",
+   "C. S. Hong"
+  ],
+  "title": "FLchain: Federated learning via MEC- enabled blockchain network",
+  "raw": "U. Majeed and C. S. Hong, ‘‘FLchain: Federated learning via MEC- enabled blockchain network,’’ in Proc. 20th Asia–Pacific Netw. Oper. Manag. Symp. (APNOMS), Sep. 2019, pp. 1–4. [Online]. Available: https://ieeexplore.ieee.org/document/8892848"
+ },
+ {
+  "n": 6,
+  "authors": [
+   "D"
+  ],
+  "title": "D. Polap, G. Srivastava, A. Jolfaei, and R. M. Parizi. (2020). Blockchain Technology and Neural Networks for the Internet of Medical Things. Accessed: Jul. 3, 2",
+  "raw": "D. Polap, G. Srivastava, A. Jolfaei, and R. M. Parizi. (2020). Blockchain Technology and Neural Networks for the Internet of Medical Things. Accessed: Jul. 3, 2021. [Online]. Available: https://researchers.mq.edu.au/en/publications/blockchain-technology- and-neural-networks-for-the-internet-of-med"
+ },
+ {
+  "n": 7,
+  "authors": [
+   "S. Lugan",
+   "P. Desbordes",
+   "E. Brion",
+   "L. X. Ramos Tormo",
+   "A. Legay",
+   "B. Macq"
+  ],
+  "title": "Secure architectures implementing trusted coalitions for blockchained distributed learning (TCLearn)",
+  "raw": "S. Lugan, P. Desbordes, E. Brion, L. X. Ramos Tormo, A. Legay, and B. Macq, ‘‘Secure architectures implementing trusted coalitions for blockchained distributed learning (TCLearn),’’ IEEE Access, vol. 7, pp. 181789–181799, 2019, doi: 10.1109/ACCESS.2019.2959220."
+ },
+ {
+  "n": 8,
+  "authors": [
+   "M. A. Rahman",
+   "M. S. Hossain",
+   "M. S. Islam",
+   "N. A. Alrajeh",
+   "G. Muham- mad"
+  ],
+  "title": "Secure and provenance enhanced Internet of Health Things frame- work: A blockchain managed federated learning approach",
+  "raw": "M. A. Rahman, M. S. Hossain, M. S. Islam, N. A. Alrajeh, and G. Muham- mad, ‘‘Secure and provenance enhanced Internet of Health Things frame- work: A blockchain managed federated learning approach,’’ IEEE Access, vol. 8, pp. 205071–205087, 2020, doi: 10.1109/ACCESS.2020.3037474. VOLUME 13, 2025 153837 T. Z. Sana et al.: Advancing FL: A SLR of Methods, Challenges, and Applications"
+ },
+ {
+  "n": 9,
+  "authors": [
+   "Z. Li",
+   "J. Liu",
+   "J. Hao",
+   "H. Wang",
+   "M. Xian"
+  ],
+  "title": "CrowdSFL: A secure crowd computing framework based on blockchain and federated learning",
+  "raw": "Z. Li, J. Liu, J. Hao, H. Wang, and M. Xian, ‘‘CrowdSFL: A secure crowd computing framework based on blockchain and federated learning,’’ Elec- tronics, vol. 9, no. 5, p. 773, May 2020, doi: 10.3390/electronics9050773."
+ },
+ {
+  "n": 10,
+  "authors": [
+   "Y. Liu",
+   "J. Peng",
+   "J. Kang",
+   "A. M. Iliyasu",
+   "D. Niyato",
+   "A. A. A. El-Latif"
+  ],
+  "title": "A secure federated learning framework for 5G networks",
+  "raw": "Y. Liu, J. Peng, J. Kang, A. M. Iliyasu, D. Niyato, and A. A. A. El-Latif, ‘‘A secure federated learning framework for 5G networks,’’ IEEE Wireless Commun., vol. 27, no. 4, pp. 24–31, Aug. 2020, doi: 10.1109/MWC.01.1900525."
+ },
+ {
+  "n": 11,
+  "authors": [
+   "Q. Wang",
+   "Y. Guo",
+   "X. Wang",
+   "T. Ji",
+   "L. Yu",
+   "P. Li"
+  ],
+  "title": "AI at the edge: Blockchain-empowered secure multiparty learning with heterogeneous models",
+  "raw": "Q. Wang, Y. Guo, X. Wang, T. Ji, L. Yu, and P. Li, ‘‘AI at the edge: Blockchain-empowered secure multiparty learning with heterogeneous models,’’ IEEE Internet Things J., vol. 7, no. 10, pp. 9600–9610, Oct. 2020, doi: 10.1109/JIOT.2020.2987843."
+ },
+ {
+  "n": 12,
+  "authors": [
+   "P. K. Sharma",
+   "J. H. Park",
+   "K. Cho"
+  ],
+  "title": "Blockchain and federated learning-based distributed computing defence framework for sustainable society",
+  "raw": "P. K. Sharma, J. H. Park, and K. Cho, ‘‘Blockchain and federated learning-based distributed computing defence framework for sustainable society,’’ Sustain. Cities Soc., vol. 59, Aug. 2020, Art. no. 102220, doi: 10.1016/j.scs.2020.102220."
+ },
+ {
+  "n": 13,
+  "authors": [
+   "L. Wu",
+   "W. Ruan",
+   "J. Hu",
+   "Y. He"
+  ],
+  "title": "A survey on blockchain-based federated learning",
+  "raw": "L. Wu, W. Ruan, J. Hu, and Y. He, ‘‘A survey on blockchain-based federated learning,’’ Future Internet, vol. 15, no. 12, p. 400, Dec. 2023, doi: 10.3390/fi15120400."
+ },
+ {
+  "n": 14,
+  "authors": [
+   "R. Ning",
+   "C. Wang",
+   "X. Li",
+   "R. Gazda",
+   "H. Wu"
+  ],
+  "title": "BlockFed: A high-performance and trustworthy blockchain-based federated learning framework",
+  "raw": "R. Ning, C. Wang, X. Li, R. Gazda, and H. Wu, ‘‘BlockFed: A high-performance and trustworthy blockchain-based federated learning framework,’’ in Proc. IEEE Global Commun. Conf., Dec. 2023, pp. 892–897, doi: 10.1109/GLOBECOM54140.2023.10437623."
+ },
+ {
+  "n": 15,
+  "authors": [
+   "Y. Zhao",
+   "J. Zhao",
+   "L. Jiang",
+   "R. Tan",
+   "D. Niyato",
+   "Z. Li",
+   "L. Lyu",
+   "Y. Liu"
+  ],
+  "title": "Privacy-preserving blockchain-based federated learning for IoT devices",
+  "raw": "Y. Zhao, J. Zhao, L. Jiang, R. Tan, D. Niyato, Z. Li, L. Lyu, and Y. Liu, ‘‘Privacy-preserving blockchain-based federated learning for IoT devices,’’ IEEE Internet Things J., vol. 8, no. 3, pp. 1817–1829, Feb. 2021, doi: 10.1109/JIOT.2020.3017377."
+ },
+ {
+  "n": 16,
+  "authors": [
+   "W. Zhang",
+   "Q. Lu",
+   "Q. Yu",
+   "Z. Li",
+   "Y. Liu",
+   "S. K. Lo",
+   "S. Chen",
+   "X. Xu",
+   "L. Zhu"
+  ],
+  "title": "Blockchain-based federated learning for device failure detection in industrial IoT",
+  "raw": "W. Zhang, Q. Lu, Q. Yu, Z. Li, Y. Liu, S. K. Lo, S. Chen, X. Xu, and L. Zhu, ‘‘Blockchain-based federated learning for device failure detection in industrial IoT,’’ IEEE Internet Things J., vol. 8, no. 7, pp. 5926–5937, Apr. 2021, doi: 10.1109/JIOT.2020.3032544."
+ },
+ {
+  "n": 17,
+  "authors": [
+   "O. El Rifai",
+   "M. Biotteau",
+   "X. de Boissezon",
+   "I. Megdiche",
+   "F. Ravat",
+   "O. Teste"
+  ],
+  "title": "Blockchain-based federated learning in medicine",
+  "raw": "O. El Rifai, M. Biotteau, X. de Boissezon, I. Megdiche, F. Ravat, and O. Teste, ‘‘Blockchain-based federated learning in medicine,’’ in Proc. Int. Conf. Artif. Intell. Med., 2020, pp. 214–224, doi: 10.1007/978-3-030- 59137-3_20."
+ },
+ {
+  "n": 18,
+  "authors": [
+   "S. Aich",
+   "N. K. Sinai",
+   "S. Kumar",
+   "M. Ali",
+   "Y. R. Choi",
+   "M. I. L. Joo",
+   "H. C. Kim"
+  ],
+  "title": "Protecting personal healthcare record using blockchain & federated learning technologies",
+  "raw": "S. Aich, N. K. Sinai, S. Kumar, M. Ali, Y. R. Choi, M. I. L. Joo, and H. C. Kim, ‘‘Protecting personal healthcare record using blockchain & federated learning technologies,’’ in Proc. 24th Int. Conf. Adv. Commun. Technol. (ICACT), Feb. 2022, pp. 109–112, doi: 10.23919/ICACT53585.2022.9728772."
+ },
+ {
+  "n": 19,
+  "authors": [
+   "S. R. Pokhrel",
+   "J. Choi"
+  ],
+  "title": "Federated learning with blockchain for autonomous vehicles: Analysis and design challenges",
+  "raw": "S. R. Pokhrel and J. Choi, ‘‘Federated learning with blockchain for autonomous vehicles: Analysis and design challenges,’’ IEEE Trans. Commun., vol. 68, no. 8, pp. 4734–4746, Aug. 2020, doi: 10.1109/TCOMM.2020.2990686."
+ },
+ {
+  "n": 20,
+  "authors": [
+   "Y. Lu",
+   "X. Huang",
+   "K. Zhang",
+   "S. Maharjan",
+   "Y. Zhang"
+  ],
+  "title": "Blockchain empowered asynchronous federated learning for secure data sharing in Internet of Vehicles",
+  "raw": "Y. Lu, X. Huang, K. Zhang, S. Maharjan, and Y. Zhang, ‘‘Blockchain empowered asynchronous federated learning for secure data sharing in Internet of Vehicles,’’ IEEE Trans. Veh. Technol., vol. 69, no. 4, pp. 4298–4311, Apr. 2020, doi: 10.1109/TVT.2020. 2973651."
+ },
+ {
+  "n": 21,
+  "authors": [
+   "H. Chai",
+   "S. Leng",
+   "Y. Chen",
+   "K. Zhang"
+  ],
+  "title": "A hierarchical blockchain- enabled federated learning algorithm for knowledge sharing in Internet of Vehicles",
+  "raw": "H. Chai, S. Leng, Y. Chen, and K. Zhang, ‘‘A hierarchical blockchain- enabled federated learning algorithm for knowledge sharing in Internet of Vehicles,’’ IEEE Trans. Intell. Transp. Syst., vol. 22, no. 7, pp. 3975–3986, Jul. 2020, doi: 10.1109/TITS.2020.3002712."
+ },
+ {
+  "n": 22,
+  "authors": [
+   "L. Cui",
+   "X. Su",
+   "Z. Ming",
+   "Z. Chen",
+   "S. Yang",
+   "Y. Zhou",
+   "W. Xiao"
+  ],
+  "title": "CREAT: Blockchain-assisted compression algorithm of federated learning for content caching in edge computing",
+  "raw": "L. Cui, X. Su, Z. Ming, Z. Chen, S. Yang, Y. Zhou, and W. Xiao, ‘‘CREAT: Blockchain-assisted compression algorithm of federated learning for content caching in edge computing,’’ IEEE Internet Things J., vol. 9, no. 16, pp. 14151–14161, Aug. 2022, doi: 10.1109/JIOT.2020. 3014370."
+ },
+ {
+  "n": 23,
+  "authors": [
+   "Y. Wang",
+   "Z. Su",
+   "N. Zhang",
+   "A. Benslimane"
+  ],
+  "title": "Learning in the air: Secure federated learning for UAV-assisted crowdsensing",
+  "raw": "Y. Wang, Z. Su, N. Zhang, and A. Benslimane, ‘‘Learning in the air: Secure federated learning for UAV-assisted crowdsensing,’’ IEEE Trans. Netw. Sci. Eng., vol. 8, no. 2, pp. 1055–1069, Apr. 2021, doi: 10.1109/TNSE.2020.3014385."
+ },
+ {
+  "n": 24,
+  "authors": [
+   "S. Pourroostaei Ardakani",
+   "N. Du",
+   "C. Lin",
+   "J.-C. Yang",
+   "Z. Bi",
+   "L. Chen"
+  ],
+  "title": "A federated learning-enabled predictive analysis to forecast stock market trends",
+  "raw": "S. Pourroostaei Ardakani, N. Du, C. Lin, J.-C. Yang, Z. Bi, and L. Chen, ‘‘A federated learning-enabled predictive analysis to forecast stock market trends,’’ J. Ambient Intell. Humanized Comput., vol. 14, no. 4, pp. 4529–4535, Feb. 2023, doi: 10.1007/s12652-023-04570-4."
+ },
+ {
+  "n": 25,
+  "authors": [
+   "L. Witt",
+   "M. Heyer",
+   "K. Toyoda",
+   "W. Samek",
+   "D. Li"
+  ],
+  "title": "Decentral and incentivized federated learning frameworks: A systematic literature review",
+  "raw": "L. Witt, M. Heyer, K. Toyoda, W. Samek, and D. Li, ‘‘Decentral and incentivized federated learning frameworks: A systematic literature review,’’ IEEE Internet Things J., vol. 10, no. 4, pp. 3642–3663, Feb. 2023, doi: 10.1109/JIOT.2022.3231363."
+ },
+ {
+  "n": 26,
+  "authors": [
+   "H. N. C. Neto",
+   "J. Hribar",
+   "I. Dusparic",
+   "D. M. F. Mattos",
+   "N. C. Fernandes"
+  ],
+  "title": "A survey on securing federated learning: Analysis of applications, attacks, challenges, and trends",
+  "raw": "H. N. C. Neto, J. Hribar, I. Dusparic, D. M. F. Mattos, and N. C. Fernandes, ‘‘A survey on securing federated learning: Analysis of applications, attacks, challenges, and trends,’’ IEEE Access, vol. 11, pp. 41928–41953, 2023, doi: 10.1109/ACCESS.2023.3269980."
+ },
+ {
+  "n": 27,
+  "authors": [
+   "M. Islam",
+   "M. T. Reza",
+   "M. Kaosar",
+   "M. Z. Parvez"
+  ],
+  "title": "Effectiveness of federated learning and CNN ensemble architectures for identifying brain tumors using MRI images",
+  "raw": "M. Islam, M. T. Reza, M. Kaosar, and M. Z. Parvez, ‘‘Effectiveness of federated learning and CNN ensemble architectures for identifying brain tumors using MRI images,’’ Neural Process. Lett., vol. 55, no. 4, pp. 3779–3809, Aug. 2022, doi: 10.1007/s11063-022-11014-1."
+ },
+ {
+  "n": 28,
+  "authors": [
+   "O. Aouedi",
+   "A. Sacco",
+   "K. Piamrat",
+   "G. Marchetto"
+  ],
+  "title": "Handling privacy-sensitive medical data with federated learning: Challenges and future directions",
+  "raw": "O. Aouedi, A. Sacco, K. Piamrat, and G. Marchetto, ‘‘Handling privacy-sensitive medical data with federated learning: Challenges and future directions,’’ IEEE J. Biomed. Health Informat., vol. 27, no. 2, pp. 790–803, Feb. 2023, doi: 10.1109/JBHI.2022.3185673."
+ },
+ {
+  "n": 29,
+  "authors": [
+   "Z. K. Taha",
+   "C. T. Yaw",
+   "S. P. Koh",
+   "S. K. Tiong",
+   "K. Kadirgama",
+   "F. Benedict",
+   "J. D. Tan",
+   "Y. A. Balasubramaniam"
+  ],
+  "title": "A survey of federated learning from data perspective in the healthcare domain: Challenges, methods, and future directions",
+  "raw": "Z. K. Taha, C. T. Yaw, S. P. Koh, S. K. Tiong, K. Kadirgama, F. Benedict, J. D. Tan, and Y. A. Balasubramaniam, ‘‘A survey of federated learning from data perspective in the healthcare domain: Challenges, methods, and future directions,’’ IEEE Access, vol. 11, pp. 45711–45735, 2023, doi: 10.1109/ACCESS.2023.3267964."
+ },
+ {
+  "n": 30,
+  "authors": [
+   "J. Wen",
+   "Z. Zhang",
+   "Y. Lan",
+   "Z. Cui",
+   "J. Cai",
+   "W. Zhang"
+  ],
+  "title": "A survey on federated learning: Challenges and applications",
+  "raw": "J. Wen, Z. Zhang, Y. Lan, Z. Cui, J. Cai, and W. Zhang, ‘‘A survey on federated learning: Challenges and applications,’’ Int. J. Mach. Learn. Cybern., vol. 14, no. 2, pp. 513–535, Nov. 2022, doi: 10.1007/s13042- 022-01647-y."
+ },
+ {
+  "n": 31,
+  "authors": [
+   "V. A. Patel",
+   "P. Bhattacharya",
+   "S. Tanwar",
+   "R. Gupta",
+   "G. Sharma",
+   "P. N. Bokoro",
+   "R. Sharma"
+  ],
+  "title": "Adoption of federated learning for healthcare informatics: Emerging applications and future directions",
+  "raw": "V. A. Patel, P. Bhattacharya, S. Tanwar, R. Gupta, G. Sharma, P. N. Bokoro, and R. Sharma, ‘‘Adoption of federated learning for healthcare informatics: Emerging applications and future directions,’’ IEEE Access, vol. 10, pp. 90792–90826, 2022, doi: 10.1109/ACCESS.2022.3201876."
+ },
+ {
+  "n": 32,
+  "authors": [
+   "X. Li",
+   "Y. Gu",
+   "N. Dvornek",
+   "L. H. Staib",
+   "P. Ventola",
+   "J. S. Duncan"
+  ],
+  "title": "Multi-site fMRI analysis using privacy-preserving federated learning and domain adaptation: ABIDE results",
+  "raw": "X. Li, Y. Gu, N. Dvornek, L. H. Staib, P. Ventola, and J. S. Duncan, ‘‘Multi-site fMRI analysis using privacy-preserving federated learning and domain adaptation: ABIDE results,’’ Med. Image Anal., vol. 65, Oct. 2020, Art. no. 101765, doi: 10.1016/j.media.2020.101765."
+ },
+ {
+  "n": 33,
+  "authors": [
+   "Request Rejected"
+  ],
+  "title": "Request Rejected. [Online]. Available: https://ieeexplore.ieee.org/ document/9146846",
+  "raw": "Request Rejected. [Online]. Available: https://ieeexplore.ieee.org/ document/9146846"
+ },
+ {
+  "n": 34,
+  "authors": [
+   "B. Li",
+   "Y. Wu",
+   "J. Song",
+   "R. Lu",
+   "T. Li",
+   "L. Zhao"
+  ],
+  "title": "DeepFed: Federated deep learning for intrusion detection in industrial cyber–physical systems",
+  "raw": "B. Li, Y. Wu, J. Song, R. Lu, T. Li, and L. Zhao, ‘‘DeepFed: Federated deep learning for intrusion detection in industrial cyber–physical systems,’’ IEEE Trans. Ind. Informat., vol. 17, no. 8, pp. 5615–5624, Aug. 2021, doi: 10.1109/TII.2020.3023430."
+ },
+ {
+  "n": 35,
+  "authors": [
+   "B. Liu",
+   "L. Wang",
+   "M. Liu"
+  ],
+  "title": "Lifelong federated reinforcement learning: A learning architecture for navigation in cloud robotic systems",
+  "raw": "B. Liu, L. Wang, and M. Liu, ‘‘Lifelong federated reinforcement learning: A learning architecture for navigation in cloud robotic systems,’’ in Proc. IEEE/RSJ Int. Conf. Intell. Robots Syst. (IROS), Nov. 2019, pp. 1688–1695, doi: 10.1109/IROS40897.2019.8967908."
+ },
+ {
+  "n": 36,
+  "authors": [
+   "Y. Hu",
+   "X. Sun",
+   "Y. Chen",
+   "Z. Lu"
+  ],
+  "title": "Model and feature aggregation based federated learning for multi-sensor time series trend following",
+  "raw": "Y. Hu, X. Sun, Y. Chen, and Z. Lu, ‘‘Model and feature aggregation based federated learning for multi-sensor time series trend following,’’ in Proc. Int. Work-Conf. Artif. Neural Netw., Jan. 2019, pp. 233–246, doi: 10.1007/978-3-030-20521-8_20."
+ },
+ {
+  "n": 37,
+  "authors": [
+   "Y. Chen",
+   "X. Qin",
+   "J. Wang",
+   "C. Yu",
+   "W. Gao"
+  ],
+  "title": "FedHealth: A federated transfer learning framework for wearable healthcare",
+  "raw": "Y. Chen, X. Qin, J. Wang, C. Yu, and W. Gao, ‘‘FedHealth: A federated transfer learning framework for wearable healthcare,’’ IEEE Intell. Syst., vol. 35, no. 4, pp. 83–93, Jul. 2020, doi: 10.1109/MIS.2020.2988604."
+ },
+ {
+  "n": 38,
+  "authors": [
+   "Z. Xiong",
+   "Z. Cheng",
+   "X. Lin",
+   "C. Xu",
+   "X. Liu",
+   "D. Wang",
+   "X. Luo",
+   "Y. Zhang",
+   "H. Jiang",
+   "N. Qiao",
+   "M. Zheng"
+  ],
+  "title": "Facing small and biased data dilemma in drug discovery with enhanced federated learning approaches",
+  "raw": "Z. Xiong, Z. Cheng, X. Lin, C. Xu, X. Liu, D. Wang, X. Luo, Y. Zhang, H. Jiang, N. Qiao, and M. Zheng, ‘‘Facing small and biased data dilemma in drug discovery with enhanced federated learning approaches,’’ Sci. China Life Sci., vol. 65, no. 3, pp. 529–539, Mar. 2022, doi: 10.1007/s11427-021-1946-0."
+ },
+ {
+  "n": 39,
+  "authors": [
+   "L. Huang",
+   "A. L. Shea",
+   "H. Qian",
+   "A. Masurkar",
+   "H. Deng",
+   "D. Liu"
+  ],
+  "title": "Patient clustering improves efficiency of federated machine learning to predict mortality and hospital stay time using distributed electronic medical records",
+  "raw": "L. Huang, A. L. Shea, H. Qian, A. Masurkar, H. Deng, and D. Liu, ‘‘Patient clustering improves efficiency of federated machine learning to predict mortality and hospital stay time using distributed electronic medical records,’’ J. Biomed. Informat., vol. 99, Nov. 2019, Art. no. 103291, doi: 10.1016/j.jbi.2019.103291."
+ },
+ {
+  "n": 40,
+  "authors": [
+   "W. Li",
+   "F. Milletarí",
+   "D. Xu",
+   "N. Rieke",
+   "J. Hancox",
+   "W. Zhu",
+   "M. Baust",
+   "Y. Cheng",
+   "S. Ourselin",
+   "M. J. Cardoso",
+   "A. Feng"
+  ],
+  "title": "Privacy- preserving federated brain tumour segmentation",
+  "raw": "W. Li, F. Milletarí, D. Xu, N. Rieke, J. Hancox, W. Zhu, M. Baust, Y. Cheng, S. Ourselin, M. J. Cardoso, and A. Feng, ‘‘Privacy- preserving federated brain tumour segmentation,’’ in Proc. Int. Workshop Mach. Learn. Med. Imag., Jan. 2019, pp. 133–141. [Online]. Available: https://kclpure.kcl.ac.uk/portal/en/publications/privacypreserving- federated-brain-tumour-segmentation(93e7026d-927e-4b77-bd13-"
+ },
+ {
+  "n": 41,
+  "authors": [
+   "S. Duan",
+   "D. Zhang",
+   "Y. Wang",
+   "L. Li",
+   "Y. Zhang"
+  ],
+  "title": "JointRec: A deep- learning-based joint cloud video recommendation framework for mobile IoT",
+  "raw": "S. Duan, D. Zhang, Y. Wang, L. Li, and Y. Zhang, ‘‘JointRec: A deep- learning-based joint cloud video recommendation framework for mobile IoT,’’ IEEE Internet Things J., vol. 7, no. 3, pp. 1655–1666, Mar. 2020, doi: 10.1109/JIOT.2019.2944889."
+ },
+ {
+  "n": 42,
+  "authors": [
+   "S. Samarakoon",
+   "M. Bennis",
+   "W. Saad",
+   "M. Debbah"
+  ],
+  "title": "Distributed feder- ated learning for ultra-reliable low-latency vehicular communications",
+  "raw": "S. Samarakoon, M. Bennis, W. Saad, and M. Debbah, ‘‘Distributed feder- ated learning for ultra-reliable low-latency vehicular communications,’’ IEEE Trans. Commun., vol. 68, no. 2, pp. 1146–1159, Feb. 2020, doi: 10.1109/TCOMM.2019.2956472."
+ },
+ {
+  "n": 43,
+  "authors": [],
+  "title": "Privacy-Preserving Traffic Flow Prediction: A Federated Learning Approach | IEEE Journals & Magazine | IEEE Xplore. [Online]. Available: https://ieeexplore.ieee",
+  "raw": "Privacy-Preserving Traffic Flow Prediction: A Federated Learning Approach | IEEE Journals & Magazine | IEEE Xplore. [Online]. Available: https://ieeexplore.ieee.org/abstract/document/9082655"
+ },
+ {
+  "n": 44,
+  "authors": [
+   "H"
+  ],
+  "title": "H. Zhang, J. Bosch, and H. H. Olsson. (Jul. 1, 2021). End-to- End Federated Learning for Autonomous Driving Vehicles. [Online]. Available: https://ieeexplore.ie",
+  "raw": "H. Zhang, J. Bosch, and H. H. Olsson. (Jul. 1, 2021). End-to- End Federated Learning for Autonomous Driving Vehicles. [Online]. Available: https://ieeexplore.ieee.org/document/9533808 153838 VOLUME 13, 2025 T. Z. Sana et al.: Advancing FL: A SLR of Methods, Challenges, and Applications"
+ },
+ {
+  "n": 45,
+  "authors": [
+   "E. Bakopoulou",
+   "B. Tillman",
+   "A. Markopoulou"
+  ],
+  "title": "FedPacket: A federated learning approach to mobile packet classification",
+  "raw": "E. Bakopoulou, B. Tillman, and A. Markopoulou, ‘‘FedPacket: A federated learning approach to mobile packet classification,’’ IEEE Trans. Mobile Comput., vol. 21, no. 10, pp. 3609–3628, Oct. 2022, doi: 10.1109/TMC.2021.3058627."
+ },
+ {
+  "n": 46,
+  "authors": [
+   "Y. Liu",
+   "Z. Ai",
+   "S. Sun",
+   "S. Zhang",
+   "Z. Liu",
+   "H. Yu"
+  ],
+  "title": "FedCoin: A peer- to-peer payment system for federated learning",
+  "raw": "Y. Liu, Z. Ai, S. Sun, S. Zhang, Z. Liu, and H. Yu, ‘‘FedCoin: A peer- to-peer payment system for federated learning,’’ in Federated Learning: Privacy and Incentive (Lecture Notes in Computer Science), 2020, pp. 125–138."
+ },
+ {
+  "n": 47,
+  "authors": [
+   "R"
+  ],
+  "title": "R. Doku, D. B. Rawat, and C. Liu. (Jul. 1, 2019). Towards Federated Learning Approach To Determine Data Relevance in Big Data. [Online]. Available: https://ieee",
+  "raw": "R. Doku, D. B. Rawat, and C. Liu. (Jul. 1, 2019). Towards Federated Learning Approach To Determine Data Relevance in Big Data. [Online]. Available: https://ieeexplore.ieee.org/abstract/document/8843451"
+ },
+ {
+  "n": 48,
+  "authors": [
+   "N. N. Sakhare",
+   "I. S. Shaik"
+  ],
+  "title": "Spatial federated learning approach for the sentiment analysis of stock news stored on blockchain",
+  "raw": "N. N. Sakhare and I. S. Shaik, ‘‘Spatial federated learning approach for the sentiment analysis of stock news stored on blockchain,’’ Spatial Inf. Res., vol. 32, no. 1, pp. 13–27, Jun. 2023, doi: 10.1007/s41324-023-00529-x."
+ },
+ {
+  "n": 49,
+  "authors": [
+   "A. Albaseer",
+   "B. S. Ciftler",
+   "M. Abdallah",
+   "A. Al-Fuqaha"
+  ],
+  "title": "Exploiting unlabeled data in smart cities using federated edge learning",
+  "raw": "A. Albaseer, B. S. Ciftler, M. Abdallah, and A. Al-Fuqaha, ‘‘Exploiting unlabeled data in smart cities using federated edge learning,’’ in Proc. Int. Wireless Commun. Mobile Comput. (IWCMC), Jun. 2020, pp. 1666–1671, doi: 10.1109/IWCMC48107.2020. 9148475."
+ },
+ {
+  "n": 50,
+  "authors": [
+   "Y. M. Saputra",
+   "D. T. Hoang",
+   "D. N. Nguyen",
+   "E. Dutkiewicz",
+   "M. D. Mueck",
+   "S. Srikanteswara"
+  ],
+  "title": "Energy demand prediction with federated learning for electric vehicle networks",
+  "raw": "Y. M. Saputra, D. T. Hoang, D. N. Nguyen, E. Dutkiewicz, M. D. Mueck, and S. Srikanteswara, ‘‘Energy demand prediction with federated learning for electric vehicle networks,’’ in Proc. IEEE Global Com- mun. Conf. (GLOBECOM), Dec. 2019, pp. 1–6. [Online]. Available: https://ieeexplore.ieee.org/document/9013587/"
+ },
+ {
+  "n": 51,
+  "authors": [
+   "T. D. Nguyen",
+   "S. Marchal",
+   "M. Miettinen",
+   "H. Fereidooni",
+   "N. Asokan",
+   "A.-R. Sadeghi"
+  ],
+  "title": "DÏoT: A federated self-learning anomaly detection system for IoT",
+  "raw": "T. D. Nguyen, S. Marchal, M. Miettinen, H. Fereidooni, N. Asokan, and A.-R. Sadeghi, ‘‘DÏoT: A federated self-learning anomaly detection system for IoT,’’ in Proc. IEEE 39th Int. Conf. Distrib. Comput. Syst. (ICDCS), Jul. 2019, pp. 756–767, doi: 10.1109/ICDCS.2019.00080."
+ },
+ {
+  "n": 52,
+  "authors": [
+   "D. Leroy",
+   "A. Coucke",
+   "T. Lavril",
+   "T. Gisselbrecht",
+   "J. Dureau"
+  ],
+  "title": "Federated learning for keyword spotting",
+  "raw": "D. Leroy, A. Coucke, T. Lavril, T. Gisselbrecht, and J. Dureau, ‘‘Federated learning for keyword spotting,’’ in Proc. IEEE Int. Conf. Acoust., Speech Signal Process. (ICASSP), May 2019, pp. 6341–6345, doi: 10.1109/ICASSP.2019.8683546."
+ },
+ {
+  "n": 53,
+  "authors": [
+   "X. Liang",
+   "Y. Liu",
+   "T. Chen",
+   "M. Liu",
+   "Q. Yang"
+  ],
+  "title": "Federated transfer reinforcement learning for autonomous driving",
+  "raw": "X. Liang, Y. Liu, T. Chen, M. Liu, and Q. Yang, ‘‘Federated transfer reinforcement learning for autonomous driving,’’ in Adaptation, Learning, and Optimization, 2022, pp. 357–371."
+ },
+ {
+  "n": 54,
+  "authors": [
+   "M. J. Sheller",
+   "G. A. Reina",
+   "B. Edwards",
+   "J. Martin",
+   "S. Bakas"
+  ],
+  "title": "Multi-institutional deep learning modeling without sharing patient data: A feasibility study on brain tumor segmentation",
+  "raw": "M. J. Sheller, G. A. Reina, B. Edwards, J. Martin, and S. Bakas, ‘‘Multi-institutional deep learning modeling without sharing patient data: A feasibility study on brain tumor segmentation,’’ in Proc. Int. MICCAI Brainlesion Workshop, 2019, pp. 92–104, doi: 10.1007/978-3- 030-11723-8_9."
+ },
+ {
+  "n": 55,
+  "authors": [
+   "S. Silva",
+   "B. A. Gutman",
+   "E. Romero",
+   "P. M. Thompson",
+   "A. Altmann",
+   "M. Lorenzi"
+  ],
+  "title": "Federated learning in distributed medical databases: Meta-analysis of large-scale subcortical brain data",
+  "raw": "S. Silva, B. A. Gutman, E. Romero, P. M. Thompson, A. Altmann, and M. Lorenzi, ‘‘Federated learning in distributed medical databases: Meta-analysis of large-scale subcortical brain data,’’ in Proc. IEEE 16th Int. Symp. Biomed. Imag. (ISBI), Apr. 2019, pp. 270–274. [Online]. Available: https://ieeexplore.ieee.org/document/8759317"
+ },
+ {
+  "n": 56,
+  "authors": [
+   "H. Sharghi",
+   "W. Ma",
+   "K. Sartipi"
+  ],
+  "title": "Federated service-based authenti- cation provisioning for distributed diagnostic imaging systems",
+  "raw": "H. Sharghi, W. Ma, and K. Sartipi, ‘‘Federated service-based authenti- cation provisioning for distributed diagnostic imaging systems,’’ in Proc. IEEE 28th Int. Symp. Comput.-Based Med. Syst., Jun. 2015, pp. 344–347, doi: 10.1109/CBMS.2015.85."
+ },
+ {
+  "n": 57,
+  "authors": [
+   "A. Korkmaz",
+   "A. Alhonainy",
+   "P. Rao"
+  ],
+  "title": "An evaluation of federated learning techniques for secure and privacy-preserving machine learning on medical datasets",
+  "raw": "A. Korkmaz, A. Alhonainy, and P. Rao, ‘‘An evaluation of federated learning techniques for secure and privacy-preserving machine learning on medical datasets,’’ in Proc. IEEE Appl. Imag. Pattern Recognit. Workshop (AIPR), Oct. 2022, pp. 1–7, doi: 10.1109/AIPR57179.2022. 10092212."
+ },
+ {
+  "n": 58,
+  "authors": [
+   "R. Zeng",
+   "S. Zhang",
+   "J. Wang",
+   "X. Chu"
+  ],
+  "title": "FMore: An incentive scheme of multi-dimensional auction for federated learning in MEC",
+  "raw": "R. Zeng, S. Zhang, J. Wang, and X. Chu, ‘‘FMore: An incentive scheme of multi-dimensional auction for federated learning in MEC,’’ in Proc. IEEE 40th Int. Conf. Distrib. Comput. Syst. (ICDCS), pp. 278–288, Nov. 2020, doi: 10.1109/ICDCS47774.2020.00094."
+ },
+ {
+  "n": 59,
+  "authors": [
+   "Y. Chen",
+   "X. Yang",
+   "X. Qin",
+   "H. Yu",
+   "P. Chan",
+   "Z. Shen"
+  ],
+  "title": "Dealing with label quality disparity in federated learning",
+  "raw": "Y. Chen, X. Yang, X. Qin, H. Yu, P. Chan, and Z. Shen, ‘‘Dealing with label quality disparity in federated learning,’’ in Federated Learning: Privacy and Incentive, (Lecture Notes in Computer Science), 2020, pp. 108–121, doi: 10.1007/978-3-030-63076-8_8."
+ },
+ {
+  "n": 60,
+  "authors": [
+   "D. Chen",
+   "L. J. Xie",
+   "B. Kim",
+   "L. Wang",
+   "C. S. Hong",
+   "L.-C. Wang",
+   "Z. Han"
+  ],
+  "title": "Federated learning based mobile edge computing for augmented reality applications",
+  "raw": "D. Chen, L. J. Xie, B. Kim, L. Wang, C. S. Hong, L.-C. Wang, and Z. Han, ‘‘Federated learning based mobile edge computing for augmented reality applications,’’ in Proc. Int. Conf. Comput., Netw. Commun. (ICNC), Feb. 2020, pp. 767–773, doi: 10.1109/ICNC47757.2020.9049708."
+ },
+ {
+  "n": 61,
+  "authors": [
+   "B. Shickel",
+   "P. J. Tighe",
+   "A. Bihorac",
+   "P. Rashidi"
+  ],
+  "title": "Deep EHR: A survey of recent advances in deep learning techniques for electronic health record (EHR) analysis",
+  "raw": "B. Shickel, P. J. Tighe, A. Bihorac, and P. Rashidi, ‘‘Deep EHR: A survey of recent advances in deep learning techniques for electronic health record (EHR) analysis,’’ IEEE J. Biomed. Health Informat., vol. 22, no. 5, pp. 1589–1604, Sep. 2018, doi: 10.1109/JBHI.2017.2767063."
+ },
+ {
+  "n": 62,
+  "authors": [
+   "G. Harerimana",
+   "B. Jang",
+   "J. W. Kim",
+   "H. K. Park"
+  ],
+  "title": "Health big data analytics: A technology survey",
+  "raw": "G. Harerimana, B. Jang, J. W. Kim, and H. K. Park, ‘‘Health big data analytics: A technology survey,’’ IEEE Access, vol. 6, pp. 65661–65678, 2018, doi: 10.1109/ACCESS.2018.2878254."
+ },
+ {
+  "n": 63,
+  "authors": [
+   "M. Hao",
+   "H. Li",
+   "G. Xu",
+   "Z. Liu",
+   "Z. Chen"
+  ],
+  "title": "Privacy-aware and resource- saving collaborative learning for healthcare in cloud computing",
+  "raw": "M. Hao, H. Li, G. Xu, Z. Liu, and Z. Chen, ‘‘Privacy-aware and resource- saving collaborative learning for healthcare in cloud computing,’’ in Proc. IEEE Int. Conf. Commun. (ICC), Jun. 2020, pp. 1–6, doi: 10.1109/ICC40277.2020.9148979."
+ },
+ {
+  "n": 64,
+  "authors": [
+   "T. S. Brisimi",
+   "R. Chen",
+   "T. Mela",
+   "A. Olshevsky",
+   "I. C. Paschalidis",
+   "W. Shi"
+  ],
+  "title": "Federated learning of predictive models from federated electronic health records",
+  "raw": "T. S. Brisimi, R. Chen, T. Mela, A. Olshevsky, I. C. Paschalidis, and W. Shi, ‘‘Federated learning of predictive models from federated electronic health records,’’ Int. J. Med. Informat., vol. 112, pp. 59–67, Apr. 2018, doi: 10.1016/j.ijmedinf.2018.01.007."
+ },
+ {
+  "n": 65,
+  "authors": [
+   "H. Chen",
+   "H. Li",
+   "G. Xu",
+   "Y. Zhang",
+   "X. Luo"
+  ],
+  "title": "Achieving privacy- preserving federated learning with irrelevant updates over e-health applications",
+  "raw": "H. Chen, H. Li, G. Xu, Y. Zhang, and X. Luo, ‘‘Achieving privacy- preserving federated learning with irrelevant updates over e-health applications,’’ in Proc. IEEE Int. Conf. Commun. (ICC), Jun. 2020, pp. 1–6, doi: 10.1109/ICC40277.2020.9149385."
+ },
+ {
+  "n": 66,
+  "authors": [
+   "Q. Wu",
+   "K. He",
+   "X. Chen"
+  ],
+  "title": "Personalized federated learning for intel- ligent IoT applications: A cloud-edge based framework",
+  "raw": "Q. Wu, K. He, and X. Chen, ‘‘Personalized federated learning for intel- ligent IoT applications: A cloud-edge based framework,’’ IEEE Open J. Comput. Soc., vol. 1, pp. 35–44, 2020, doi: 10.1109/OJCS.2020.2993259."
+ },
+ {
+  "n": 67,
+  "authors": [
+   "D. C. Nguyen",
+   "P. N. Pathirana",
+   "M. Ding",
+   "A. Seneviratne"
+  ],
+  "title": "BEdge- Health: A decentralized architecture for edge-based IoMT networks using blockchain",
+  "raw": "D. C. Nguyen, P. N. Pathirana, M. Ding, and A. Seneviratne, ‘‘BEdge- Health: A decentralized architecture for edge-based IoMT networks using blockchain,’’ IEEE Internet Things J., vol. 8, no. 14, pp. 11743–11757, Jul. 2021, doi: 10.1109/JIOT.2021.3058953."
+ },
+ {
+  "n": 68,
+  "authors": [
+   "D. C. Nguyen",
+   "P. N. Pathirana",
+   "M. Ding",
+   "A. Seneviratne"
+  ],
+  "title": "Blockchain for secure EHRs sharing of mobile cloud based e- health systems",
+  "raw": "D. C. Nguyen, P. N. Pathirana, M. Ding, and A. Seneviratne, ‘‘Blockchain for secure EHRs sharing of mobile cloud based e- health systems,’’ IEEE Access, vol. 7, pp. 66792–66806, 2019, doi: 10.1109/ACCESS.2019.2917555."
+ },
+ {
+  "n": 69,
+  "authors": [
+   "B. Yan",
+   "J. Wang",
+   "J. Cheng",
+   "Y. Zhou",
+   "Y. Zhang",
+   "Y. Yang",
+   "L. Liu",
+   "H. Zhao",
+   "C. Wang",
+   "B. Liu"
+  ],
+  "title": "Experiments of federated learning for COVID-19 chest X-ray images",
+  "raw": "B. Yan, J. Wang, J. Cheng, Y. Zhou, Y. Zhang, Y. Yang, L. Liu, H. Zhao, C. Wang, and B. Liu, ‘‘Experiments of federated learning for COVID-19 chest X-ray images,’’ in Proc. Int. Conf. Artif. Intell. Secur., in Communications in computer and information science, Jan. 2021, pp. 41–53, doi: 10.1007/978-3-030-78618-2_4."
+ },
+ {
+  "n": 70,
+  "authors": [
+   "S. Jin",
+   "X. Luo",
+   "D. Ma"
+  ],
+  "title": "Determining the breakpoints of fundamental diagrams",
+  "raw": "S. Jin, X. Luo, and D. Ma, ‘‘Determining the breakpoints of fundamental diagrams,’’ IEEE Intell. Transp. Syst. Mag., vol. 12, no. 1, pp. 74–90, Oct. 2020, doi: 10.1109/MITS.2018.2876576."
+ },
+ {
+  "n": 71,
+  "authors": [
+   "W. Y. B. Lim",
+   "J. Huang",
+   "Z. Xiong",
+   "J. Kang",
+   "D. Niyato",
+   "X.-S. Hua",
+   "C. Leung",
+   "C. Miao"
+  ],
+  "title": "Towards federated learning in UAV-enabled Internet of Vehicles: A multi-dimensional contract-matching approach",
+  "raw": "W. Y. B. Lim, J. Huang, Z. Xiong, J. Kang, D. Niyato, X.-S. Hua, C. Leung, and C. Miao, ‘‘Towards federated learning in UAV-enabled Internet of Vehicles: A multi-dimensional contract-matching approach,’’ IEEE Trans. Intell. Transp. Syst., vol. 22, no. 8, pp. 5140–5154, Aug. 2021, doi: 10.1109/TITS.2021.3056341."
+ },
+ {
+  "n": 72,
+  "authors": [
+   "S"
+  ],
+  "title": "S. Samarakoon, M. Bennis, W. Saad, and M. Debbah. (2018). Federated Learning for Ultra-Reliable Low-Latency V2V Communications. Accessed: Oct. 11, 2022. [Online",
+  "raw": "S. Samarakoon, M. Bennis, W. Saad, and M. Debbah. (2018). Federated Learning for Ultra-Reliable Low-Latency V2V Communications. Accessed: Oct. 11, 2022. [Online]. Available: https://ieeexplore.ieee.org/abstract/document/8647927"
+ },
+ {
+  "n": 73,
+  "authors": [
+   "X. Zhang",
+   "M. Peng",
+   "S. Yan",
+   "Y. Sun"
+  ],
+  "title": "Deep-reinforcement- learning-based mode selection and resource allocation for cellular V2X communications",
+  "raw": "X. Zhang, M. Peng, S. Yan, and Y. Sun, ‘‘Deep-reinforcement- learning-based mode selection and resource allocation for cellular V2X communications,’’ IEEE Internet Things J., vol. 7, no. 7, pp. 6380–6391, Jul. 2020, doi: 10.1109/JIOT.2019.2962715."
+ },
+ {
+  "n": 74,
+  "authors": [
+   "D. C. Nguyen",
+   "P. N. Pathirana",
+   "M. Ding",
+   "A. Seneviratne"
+  ],
+  "title": "Privacy-preserved task offloading in mobile blockchain with deep reinforcement learning",
+  "raw": "D. C. Nguyen, P. N. Pathirana, M. Ding, and A. Seneviratne, ‘‘Privacy-preserved task offloading in mobile blockchain with deep reinforcement learning,’’ IEEE Trans. Netw. Service Manage., vol. 17, no. 4, pp. 2536–2549, Dec. 2020, doi: 10.1109/TNSM.2020.3010967."
+ },
+ {
+  "n": 75,
+  "authors": [
+   "J. Cao",
+   "K. Zhang",
+   "F. Wu",
+   "S. Leng"
+  ],
+  "title": "Learning cooperation schemes for mobile edge computing empowered Internet of Vehicles",
+  "raw": "J. Cao, K. Zhang, F. Wu, and S. Leng, ‘‘Learning cooperation schemes for mobile edge computing empowered Internet of Vehicles,’’ in Proc. IEEE Wireless Commun. Netw. Conf. (WCNC), May 2020, pp. 1–6, doi: 10.1109/WCNC45663.2020.9120493."
+ },
+ {
+  "n": 76,
+  "authors": [
+   "D. Conway-Jones",
+   "T. Tuor",
+   "S. Wang",
+   "K. K. Leung"
+  ],
+  "title": "Demonstration of federated learning in a resource-constrained networked environment",
+  "raw": "D. Conway-Jones, T. Tuor, S. Wang, and K. K. Leung, ‘‘Demonstration of federated learning in a resource-constrained networked environment,’’ in Proc. IEEE Int. Conf. Smart Comput. (SMARTCOMP), Jun. 2019, pp. 484–486, doi: 10.1109/SMARTCOMP.2019.00095."
+ },
+ {
+  "n": 77,
+  "authors": [
+   "K. Xiong",
+   "S. Leng",
+   "C. Huang",
+   "C. Yuen",
+   "Y. L. Guan"
+  ],
+  "title": "Intelligent task offloading for heterogeneous V2X communications",
+  "raw": "K. Xiong, S. Leng, C. Huang, C. Yuen, and Y. L. Guan, ‘‘Intelligent task offloading for heterogeneous V2X communications,’’ IEEE Trans. Intell. Transp. Syst., vol. 22, no. 4, pp. 2226–2238, Apr. 2021, doi: 10.1109/TITS.2020.3015210."
+ },
+ {
+  "n": 78,
+  "authors": [
+   "A. Fotouhi",
+   "H. Qiang",
+   "M. Ding",
+   "M. Hassan",
+   "L. G. Giordano",
+   "A. Garcia-Rodriguez",
+   "J. Yuan"
+  ],
+  "title": "Survey on UAV cellular commu- nications: Practical aspects, standardization advancements, regulation, and security challenges",
+  "raw": "A. Fotouhi, H. Qiang, M. Ding, M. Hassan, L. G. Giordano, A. Garcia-Rodriguez, and J. Yuan, ‘‘Survey on UAV cellular commu- nications: Practical aspects, standardization advancements, regulation, and security challenges,’’ IEEE Commun. Surveys Tuts., vol. 21, no. 4, pp. 3417–3442, 4th Quart., 2019, doi: 10.1109/COMST.2019.2906228."
+ },
+ {
+  "n": 79,
+  "authors": [
+   "M. Chen",
+   "W. Saad",
+   "C. Yin"
+  ],
+  "title": "Liquid state machine learning for resource and cache management in LTE-U unmanned aerial vehicle (UAV) networks",
+  "raw": "M. Chen, W. Saad, and C. Yin, ‘‘Liquid state machine learning for resource and cache management in LTE-U unmanned aerial vehicle (UAV) networks,’’ IEEE Trans. Wireless Commun., vol. 18, no. 3, pp. 1504–1517, Mar. 2019, doi: 10.1109/TWC.2019.2891629."
+ },
+ {
+  "n": 80,
+  "authors": [
+   "T. Zeng",
+   "O. Semiari",
+   "M. Mozaffari",
+   "M. Chen",
+   "W. Saad",
+   "M. Bennis"
+  ],
+  "title": "Federated learning in the sky: Joint power allocation and scheduling with UAV swarms",
+  "raw": "T. Zeng, O. Semiari, M. Mozaffari, M. Chen, W. Saad, and M. Bennis, ‘‘Federated learning in the sky: Joint power allocation and scheduling with UAV swarms,’’ in Proc. IEEE Int. Conf. Commun. (ICC), Jun. 2020, pp. 1–6, doi: 10.1109/ICC40277.2020.9148776. VOLUME 13, 2025 153839 T. Z. Sana et al.: Advancing FL: A SLR of Methods, Challenges, and Applications"
+ },
+ {
+  "n": 81,
+  "authors": [
+   "W. Yuan",
+   "C. Liu",
+   "F. Liu",
+   "S. Li",
+   "D. W. K. Ng"
+  ],
+  "title": "Learning-based predictive beamforming for UAV communications with jittering",
+  "raw": "W. Yuan, C. Liu, F. Liu, S. Li, and D. W. K. Ng, ‘‘Learning-based predictive beamforming for UAV communications with jittering,’’ IEEE Wireless Commun. Lett., vol. 9, no. 11, pp. 1970–1974, Nov. 2020, doi: 10.1109/LWC.2020.3009951."
+ },
+ {
+  "n": 82,
+  "authors": [
+   "Y. Wang",
+   "Y. Yang",
+   "T. Luo"
+  ],
+  "title": "Federated convolutional auto-encoder for optimal deployment of UAVs with visible light communications",
+  "raw": "Y. Wang, Y. Yang, and T. Luo, ‘‘Federated convolutional auto-encoder for optimal deployment of UAVs with visible light communications,’’ in Proc. IEEE Int. Conf. Commun. Workshops (ICC Workshops), Jun. 2020, pp. 1–6, doi: 10.1109/ICCWORKSHOPS49005.2020.9145090."
+ },
+ {
+  "n": 83,
+  "authors": [
+   "Y. Qu",
+   "C. Dong",
+   "J. Zheng",
+   "H. Dai",
+   "F. Wu",
+   "S. Guo",
+   "A. Anpalagan"
+  ],
+  "title": "Empowering edge intelligence by air-ground integrated federated learning",
+  "raw": "Y. Qu, C. Dong, J. Zheng, H. Dai, F. Wu, S. Guo, and A. Anpalagan, ‘‘Empowering edge intelligence by air-ground integrated federated learning,’’ IEEE Netw., vol. 35, no. 5, pp. 34–41, Sep. 2021, doi: 10.1109/MNET.111.2100044."
+ },
+ {
+  "n": 84,
+  "authors": [
+   "N. I. Mowla",
+   "N. H. Tran",
+   "I. Doh",
+   "K. Chae"
+  ],
+  "title": "Federated learning- based cognitive detection of jamming attack in flying ad-hoc net- work",
+  "raw": "N. I. Mowla, N. H. Tran, I. Doh, and K. Chae, ‘‘Federated learning- based cognitive detection of jamming attack in flying ad-hoc net- work,’’ IEEE Access, vol. 8, pp. 4338–4350, 2020. [Online]. Available: https://ieeexplore.ieee.org/document/8945183"
+ },
+ {
+  "n": 85,
+  "authors": [
+   "A. Gharaibeh",
+   "M. A. Salahuddin",
+   "S. J. Hussini",
+   "A. Khreishah",
+   "I. Khalil",
+   "M. Guizani",
+   "A. Al-Fuqaha"
+  ],
+  "title": "Smart cities: A survey on data management, security, and enabling technologies",
+  "raw": "A. Gharaibeh, M. A. Salahuddin, S. J. Hussini, A. Khreishah, I. Khalil, M. Guizani, and A. Al-Fuqaha, ‘‘Smart cities: A survey on data management, security, and enabling technologies,’’ IEEE Commun. Surveys Tuts., vol. 19, no. 4, pp. 2456–2501, 4th Quart., 2017, doi: 10.1109/COMST.2017.2736886."
+ },
+ {
+  "n": 86,
+  "authors": [
+   "M. Mohammadi",
+   "A. Al-Fuqaha"
+  ],
+  "title": "Enabling cognitive smart cities using big data and machine learning: Approaches and challenges",
+  "raw": "M. Mohammadi and A. Al-Fuqaha, ‘‘Enabling cognitive smart cities using big data and machine learning: Approaches and challenges,’’ IEEE Commun. Mag., vol. 56, no. 2, pp. 94–101, Feb. 2018, doi: 10.1109/MCOM.2018.1700298."
+ },
+ {
+  "n": 87,
+  "authors": [
+   "D. R. Mukhametov"
+  ],
+  "title": "Ubiquitous computing and distributed machine learning in smart cities",
+  "raw": "D. R. Mukhametov, ‘‘Ubiquitous computing and distributed machine learning in smart cities,’’ in Proc. Wave Electron. its Appl. Inf. Telecommun. Syst. (WECONF), Jun. 2020, pp. 1–5, doi: 10.1109/WECONF48837.2020.9131518."
+ },
+ {
+  "n": 88,
+  "authors": [
+   "Big Data"
+  ],
+  "title": "Trustworthy AI in the Age of Pervasive Computing and Big Data. [Online]. Available: https://ieeexplore.ieee.org/document/9156127",
+  "raw": "Trustworthy AI in the Age of Pervasive Computing and Big Data. [Online]. Available: https://ieeexplore.ieee.org/document/9156127"
+ },
+ {
+  "n": 89,
+  "authors": [
+   "T.-C. Chiu",
+   "Y.-Y. Shih",
+   "A.-C. Pang",
+   "C.-S. Wang",
+   "W. Weng",
+   "C.-T. Chou"
+  ],
+  "title": "Semisupervised distributed learning with non-IID data for AIoT service platform",
+  "raw": "T.-C. Chiu, Y.-Y. Shih, A.-C. Pang, C.-S. Wang, W. Weng, and C.-T. Chou, ‘‘Semisupervised distributed learning with non-IID data for AIoT service platform,’’ IEEE Internet Things J., vol. 7, no. 10, pp. 9266–9277, Oct. 2020, doi: 10.1109/JIOT.2020.2995162."
+ },
+ {
+  "n": 90,
+  "authors": [
+   "M. Masera",
+   "E. F. Bompard",
+   "F. Profumo",
+   "N. Hadjsaid"
+  ],
+  "title": "Smart (electricity) grids for smart cities: Assessing roles and societal impacts",
+  "raw": "M. Masera, E. F. Bompard, F. Profumo, and N. Hadjsaid, ‘‘Smart (electricity) grids for smart cities: Assessing roles and societal impacts,’’ Proc. IEEE, vol. 106, no. 4, pp. 613–625, Apr. 2018, doi: 10.1109/JPROC.2018.2812212."
+ },
+ {
+  "n": 91,
+  "authors": [
+   "S. Pérez",
+   "J. Pérez",
+   "P. Arroba",
+   "R. Blanco",
+   "J. L. Ayala",
+   "J. M. Moya"
+  ],
+  "title": "Predictive GPU-based ADAS management in energy-conscious smart cities",
+  "raw": "S. Pérez, J. Pérez, P. Arroba, R. Blanco, J. L. Ayala, and J. M. Moya, ‘‘Predictive GPU-based ADAS management in energy-conscious smart cities,’’ in Proc. IEEE Int. Smart Cities Conf. (ISC), Oct. 2019, pp. 349–354, doi: 10.1109/ISC246665.2019.9071685."
+ },
+ {
+  "n": 92,
+  "authors": [
+   "A. Taïk",
+   "S. Cherkaoui"
+  ],
+  "title": "Electrical load forecasting using edge computing and federated learning",
+  "raw": "A. Taïk and S. Cherkaoui, ‘‘Electrical load forecasting using edge computing and federated learning,’’ in Proc. IEEE Int. Conf. Commun. (ICC), Jun. 2020, pp. 1–6, doi: 10.1109/ICC40277.2020.9148937."
+ },
+ {
+  "n": 93,
+  "authors": [
+   "Z. Ge",
+   "Z. Song",
+   "S. X. Ding",
+   "B. Huang"
+  ],
+  "title": "Data mining and analytics in the process industry: The role of machine learning",
+  "raw": "Z. Ge, Z. Song, S. X. Ding, and B. Huang, ‘‘Data mining and analytics in the process industry: The role of machine learning,’’ IEEE Access, vol. 5, pp. 20590–20616, 2017, doi: 10.1109/ACCESS.2017.2756872."
+ },
+ {
+  "n": 94,
+  "authors": [
+   "W. Zhou",
+   "Y. Li",
+   "S. Chen",
+   "B. Ding"
+  ],
+  "title": "Real-time data processing architecture for multi-robots based on differential federated learning",
+  "raw": "W. Zhou, Y. Li, S. Chen, and B. Ding, ‘‘Real-time data processing architecture for multi-robots based on differential federated learning,’’ in Proc. IEEE SmartWorld, Ubiquitous Intell. Comput., Adv. Trusted Comput., Scalable Comput. Commun., Cloud Big Data Comput., Internet People Smart City Innov. (SmartWorld/SCALCOM/UIC/ATC/CBDCom/IOP/SCI), Oct. 2018, pp. 462–471, doi: 10.1109/SMARTWORLD.2018.00"
+ },
+ {
+  "n": 95,
+  "authors": [
+   "B. Liu",
+   "L. Wang",
+   "M. Liu",
+   "C.-Z. Xu"
+  ],
+  "title": "Federated imitation learning: A novel framework for cloud robotic systems with heterogeneous sensor data",
+  "raw": "B. Liu, L. Wang, M. Liu, and C.-Z. Xu, ‘‘Federated imitation learning: A novel framework for cloud robotic systems with heterogeneous sensor data,’’ IEEE Robot. Autom. Lett., vol. 5, no. 2, pp. 3509–3516, Apr. 2020, doi: 10.1109/LRA.2020.2976321."
+ },
+ {
+  "n": 96,
+  "authors": [
+   "A. K. Tanwani",
+   "N. Mor",
+   "J. Kubiatowicz",
+   "J. E. Gonzalez",
+   "K. Goldberg"
+  ],
+  "title": "A fog robotics approach to deep robot learning: Application to object recognition and grasp planning in surface decluttering",
+  "raw": "A. K. Tanwani, N. Mor, J. Kubiatowicz, J. E. Gonzalez, and K. Goldberg, ‘‘A fog robotics approach to deep robot learning: Application to object recognition and grasp planning in surface decluttering,’’ in Proc. Int. Conf. Robot. Autom. (ICRA), May 2019, pp. 4559–4566, doi: 10.1109/ICRA.2019.8793690."
+ },
+ {
+  "n": 97,
+  "authors": [
+   "H.-K. Lim",
+   "J.-B. Kim",
+   "C.-M. Kim",
+   "G.-Y. Hwang",
+   "H.-B. Choi",
+   "Y. Han"
+  ],
+  "title": "Federated reinforcement learning for controlling multiple rotary inverted pendulums in edge computing environments",
+  "raw": "H.-K. Lim, J.-B. Kim, C.-M. Kim, G.-Y. Hwang, H.-B. Choi, and Y. Han, ‘‘Federated reinforcement learning for controlling multiple rotary inverted pendulums in edge computing environments,’’ in Proc. Int. Conf. Artif. Intell. Inf. Commun. (ICAIIC), Feb. 2020, pp. 463–464, doi: 10.1109/icaiic48513.2020.9065233."
+ },
+ {
+  "n": 98,
+  "authors": [
+   "Z. Li",
+   "L. Wang",
+   "L. Jiang",
+   "C.-Z. Xu"
+  ],
+  "title": "FC-SLAM: Federated learning enhanced distributed visual-LiDAR SLAM in cloud robotic system",
+  "raw": "Z. Li, L. Wang, L. Jiang, and C.-Z. Xu, ‘‘FC-SLAM: Federated learning enhanced distributed visual-LiDAR SLAM in cloud robotic system,’’ in Proc. IEEE Int. Conf. Robot. Biomimetics (ROBIO), Dec. 2019, pp. 1995–2000, doi: 10.1109/ROBIO49542.2019.8961798."
+ },
+ {
+  "n": 99,
+  "authors": [
+   "Y. Lu"
+  ],
+  "title": "Industry 4.0: A survey on technologies, applications and open research issues",
+  "raw": "Y. Lu, ‘‘Industry 4.0: A survey on technologies, applications and open research issues,’’ J. Ind. Inf. Integr., vol. 6, pp. 1–10, Jun. 2017, doi: 10.1016/j.jii.2017.04.005."
+ },
+ {
+  "n": 100,
+  "authors": [
+   "M. Hao",
+   "H. Li",
+   "X. Luo",
+   "G. Xu",
+   "H. Yang",
+   "S. Liu"
+  ],
+  "title": "Efficient and privacy- enhanced federated learning for industrial artificial intelligence",
+  "raw": "M. Hao, H. Li, X. Luo, G. Xu, H. Yang, and S. Liu, ‘‘Efficient and privacy- enhanced federated learning for industrial artificial intelligence,’’ IEEE Trans. Ind. Informat., vol. 16, no. 10, pp. 6532–6542, Oct. 2020, doi: 10.1109/TII.2019.2945367."
+ },
+ {
+  "n": 101,
+  "authors": [
+   "S. R. Pokhrel",
+   "S. Singh"
+  ],
+  "title": "Compound TCP performance for Industry 4.0 WiFi: A cognitive federated learning approach",
+  "raw": "S. R. Pokhrel and S. Singh, ‘‘Compound TCP performance for Industry 4.0 WiFi: A cognitive federated learning approach,’’ IEEE Trans. Ind. Informat., vol. 17, no. 3, pp. 2143–2151, Mar. 2021, doi: 10.1109/TII.2020.2985033."
+ },
+ {
+  "n": 102,
+  "authors": [
+   "P. C. M. Arachchige",
+   "P. Bertok",
+   "I. Khalil",
+   "D. Liu",
+   "S. Camtepe",
+   "M. Atiquzzaman"
+  ],
+  "title": "A trustworthy privacy preserving framework for machine learning in industrial IoT systems",
+  "raw": "P. C. M. Arachchige, P. Bertok, I. Khalil, D. Liu, S. Camtepe, and M. Atiquzzaman, ‘‘A trustworthy privacy preserving framework for machine learning in industrial IoT systems,’’ IEEE Trans. Ind. Informat., vol. 16, no. 9, pp. 6092–6102, Sep. 2020, doi: 10.1109/TII.2020.2974555."
+ },
+ {
+  "n": 103,
+  "authors": [
+   "Y. Qu",
+   "S. R. Pokhrel",
+   "S. Garg",
+   "L. Gao",
+   "Y. Xiang"
+  ],
+  "title": "A blockchained federated learning framework for cognitive computing in Industry 4.0 networks",
+  "raw": "Y. Qu, S. R. Pokhrel, S. Garg, L. Gao, and Y. Xiang, ‘‘A blockchained federated learning framework for cognitive computing in Industry 4.0 networks,’’ IEEE Trans. Ind. Informat., vol. 17, no. 4, pp. 2964–2973, Apr. 2021. [Online]. Available: https://ieeexplore.ieee.org/document/9134967"
+ },
+ {
+  "n": 104,
+  "authors": [
+   "T. Qiu",
+   "J. Chi",
+   "X. Zhou",
+   "Z. Ning",
+   "M. Atiquzzaman",
+   "D. O. Wu"
+  ],
+  "title": "Edge computing in industrial Internet of Things: Architecture, advances and challenges",
+  "raw": "T. Qiu, J. Chi, X. Zhou, Z. Ning, M. Atiquzzaman, and D. O. Wu, ‘‘Edge computing in industrial Internet of Things: Architecture, advances and challenges,’’ IEEE Commun. Surveys Tuts., vol. 22, no. 4, pp. 2462–2488, 4th Quart., 2020. [Online]. Available: https://ieeexplore.ieee.org/document/9139976"
+ },
+ {
+  "n": 105,
+  "authors": [
+   "J. Mills",
+   "J. Hu",
+   "G. Min"
+  ],
+  "title": "Communication-efficient federated learning for wireless edge intelligence in IoT",
+  "raw": "J. Mills, J. Hu, and G. Min, ‘‘Communication-efficient federated learning for wireless edge intelligence in IoT,’’ IEEE Internet Things J., vol. 7, no. 7, pp. 5986–5994, Jul. 2020, doi: 10.1109/JIOT.2019.2956615."
+ },
+ {
+  "n": 106,
+  "authors": [
+   "H. Sun",
+   "S. Li",
+   "F. R. Yu",
+   "Q. Qi",
+   "J. Wang",
+   "J. Liao"
+  ],
+  "title": "Toward communication-efficient federated learning in the Internet of Things with edge computing",
+  "raw": "H. Sun, S. Li, F. R. Yu, Q. Qi, J. Wang, and J. Liao, ‘‘Toward communication-efficient federated learning in the Internet of Things with edge computing,’’ IEEE Internet Things J., vol. 7, no. 11, pp. 11053–11067, Nov. 2020, doi: 10.1109/JIOT.2020.2994596."
+ },
+ {
+  "n": 107,
+  "authors": [
+   "S. Zhai",
+   "X. Jin",
+   "L. Wei",
+   "H. Luo",
+   "M. Cao"
+  ],
+  "title": "Dynamic federated learning for GMEC with time-varying wireless link",
+  "raw": "S. Zhai, X. Jin, L. Wei, H. Luo, and M. Cao, ‘‘Dynamic federated learning for GMEC with time-varying wireless link,’’ IEEE Access, vol. 9, pp. 10400–10412, 2021, doi: 10.1109/ACCESS.2021.3050172."
+ },
+ {
+  "n": 108,
+  "authors": [
+   "L"
+  ],
+  "title": "L. Wang, W. Wang, and B. Li. (Jul. 1, 2019). CMFL: Mitigating Communication Overhead for Federated Learning. [Online]. Available: https://ieeexplore.ieee.org/ab",
+  "raw": "L. Wang, W. Wang, and B. Li. (Jul. 1, 2019). CMFL: Mitigating Communication Overhead for Federated Learning. [Online]. Available: https://ieeexplore.ieee.org/abstract/document/8885054?casa_token= o82a5mcscF4AAAAA:Ad5c5VNfj-16CJX8VvvD8N2B066iINlX9 hewz_I2gLZ5-JGxrNF1R6SiP4znNHVpCzWctELCTh0"
+ },
+ {
+  "n": 109,
+  "authors": [
+   "Z. Yang",
+   "M. Chen",
+   "W. Saad",
+   "C. S. Hong",
+   "M. Shikh-Bahaei"
+  ],
+  "title": "Energy efficient federated learning over wireless communication networks",
+  "raw": "Z. Yang, M. Chen, W. Saad, C. S. Hong, and M. Shikh-Bahaei, ‘‘Energy efficient federated learning over wireless communication networks,’’ IEEE Trans. Wireless Commun., vol. 20, no. 3, pp. 1935–1949, Mar. 2021, doi: 10.1109/TWC.2020.3037554."
+ },
+ {
+  "n": 110,
+  "authors": [
+   "H. T. Nguyen",
+   "N. Cong Luong",
+   "J. Zhao",
+   "C. Yuen",
+   "D. Niyato"
+  ],
+  "title": "Resource allocation in mobility-aware federated learning networks: A deep reinforcement learning approach",
+  "raw": "H. T. Nguyen, N. Cong Luong, J. Zhao, C. Yuen, and D. Niyato, ‘‘Resource allocation in mobility-aware federated learning networks: A deep reinforcement learning approach,’’ in Proc. IEEE 6th World Forum Internet Things (WF-IoT), Jun. 2020, pp. 1–6, doi: 10.1109/WF- IoT48130.2020.9221089."
+ },
+ {
+  "n": 111,
+  "authors": [
+   "A. Imteaj",
+   "M. Hadi Amini"
+  ],
+  "title": "FedAR: Activity and resource-aware federated learning model for distributed mobile robots",
+  "raw": "A. Imteaj and M. Hadi Amini, ‘‘FedAR: Activity and resource-aware federated learning model for distributed mobile robots,’’ in Proc. 19th IEEE Int. Conf. Mach. Learn. Appl. (ICMLA), Dec. 2020, pp. 1153–1160, doi: 10.1109/ICMLA51294.2020.00185."
+ },
+ {
+  "n": 112,
+  "authors": [
+   "U"
+  ],
+  "title": "U. M. Aïvodji, S. Gambs, and A. Martin. (May 1, 2019). IOTFLA: A Secured and Privacy-Preserving Smart Home Architecture Implementing Federated Learning. [Online",
+  "raw": "U. M. Aïvodji, S. Gambs, and A. Martin. (May 1, 2019). IOTFLA: A Secured and Privacy-Preserving Smart Home Architecture Implementing Federated Learning. [Online]. Available: https://ieeexplore.ieee.org/ document/8844592"
+ },
+ {
+  "n": 113,
+  "authors": [
+   "A. Fu",
+   "X. Zhang",
+   "N. Xiong",
+   "Y. Gao",
+   "H. Wang",
+   "J. Zhang"
+  ],
+  "title": "VFL: A verifiable federated learning with privacy-preserving for big data in industrial IoT",
+  "raw": "A. Fu, X. Zhang, N. Xiong, Y. Gao, H. Wang, and J. Zhang, ‘‘VFL: A verifiable federated learning with privacy-preserving for big data in industrial IoT,’’ IEEE Trans. Ind. Informat., vol. 18, no. 5, pp. 3316–3326, May 2022, doi: 10.1109/TII.2020.3036166."
+ },
+ {
+  "n": 114,
+  "authors": [
+   "C. Zhang",
+   "X. Liu",
+   "X. Zheng",
+   "R. Li",
+   "H. Liu"
+  ],
+  "title": "FengHuoLun: A federated learning based edge computing platform for cyber-physical systems",
+  "raw": "C. Zhang, X. Liu, X. Zheng, R. Li, and H. Liu, ‘‘FengHuoLun: A federated learning based edge computing platform for cyber-physical systems,’’ in Proc. IEEE Int. Conf. Pervasive Comput. Commun. Workshops (PerCom Workshops), Mar. 2020, pp. 1–4, doi: 10.1109/PER- COMWORKSHOPS48775.2020.9156259."
+ },
+ {
+  "n": 115,
+  "authors": [
+   "Y. Tu",
+   "Y. Ruan",
+   "S. Wagle",
+   "C. G. Brinton",
+   "C. Joe-Wong"
+  ],
+  "title": "Network- aware optimization of distributed learning for fog computing",
+  "raw": "Y. Tu, Y. Ruan, S. Wagle, C. G. Brinton, and C. Joe-Wong, ‘‘Network- aware optimization of distributed learning for fog computing,’’ in Proc. IEEE Conf. Comput. Commun., Jul. 2020, pp. 2509–2518, doi: 10.1109/INFOCOM41043.2020.9155372."
+ },
+ {
+  "n": 116,
+  "authors": [
+   "X. Lu",
+   "Y. Liao",
+   "P. Lio",
+   "P. Hui"
+  ],
+  "title": "Privacy-preserving asynchronous fed- erated learning mechanism for edge network computing",
+  "raw": "X. Lu, Y. Liao, P. Lio, and P. Hui, ‘‘Privacy-preserving asynchronous fed- erated learning mechanism for edge network computing,’’ IEEE Access, vol. 8, pp. 48970–48981, 2020, doi: 10.1109/ACCESS.2020.2978082. 153840 VOLUME 13, 2025 T. Z. Sana et al.: Advancing FL: A SLR of Methods, Challenges, and Applications"
+ },
+ {
+  "n": 117,
+  "authors": [
+   "L. Li",
+   "C. Huang",
+   "D. Shi",
+   "H. Wang",
+   "X. Zhou",
+   "M. Shu",
+   "M. Pan"
+  ],
+  "title": "Energy and spectrum efficient federated learning via high-precision over-the-air computation",
+  "raw": "L. Li, C. Huang, D. Shi, H. Wang, X. Zhou, M. Shu, and M. Pan, ‘‘Energy and spectrum efficient federated learning via high-precision over-the-air computation,’’ IEEE Trans. Wireless Commun., vol. 23, no. 2, pp. 1228–1242, Feb. 2024, doi: 10.1109/TWC.2023.3287549."
+ },
+ {
+  "n": 118,
+  "authors": [
+   "I. Adjei-Mensah",
+   "X. Zhang",
+   "I. O. Agyemang",
+   "S. B. Yussif",
+   "A. A. Baffour",
+   "B. M. Cobbinah",
+   "C. Sey",
+   "L. D. Fiasam",
+   "I. A. Chikwendu",
+   "J. R. Arhin"
+  ],
+  "title": "Cov-Fed: Federated learning-based framework for COVID-19 diagnosis using chest X-ray scans",
+  "raw": "I. Adjei-Mensah, X. Zhang, I. O. Agyemang, S. B. Yussif, A. A. Baffour, B. M. Cobbinah, C. Sey, L. D. Fiasam, I. A. Chikwendu, and J. R. Arhin, ‘‘Cov-Fed: Federated learning-based framework for COVID-19 diagnosis using chest X-ray scans,’’ Eng. Appl. Artif. Intell., vol. 128, Feb. 2024, Art. no. 107448, doi: 10.1016/j.engappai.2023.107448."
+ },
+ {
+  "n": 119,
+  "authors": [
+   "M. Gupta",
+   "M. Kumar",
+   "Y. Gupta"
+  ],
+  "title": "A blockchain-empowered federated learning-based framework for data privacy in lung disease detection system",
+  "raw": "M. Gupta, M. Kumar, and Y. Gupta, ‘‘A blockchain-empowered federated learning-based framework for data privacy in lung disease detection system,’’ Comput. Hum. Behav., vol. 158, Sep. 2024, Art. no. 108302, doi: 10.1016/j.chb.2024.108302."
+ },
+ {
+  "n": 120,
+  "authors": [
+   "Y. Li",
+   "C. Chen",
+   "N. Liu",
+   "H. Huang",
+   "Z. Zheng",
+   "Q. Yan"
+  ],
+  "title": "A blockchain- based decentralized federated learning framework with committee consensus",
+  "raw": "Y. Li, C. Chen, N. Liu, H. Huang, Z. Zheng, and Q. Yan, ‘‘A blockchain- based decentralized federated learning framework with committee consensus,’’ IEEE Netw., vol. 35, no. 1, pp. 234–241, Jan. 2021, doi: 10.1109/MNET.011.2000263."
+ },
+ {
+  "n": 121,
+  "authors": [
+   "Y. Liu",
+   "Z. Jia",
+   "Z. Jiang",
+   "X. Lin",
+   "J. Liu",
+   "Q. Wu",
+   "W. Susilo"
+  ],
+  "title": "BFL-SA: Blockchain-based federated learning via enhanced secure aggregation",
+  "raw": "Y. Liu, Z. Jia, Z. Jiang, X. Lin, J. Liu, Q. Wu, and W. Susilo, ‘‘BFL-SA: Blockchain-based federated learning via enhanced secure aggregation,’’ J. Syst. Archit., vol. 152, Jul. 2024, Art. no. 103163, doi: 10.1016/j.sysarc.2024.103163."
+ },
+ {
+  "n": 122,
+  "authors": [
+   "Z. Li",
+   "X. Xu",
+   "X. Cao",
+   "W. Liu",
+   "Y. Zhang",
+   "D. Chen",
+   "H. Dai"
+  ],
+  "title": "Integrated CNN and federated learning for COVID-19 detection on chest X- ray images",
+  "raw": "Z. Li, X. Xu, X. Cao, W. Liu, Y. Zhang, D. Chen, and H. Dai, ‘‘Integrated CNN and federated learning for COVID-19 detection on chest X- ray images,’’ IEEE/ACM Trans. Comput. Biol. Bioinf., vol. 24, no. 4, pp. 835–845, Jan. 2022, doi: 10.1109/TCBB.2022.3184319."
+ },
+ {
+  "n": 123,
+  "authors": [
+   "I. Blanquer",
+   "F. Brasileiro",
+   "A. Brito",
+   "A. Calatrava",
+   "A. Carvalho",
+   "C. Fetzer",
+   "F. Figueiredo",
+   "R. P. Guimarães",
+   "L. Marinho",
+   "W. Meira",
+   "A. Silva",
+   "E. Camacho-Ramos",
+   "A. Jimenez-Pastor",
+   "A. L. L. Ribeiro",
+   "B. R. Nascimento",
+   "F. Silva"
+  ],
+  "title": "Federated and secure cloud services for building medical image classifiers on an intercontinen- tal infrastructure",
+  "raw": "I. Blanquer, F. Brasileiro, A. Brito, A. Calatrava, A. Carvalho, C. Fetzer, F. Figueiredo, R. P. Guimarães, L. Marinho, W. Meira, A. Silva, Á. Alberich-Bayarri, E. Camacho-Ramos, A. Jimenez-Pastor, A. L. L. Ribeiro, B. R. Nascimento, and F. Silva, ‘‘Federated and secure cloud services for building medical image classifiers on an intercontinen- tal infrastructure,’’ Future Gener. Comput. Syst., vol"
+ },
+ {
+  "n": 124,
+  "authors": [
+   "Y. Ye",
+   "S. Li",
+   "F. Liu",
+   "Y. Tang",
+   "W. Hu"
+  ],
+  "title": "EdgeFed: Optimized federated learning based on edge computing",
+  "raw": "Y. Ye, S. Li, F. Liu, Y. Tang, and W. Hu, ‘‘EdgeFed: Optimized federated learning based on edge computing,’’ IEEE Access, vol. 8, pp. 209191–209198, 2020, doi: 10.1109/ACCESS.2020.3038287."
+ },
+ {
+  "n": 125,
+  "authors": [
+   "H. Liu",
+   "S. Zhang",
+   "P. Zhang",
+   "X. Zhou",
+   "X. Shao",
+   "G. Pu",
+   "Y. Zhang"
+  ],
+  "title": "Blockchain and federated learning for collaborative intrusion detection in vehicular edge computing",
+  "raw": "H. Liu, S. Zhang, P. Zhang, X. Zhou, X. Shao, G. Pu, and Y. Zhang, ‘‘Blockchain and federated learning for collaborative intrusion detection in vehicular edge computing,’’ IEEE Trans. Veh. Technol., vol. 70, no. 6, pp. 6073–6084, Jun. 2021, doi: 10.1109/TVT.2021.3076780."
+ },
+ {
+  "n": 126,
+  "authors": [
+   "Y. Lu",
+   "X. Huang",
+   "K. Zhang",
+   "S. Maharjan",
+   "Y. Zhang"
+  ],
+  "title": "Communication-efficient federated learning and permissioned blockchain for digital twin edge networks",
+  "raw": "Y. Lu, X. Huang, K. Zhang, S. Maharjan, and Y. Zhang, ‘‘Communication-efficient federated learning and permissioned blockchain for digital twin edge networks,’’ IEEE Internet Things J., vol. 8, no. 4, pp. 2276–2288, Feb. 2021, doi: 10.1109/JIOT.2020.3015772."
+ },
+ {
+  "n": 127,
+  "authors": [
+   "J"
+  ],
+  "title": "J. Qian and M. Barzegaran. (Dec. 1, 2021). A Decomposed Deep Training Solution for Fog Computing Platforms. Accessed: Sep. 17, 2023. [Online]. Available: https:",
+  "raw": "J. Qian and M. Barzegaran. (Dec. 1, 2021). A Decomposed Deep Training Solution for Fog Computing Platforms. Accessed: Sep. 17, 2023. [Online]. Available: https://ieeexplore.ieee.org/abstract/document/ 9709003/"
+ },
+ {
+  "n": 128,
+  "authors": [
+   "Y. Xiao",
+   "X. Zhang",
+   "Y. Li",
+   "G. Shi",
+   "M. Krunz",
+   "D. N. Nguyen",
+   "D. T. Hoang"
+  ],
+  "title": "Time-sensitive learning for heterogeneous federated edge intelligence",
+  "raw": "Y. Xiao, X. Zhang, Y. Li, G. Shi, M. Krunz, D. N. Nguyen, and D. T. Hoang, ‘‘Time-sensitive learning for heterogeneous federated edge intelligence,’’ IEEE Trans. Mobile Comput., vol. 23, no. 2, pp. 1–18, Feb. 2024, doi: 10.1109/TMC.2023.3237374."
+ },
+ {
+  "n": 129,
+  "authors": [
+   "L. Cui",
+   "Z. Chen",
+   "S. Yang",
+   "R. Chen",
+   "Z. Ming"
+  ],
+  "title": "A secure and decentralized DLaaS platform for edge resource scheduling against adversarial attacks",
+  "raw": "L. Cui, Z. Chen, S. Yang, R. Chen, and Z. Ming, ‘‘A secure and decentralized DLaaS platform for edge resource scheduling against adversarial attacks,’’ IEEE Trans. Comput., vol. 73, no. 3, pp. 631–644, Jan. 2021, doi: 10.1109/TC.2021.3074806."
+ },
+ {
+  "n": 130,
+  "authors": [
+   "W. Yang",
+   "Y. Zhang",
+   "K. Ye",
+   "L. Li",
+   "C. Xu"
+  ],
+  "title": "FFD: A federated learning based method for credit card fraud detection",
+  "raw": "W. Yang, Y. Zhang, K. Ye, L. Li, and C. Xu, ‘‘FFD: A federated learning based method for credit card fraud detection,’’ in Proc. Int. Conf. big data, 2019, pp. 18–32, doi: 10.1007/978-3-030-23551-2_2."
+ },
+ {
+  "n": 131,
+  "authors": [
+   "M. Abdul Salam",
+   "K. M. Fouad",
+   "D. L. Elbably",
+   "S. M. Elsayed"
+  ],
+  "title": "Fed- erated learning model for credit card fraud detection with data balancing techniques",
+  "raw": "M. Abdul Salam, K. M. Fouad, D. L. Elbably, and S. M. Elsayed, ‘‘Fed- erated learning model for credit card fraud detection with data balancing techniques,’’ Neural Comput. Appl., vol. 36, no. 11, pp. 6231–6256, Jan. 2024, doi: 10.1007/s00521-023-09410-2."
+ },
+ {
+  "n": 132,
+  "authors": [
+   "V. V. K. Reddy",
+   "R. V. K. Reddy",
+   "M. S. K. Munaga",
+   "B. Karnam",
+   "S. K. Maddila",
+   "C. S. Kolli"
+  ],
+  "title": "Deep learning-based credit card fraud detection in federated learning",
+  "raw": "V. V. K. Reddy, R. V. K. Reddy, M. S. K. Munaga, B. Karnam, S. K. Maddila, and C. S. Kolli, ‘‘Deep learning-based credit card fraud detection in federated learning,’’ Expert Syst. Appl., vol. 255, Dec. 2024, Art. no. 124493, doi: 10.1016/j.eswa.2024.124493."
+ },
+ {
+  "n": 133,
+  "authors": [
+   "N. Hossein Motlagh",
+   "T. Taleb",
+   "O. Arouk"
+  ],
+  "title": "Low-altitude unmanned aerial vehicles-based Internet of Things services: Comprehensive survey and future perspectives",
+  "raw": "N. Hossein Motlagh, T. Taleb, and O. Arouk, ‘‘Low-altitude unmanned aerial vehicles-based Internet of Things services: Comprehensive survey and future perspectives,’’ IEEE Internet Things J., vol. 3, no. 6, pp. 899–922, Dec. 2016, doi: 10.1109/JIOT.2016.2612119."
+ },
+ {
+  "n": 134,
+  "authors": [
+   "J. Yao",
+   "N. Ansari"
+  ],
+  "title": "Secure federated learning by power control for Internet of Drones",
+  "raw": "J. Yao and N. Ansari, ‘‘Secure federated learning by power control for Internet of Drones,’’ IEEE Trans. Cognit. Commun. Netw., vol. 7, no. 4, pp. 1021–1031, Dec. 2021, doi: 10.1109/TCCN.2021.3076167."
+ },
+ {
+  "n": 135,
+  "authors": [
+   "A. Yazdinejad",
+   "R. M. Parizi",
+   "A. Dehghantanha",
+   "H. Karimipour"
+  ],
+  "title": "Federated learning for drone authentication",
+  "raw": "A. Yazdinejad, R. M. Parizi, A. Dehghantanha, and H. Karimipour, ‘‘Federated learning for drone authentication,’’ Ad Hoc Netw., vol. 120, Sep. 2021, Art. no. 102574, doi: 10.1016/j.adhoc.2021.102574."
+ },
+ {
+  "n": 136,
+  "authors": [
+   "M. Harasic",
+   "F.-S. Keese",
+   "D. Mattern",
+   "A. Paschke"
+  ],
+  "title": "Recent advances and future challenges in federated recommender systems",
+  "raw": "M. Harasic, F.-S. Keese, D. Mattern, and A. Paschke, ‘‘Recent advances and future challenges in federated recommender systems,’’ Int. J. Data Sci. Anal., vol. 17, no. 4, pp. 337–357, Aug. 2023, doi: 10.1007/s41060- 023-00442-4."
+ },
+ {
+  "n": 137,
+  "authors": [
+   "Y. Wu",
+   "L. Su",
+   "L. Wu",
+   "W. Xiong"
+  ],
+  "title": "FedDeepFM: A factor- ization machine-based neural network for recommendation in feder- ated learning",
+  "raw": "Y. Wu, L. Su, L. Wu, and W. Xiong, ‘‘FedDeepFM: A factor- ization machine-based neural network for recommendation in feder- ated learning,’’ IEEE Access, vol. 11, pp. 74182–74190, 2023, doi: 10.1109/ACCESS.2023.3295894."
+ },
+ {
+  "n": 138,
+  "authors": [
+   "A. Salh",
+   "R. Ngah",
+   "L. Audah",
+   "K. S. Kim",
+   "Q. Abdullah",
+   "Y. M. Al-Moliki",
+   "K. A. Aljaloud",
+   "H. N. Talib"
+  ],
+  "title": "Energy-efficient federated learning with resource allocation for green IoT edge intelligence in B5G",
+  "raw": "A. Salh, R. Ngah, L. Audah, K. S. Kim, Q. Abdullah, Y. M. Al-Moliki, K. A. Aljaloud, and H. N. Talib, ‘‘Energy-efficient federated learning with resource allocation for green IoT edge intelligence in B5G,’’ IEEE Access, vol. 11, pp. 16353–16367, 2023. [Online]. Available: https://ieeexplore.ieee.org/document/10041930"
+ },
+ {
+  "n": 139,
+  "authors": [
+   "L. Ferreira",
+   "L. Silva",
+   "F. Morais",
+   "C. M. Martins",
+   "P. M. Pires",
+   "H. Rodrigues",
+   "P. Cortez",
+   "A. Pilastri"
+  ],
+  "title": "International revenue share fraud prediction on the 5G edge using federated learning",
+  "raw": "L. Ferreira, L. Silva, F. Morais, C. M. Martins, P. M. Pires, H. Rodrigues, P. Cortez, and A. Pilastri, ‘‘International revenue share fraud prediction on the 5G edge using federated learning,’’ Computing, vol. 105, no. 9, pp. 1907–1932, Mar. 2023, doi: 10.1007/s00607-023-01174-w."
+ },
+ {
+  "n": 140,
+  "authors": [
+   "R. Parekh",
+   "N. Patel",
+   "R. Gupta",
+   "N. K. Jadav",
+   "S. Tanwar",
+   "A. Alharbi",
+   "A. Tolba",
+   "B.-C. Neagu",
+   "M. S. Raboaca"
+  ],
+  "title": "GeFL: Gradient encryption-aided privacy preserved federated learning for autonomous vehicles",
+  "raw": "R. Parekh, N. Patel, R. Gupta, N. K. Jadav, S. Tanwar, A. Alharbi, A. Tolba, B.-C. Neagu, and M. S. Raboaca, ‘‘GeFL: Gradient encryption-aided privacy preserved federated learning for autonomous vehicles,’’ IEEE Access, vol. 11, pp. 1825–1839, 2023, doi: 10.1109/ACCESS.2023.3233983."
+ },
+ {
+  "n": 141,
+  "authors": [
+   "D. C. Nguyen",
+   "M. Ding",
+   "P. N. Pathirana",
+   "A. Seneviratne",
+   "J. Li",
+   "H. V. Poor"
+  ],
+  "title": "Federated learning for Internet of Things: A comprehensive survey",
+  "raw": "D. C. Nguyen, M. Ding, P. N. Pathirana, A. Seneviratne, J. Li, and H. V. Poor, ‘‘Federated learning for Internet of Things: A comprehensive survey,’’ IEEE Commun. Surveys Tuts., vol. 23, no. 3, pp. 1622–1658, 3rd Quart., 2021, doi: 10.1109/COMST.2021.3075439."
+ },
+ {
+  "n": 142,
+  "authors": [
+   "S. Math",
+   "P. Tam",
+   "S. Kim"
+  ],
+  "title": "Reliable federated learning systems based on intelligent resource sharing scheme for big data Internet of Things",
+  "raw": "S. Math, P. Tam, and S. Kim, ‘‘Reliable federated learning systems based on intelligent resource sharing scheme for big data Internet of Things,’’ IEEE Access, vol. 9, pp. 108091–108100, 2021, doi: 10.1109/ACCESS.2021.3101871."
+ },
+ {
+  "n": 143,
+  "authors": [
+   "W. Zhang",
+   "X. Li",
+   "H. Ma",
+   "Z. Luo",
+   "X. Li"
+  ],
+  "title": "Federated learning for machinery fault diagnosis with dynamic validation and self-supervision",
+  "raw": "W. Zhang, X. Li, H. Ma, Z. Luo, and X. Li, ‘‘Federated learning for machinery fault diagnosis with dynamic validation and self-supervision,’’ Knowledge-Based Syst., vol. 213, Feb. 2021, Art. no. 106679, doi: 10.1016/j.knosys.2020.106679."
+ },
+ {
+  "n": 144,
+  "authors": [
+   "Q. Song",
+   "S. Lei",
+   "W. Sun",
+   "Y. Zhang"
+  ],
+  "title": "Adaptive federated learning for digital twin driven industrial Internet of Things",
+  "raw": "Q. Song, S. Lei, W. Sun, and Y. Zhang, ‘‘Adaptive federated learning for digital twin driven industrial Internet of Things,’’ in Proc. IEEE Wireless Commun. Netw. Conf. (WCNC), Mar. 2021, pp. 1–6, doi: 10.1109/WCNC49053.2021.9417370."
+ },
+ {
+  "n": 145,
+  "authors": [
+   "J. Zhang",
+   "J. Zhou",
+   "J. Guo",
+   "X. Sun"
+  ],
+  "title": "Visual object detection for privacy-preserving federated learning",
+  "raw": "J. Zhang, J. Zhou, J. Guo, and X. Sun, ‘‘Visual object detection for privacy-preserving federated learning,’’ IEEE Access, vol. 11, pp. 33324–33335, 2023, doi: 10.1109/ACCESS.2023.3263533."
+ },
+ {
+  "n": 146,
+  "authors": [
+   "R. Zhao",
+   "Y. Yin",
+   "Y. Shi",
+   "Z. Xue"
+  ],
+  "title": "Intelligent intrusion detection based on federated learning aided long short-term memory",
+  "raw": "R. Zhao, Y. Yin, Y. Shi, and Z. Xue, ‘‘Intelligent intrusion detection based on federated learning aided long short-term memory,’’ Phys. Commun., vol. 42, Oct. 2020, Art. no. 101157, doi: 10.1016/j.phycom.2020.101157."
+ },
+ {
+  "n": 147,
+  "authors": [
+   "I. Mohammed",
+   "S. Tabatabai",
+   "A. Al-Fuqaha",
+   "F. E. Bouanani",
+   "J. Qadir",
+   "B. Qolomany",
+   "M. Guizani"
+  ],
+  "title": "Budgeted online selection of candidate IoT clients to participate in federated learning",
+  "raw": "I. Mohammed, S. Tabatabai, A. Al-Fuqaha, F. E. Bouanani, J. Qadir, B. Qolomany, and M. Guizani, ‘‘Budgeted online selection of candidate IoT clients to participate in federated learning,’’ IEEE Internet Things J., vol. 8, no. 7, pp. 5938–5952, Apr. 2021. [Online]. Available: https://ieeexplore.ieee.org/document/9249424"
+ },
+ {
+  "n": 148,
+  "authors": [
+   "L. Kong",
+   "X.-Y. Liu",
+   "H. Sheng",
+   "P. Zeng",
+   "G. Chen"
+  ],
+  "title": "Feder- ated tensor mining for secure industrial Internet of Things",
+  "raw": "L. Kong, X.-Y. Liu, H. Sheng, P. Zeng, and G. Chen, ‘‘Feder- ated tensor mining for secure industrial Internet of Things,’’ IEEE Trans. Ind. Informat., vol. 16, no. 3, pp. 2144–2153, Mar. 2020, doi: 10.1109/TII.2019.2937876."
+ },
+ {
+  "n": 149,
+  "authors": [
+   "T. V. Khoa",
+   "Y. M. Saputra",
+   "D. T. Hoang",
+   "N. L. Trung",
+   "D. Nguyen",
+   "N. V. Ha",
+   "E. Dutkiewicz"
+  ],
+  "title": "Collaborative learning model for cyberattack detection systems in IoT Industry 4.0",
+  "raw": "T. V. Khoa, Y. M. Saputra, D. T. Hoang, N. L. Trung, D. Nguyen, N. V. Ha, and E. Dutkiewicz, ‘‘Collaborative learning model for cyberattack detection systems in IoT Industry 4.0,’’ in Proc. IEEE Wireless Commun. Netw. Conf. (WCNC), May 2020, pp. 1–6. [Online]. Available: https://ieeexplore.ieee.org/abstract/document/9120761"
+ },
+ {
+  "n": 150,
+  "authors": [
+   "M. H. U. Rehman",
+   "A. M. Dirir",
+   "K. Salah",
+   "E. Damiani",
+   "D. Svetinovic"
+  ],
+  "title": "TrustFed: A framework for fair and trustworthy cross-device federated learning in IIoT",
+  "raw": "M. H. U. Rehman, A. M. Dirir, K. Salah, E. Damiani, and D. Svetinovic, ‘‘TrustFed: A framework for fair and trustworthy cross-device federated learning in IIoT,’’ IEEE Trans. Ind. Informat., vol. 17, no. 12, pp. 8485–8494, Dec. 2021, doi: 10.1109/TII.2021.3075706."
+ },
+ {
+  "n": 151,
+  "authors": [
+   "B. Zhao",
+   "K. Fan",
+   "K. Yang",
+   "Z. Wang",
+   "H. Li",
+   "Y. Yang"
+  ],
+  "title": "Anonymous and privacy-preserving federated learning with industrial big data",
+  "raw": "B. Zhao, K. Fan, K. Yang, Z. Wang, H. Li, and Y. Yang, ‘‘Anonymous and privacy-preserving federated learning with industrial big data,’’ IEEE Trans. Ind. Informat., vol. 17, no. 9, pp. 6314–6323, Sep. 2021. [Online]. Available: https://ieeexplore.ieee.org/document/9325934"
+ },
+ {
+  "n": 152,
+  "authors": [
+   "X. Zhang",
+   "M. Hu",
+   "J. Xia",
+   "T. Wei",
+   "M. Chen",
+   "S. Hu"
+  ],
+  "title": "Efficient federated learning for cloud-based AIoT applications",
+  "raw": "X. Zhang, M. Hu, J. Xia, T. Wei, M. Chen, and S. Hu, ‘‘Efficient federated learning for cloud-based AIoT applications,’’ IEEE Trans. Comput.-Aided Design Integr. Circuits Syst., vol. 40, no. 11, pp. 2211–2223, Nov. 2021, doi: 10.1109/TCAD.2020.3046665. VOLUME 13, 2025 153841 T. Z. Sana et al.: Advancing FL: A SLR of Methods, Challenges, and Applications"
+ },
+ {
+  "n": 153,
+  "authors": [
+   "C. Fang",
+   "Y. Guo",
+   "N. Wang",
+   "A. Ju"
+  ],
+  "title": "Highly efficient federated learning with strong privacy preservation in cloud computing",
+  "raw": "C. Fang, Y. Guo, N. Wang, and A. Ju, ‘‘Highly efficient federated learning with strong privacy preservation in cloud computing,’’ Comput. Secur., vol. 96, Sep. 2020, Art. no. 101889, doi: 10.1016/j.cose.2020.101889."
+ },
+ {
+  "n": 154,
+  "authors": [
+   "Y. Wei",
+   "S. Zhou",
+   "S. Leng",
+   "S. Maharjan",
+   "Y. Zhang"
+  ],
+  "title": "Feder- ated learning empowered end-edge-cloud cooperation for 5G HetNet security",
+  "raw": "Y. Wei, S. Zhou, S. Leng, S. Maharjan, and Y. Zhang, ‘‘Feder- ated learning empowered end-edge-cloud cooperation for 5G HetNet security,’’ IEEE Netw., vol. 35, no. 2, pp. 88–94, Mar. 2021, doi: 10.1109/MNET.011.2000340."
+ },
+ {
+  "n": 155,
+  "authors": [
+   "H. N. Cunha Neto",
+   "J. Hribar",
+   "I. Dusparic",
+   "N. C. Fernandes",
+   "D. M. F. Mattos"
+  ],
+  "title": "FedSBS: Federated-learning participant-selection method for intrusion detection systems",
+  "raw": "H. N. Cunha Neto, J. Hribar, I. Dusparic, N. C. Fernandes, and D. M. F. Mattos, ‘‘FedSBS: Federated-learning participant-selection method for intrusion detection systems,’’ Comput. Netw., vol. 244, May 2024, Art. no. 110351, doi: 10.1016/j.comnet.2024.110351."
+ },
+ {
+  "n": 156,
+  "authors": [
+   "M. Aledhari",
+   "R. Razzak",
+   "R. M. Parizi",
+   "F. Saeed"
+  ],
+  "title": "Feder- ated learning: A survey on enabling technologies, protocols, and applications",
+  "raw": "M. Aledhari, R. Razzak, R. M. Parizi, and F. Saeed, ‘‘Feder- ated learning: A survey on enabling technologies, protocols, and applications,’’ IEEE Access, vol. 8, pp. 140699–140725, 2020, doi: 10.1109/ACCESS.2020.3013541."
+ },
+ {
+  "n": 157,
+  "authors": [
+   "B. S. Ciftler",
+   "A. Albaseer",
+   "N. Lasla",
+   "M. Abdallah"
+  ],
+  "title": "Federated learning for RSS fingerprint-based localization: A privacy-preserving crowdsourcing method",
+  "raw": "B. S. Ciftler, A. Albaseer, N. Lasla, and M. Abdallah, ‘‘Federated learning for RSS fingerprint-based localization: A privacy-preserving crowdsourcing method,’’ in Proc. Int. Wireless Commun. Mobile Comput. (IWCMC), Jun. 2020, pp. 2112–2117, doi: 10.1109/IWCMC48107.2020. 9148111."
+ },
+ {
+  "n": 158,
+  "authors": [
+   "B. Yin",
+   "H. Yin",
+   "Y. Wu",
+   "Z. Jiang"
+  ],
+  "title": "FDC: A secure federated deep learning mechanism for data collaborations in the Internet of Things",
+  "raw": "B. Yin, H. Yin, Y. Wu, and Z. Jiang, ‘‘FDC: A secure federated deep learning mechanism for data collaborations in the Internet of Things,’’ IEEE Internet Things J., vol. 7, no. 7, pp. 6348–6359, Jul. 2020, doi: 10.1109/JIOT.2020.2966778."
+ },
+ {
+  "n": 159,
+  "authors": [
+   "S. Yu",
+   "X. Chen",
+   "Z. Zhou",
+   "X. Gong",
+   "D. Wu"
+  ],
+  "title": "When deep reinforcement learning meets federated learning: Intelligent multitimescale resource management for multiaccess edge computing in 5G ultradense network",
+  "raw": "S. Yu, X. Chen, Z. Zhou, X. Gong, and D. Wu, ‘‘When deep reinforcement learning meets federated learning: Intelligent multitimescale resource management for multiaccess edge computing in 5G ultradense network,’’ IEEE Internet Things J., vol. 8, no. 4, pp. 2238–2251, Feb. 2021, doi: 10.1109/JIOT.2020.3026589."
+ },
+ {
+  "n": 160,
+  "authors": [
+   "K. Cheng",
+   "T. Fan",
+   "Y. Jin",
+   "Y. Liu",
+   "T. Chen",
+   "D. Papadopoulos",
+   "Q. Yang"
+  ],
+  "title": "SecureBoost: A lossless federated learning framework",
+  "raw": "K. Cheng, T. Fan, Y. Jin, Y. Liu, T. Chen, D. Papadopoulos, and Q. Yang, ‘‘SecureBoost: A lossless federated learning framework,’’ IEEE Intell. Syst., vol. 36, no. 6, pp. 87–98, Nov. 2021, doi: 10.1109/MIS.2021.3082561."
+ },
+ {
+  "n": 161,
+  "authors": [
+   "M. S. Farooq",
+   "R. Tehseen",
+   "J. N. Qureshi",
+   "U. Omer",
+   "R. Yaqoob",
+   "H. A. Tanweer",
+   "Z. Atal"
+  ],
+  "title": "FFM: Flood forecasting model using federated learning",
+  "raw": "M. S. Farooq, R. Tehseen, J. N. Qureshi, U. Omer, R. Yaqoob, H. A. Tanweer, and Z. Atal, ‘‘FFM: Flood forecasting model using federated learning,’’ IEEE Access, vol. 11, pp. 24472–24483, 2023, doi: 10.1109/ACCESS.2023.3252896."
+ },
+ {
+  "n": 162,
+  "authors": [
+   "J. Jithish",
+   "B. Alangot",
+   "N. Mahalingam",
+   "K. S. Yeo"
+  ],
+  "title": "Dis- tributed anomaly detection in smart grids: A federated learning- based approach",
+  "raw": "J. Jithish, B. Alangot, N. Mahalingam, and K. S. Yeo, ‘‘Dis- tributed anomaly detection in smart grids: A federated learning- based approach,’’ IEEE Access, vol. 11, pp. 7157–7179, 2023, doi: 10.1109/ACCESS.2023.3237554."
+ },
+ {
+  "n": 163,
+  "authors": [
+   "T. T. Huong",
+   "T. P. Bac",
+   "K. N. Ha",
+   "N. V. Hoang",
+   "N. X. Hoang",
+   "N. T. Hung",
+   "K. P. Tran"
+  ],
+  "title": "Federated learning-based explainable anomaly detection for industrial control systems",
+  "raw": "T. T. Huong, T. P. Bac, K. N. Ha, N. V. Hoang, N. X. Hoang, N. T. Hung, and K. P. Tran, ‘‘Federated learning-based explainable anomaly detection for industrial control systems,’’ IEEE Access, vol. 10, pp. 53854–53872, 2022, doi: 10.1109/ACCESS.2022. 3173288."
+ },
+ {
+  "n": 164,
+  "authors": [
+   "X. Sáez-de-Cámara",
+   "J. L. Flores",
+   "C. Arellano",
+   "A. Urbieta",
+   "U. Zurutuza"
+  ],
+  "title": "Clustered federated learning architecture for network anomaly detection in large scale heterogeneous IoT networks",
+  "raw": "X. Sáez-de-Cámara, J. L. Flores, C. Arellano, A. Urbieta, and U. Zurutuza, ‘‘Clustered federated learning architecture for network anomaly detection in large scale heterogeneous IoT networks,’’ Comput. Secur., vol. 131, Aug. 2023, Art. no. 103299, doi: 10.1016/j.cose.2023.103299."
+ },
+ {
+  "n": 165,
+  "authors": [
+   "N. A. Al-Athba Al-Marri",
+   "B. S. Ciftler",
+   "M. M. Abdallah"
+  ],
+  "title": "Federated mimic learning for privacy preserving intrusion detection",
+  "raw": "N. A. Al-Athba Al-Marri, B. S. Ciftler, and M. M. Abdallah, ‘‘Federated mimic learning for privacy preserving intrusion detection,’’ in Proc. IEEE Int. Black Sea Conf. Commun. Netw. (BlackSeaCom), May 2020, pp. 1–6, doi: 10.1109/BLACKSEACOM48709.2020.9234959."
+ },
+ {
+  "n": 166,
+  "authors": [
+   "K. Li",
+   "H. Zhou",
+   "Z. Tu",
+   "W. Wang",
+   "H. Zhang"
+  ],
+  "title": "Distributed network intrusion detection system in satellite-terrestrial integrated networks using federated learning",
+  "raw": "K. Li, H. Zhou, Z. Tu, W. Wang, and H. Zhang, ‘‘Distributed network intrusion detection system in satellite-terrestrial integrated networks using federated learning,’’ IEEE Access, vol. 8, pp. 214852–214865, 2020. [Online]. Available: https://ieeexplore.ieee.org/document/9274426"
+ },
+ {
+  "n": 167,
+  "authors": [],
+  "title": "Federated-Learning-Based Anomaly Detection for IoT Security Attacks. [Online]. Available: https://ieeexplore.ieee.org/document/9424138",
+  "raw": "Federated-Learning-Based Anomaly Detection for IoT Security Attacks. [Online]. Available: https://ieeexplore.ieee.org/document/9424138"
+ },
+ {
+  "n": 168,
+  "authors": [
+   "S. A. Rahman",
+   "H. Tout",
+   "C. Talhi",
+   "A. Mourad"
+  ],
+  "title": "Internet of Things intrusion detection: Centralized, on-device, or federated learn- ing?",
+  "raw": "S. A. Rahman, H. Tout, C. Talhi, and A. Mourad, ‘‘Internet of Things intrusion detection: Centralized, on-device, or federated learn- ing?’’ IEEE Netw., vol. 34, no. 6, pp. 310–317, Nov. 2020, doi: 10.1109/MNET.011.2000286."
+ },
+ {
+  "n": 169,
+  "authors": [
+   "B. Cetin",
+   "A. Lazar",
+   "J. Kim",
+   "A. Sim",
+   "K. Wu"
+  ],
+  "title": "Federated wireless network intrusion detection",
+  "raw": "B. Cetin, A. Lazar, J. Kim, A. Sim, and K. Wu, ‘‘Federated wireless network intrusion detection,’’ in Proc. IEEE Int. Conf. Big Data (Big Data), Dec. 2019, pp. 6004–6006, doi: 10.1109/BIG- DATA47090.2019.9005507."
+ },
+ {
+  "n": 170,
+  "authors": [
+   "I. Cvitic",
+   "D. Perakovic",
+   "B. B. Gupta",
+   "K. R. Choo"
+  ],
+  "title": "Boosting- based DDoS detection in Internet of Things systems",
+  "raw": "I. Cvitic, D. Perakovic, B. B. Gupta, and K. R. Choo, ‘‘Boosting- based DDoS detection in Internet of Things systems,’’ IEEE Internet Things J., vol. 9, no. 3, pp. 2109–2123, Feb. 2022, doi: 10.1109/JIOT.2021.3090909."
+ },
+ {
+  "n": 171,
+  "authors": [
+   "N. Moustafa",
+   "M. Keshky",
+   "E. Debiez",
+   "H. Janicke"
+  ],
+  "title": "Federated TON_IoT windows datasets for evaluating AI-based security applica- tions",
+  "raw": "N. Moustafa, M. Keshky, E. Debiez, and H. Janicke, ‘‘Federated TON_IoT windows datasets for evaluating AI-based security applica- tions,’’ in Proc. IEEE 19th Int. Conf. Trust, Secur. Privacy Comput. Commun. (TrustCom), Dec. 2020, pp. 848–855, doi: 10.1109/TRUST- COM50675.2020.00114."
+ },
+ {
+  "n": 172,
+  "authors": [
+   "Z. Chen",
+   "N. Lv",
+   "P. Liu",
+   "Y. Fang",
+   "K. Chen",
+   "W. Pan"
+  ],
+  "title": "Intrusion detection for wireless edge networks based on federated learning",
+  "raw": "Z. Chen, N. Lv, P. Liu, Y. Fang, K. Chen, and W. Pan, ‘‘Intrusion detection for wireless edge networks based on federated learning,’’ IEEE Access, vol. 8, pp. 217463–217472, 2020, doi: 10.1109/ACCESS.2020.3041793."
+ },
+ {
+  "n": 173,
+  "authors": [
+   "T. T. Huong",
+   "T. P. Bac",
+   "D. M. Long",
+   "B. D. Thang",
+   "N. T. Binh",
+   "T. D. Luong",
+   "T. K. Phuc"
+  ],
+  "title": "LocKedge: Low-complexity cyberattack detection in IoT edge computing",
+  "raw": "T. T. Huong, T. P. Bac, D. M. Long, B. D. Thang, N. T. Binh, T. D. Luong, and T. K. Phuc, ‘‘LocKedge: Low-complexity cyberattack detection in IoT edge computing,’’ IEEE Access, vol. 9, pp. 29696–29710, 2021, doi: 10.1109/ACCESS.2021.3058528."
+ },
+ {
+  "n": 174,
+  "authors": [
+   "S. McElwee",
+   "J. Heaton",
+   "J. Fraley",
+   "J. Cannady"
+  ],
+  "title": "Deep learning for prioritizing and responding to intrusion detection alerts",
+  "raw": "S. McElwee, J. Heaton, J. Fraley, and J. Cannady, ‘‘Deep learning for prioritizing and responding to intrusion detection alerts,’’ in Proc. IEEE Mil. Commun. Conf. (MILCOM), Oct. 2017, pp. 1–5, doi: 10.1109/MILCOM.2017.8170757."
+ },
+ {
+  "n": 175,
+  "authors": [
+   "X. Wang",
+   "S. Garg",
+   "H. Lin",
+   "J. Hu",
+   "G. Kaddoum",
+   "M. J. Piran",
+   "M. S. Hossain"
+  ],
+  "title": "Toward accurate anomaly detection in indus- trial Internet of Things using hierarchical federated learning",
+  "raw": "X. Wang, S. Garg, H. Lin, J. Hu, G. Kaddoum, M. J. Piran, and M. S. Hossain, ‘‘Toward accurate anomaly detection in indus- trial Internet of Things using hierarchical federated learning,’’ IEEE Internet Things J., vol. 9, no. 10, pp. 7110–7119, May 2022, doi: 10.1109/JIOT.2021.3074382."
+ },
+ {
+  "n": 176,
+  "authors": [
+   "Federated Learning in Computer Vision"
+  ],
+  "title": "Federated Learning in Computer Vision. [Online]. Available: https://ieeexplore.ieee.org/document/10234425",
+  "raw": "Federated Learning in Computer Vision. [Online]. Available: https://ieeexplore.ieee.org/document/10234425"
+ },
+ {
+  "n": 177,
+  "authors": [
+   "P. Tam",
+   "S. Math",
+   "C. Nam",
+   "S. Kim"
+  ],
+  "title": "Adaptive resource optimized edge federated learning in real-time image sensing classifications",
+  "raw": "P. Tam, S. Math, C. Nam, and S. Kim, ‘‘Adaptive resource optimized edge federated learning in real-time image sensing classifications,’’ IEEE J. Sel. Topics Appl. Earth Observ. Remote Sens., vol. 14, pp. 10929–10940, 2021, doi: 10.1109/JSTARS.2021.3120724."
+ },
+ {
+  "n": 178,
+  "authors": [
+   "A. T. Thorgeirsson",
+   "S. Scheubner",
+   "S. Funfgeld",
+   "F. Gauterin"
+  ],
+  "title": "Probabilistic prediction of energy demand and driving range for electric vehicles with federated learning",
+  "raw": "A. T. Thorgeirsson, S. Scheubner, S. Funfgeld, and F. Gauterin, ‘‘Probabilistic prediction of energy demand and driving range for electric vehicles with federated learning,’’ IEEE Open J. Veh. Technol., vol. 2, pp. 151–161, 2021, doi: 10.1109/OJVT.2021.3065529."
+ },
+ {
+  "n": 179,
+  "authors": [
+   "X. Qu",
+   "C. Guan",
+   "G. Xie",
+   "Z. Tian",
+   "K. Sood",
+   "C. Sun",
+   "L. Cui"
+  ],
+  "title": "Personalized federated learning for heterogeneous residential load forecasting",
+  "raw": "X. Qu, C. Guan, G. Xie, Z. Tian, K. Sood, C. Sun, and L. Cui, ‘‘Personalized federated learning for heterogeneous residential load forecasting,’’ Big Data Mining Analytics, vol. 6, no. 4, pp. 421–432, Dec. 2023, doi: 10.26599/bdma.2022.9020043."
+ },
+ {
+  "n": 180,
+  "authors": [
+   "Z. Du",
+   "C. Wu",
+   "T. Yoshinaga",
+   "K.-L.-A. Yau",
+   "Y. Ji",
+   "J. Li"
+  ],
+  "title": "Federated learning for vehicular Internet of Things: Recent advances and open issues",
+  "raw": "Z. Du, C. Wu, T. Yoshinaga, K.-L.-A. Yau, Y. Ji, and J. Li, ‘‘Federated learning for vehicular Internet of Things: Recent advances and open issues,’’ IEEE Open J. Comput. Soc., vol. 1, pp. 45–61, 2020. [Online]. Available: https://ieeexplore.ieee.org/abstract/document/9086790"
+ },
+ {
+  "n": 181,
+  "authors": [
+   "D. Ye",
+   "R. Yu",
+   "M. Pan",
+   "Z. Han"
+  ],
+  "title": "Federated learning in vehicular edge computing: A selective model aggregation approach",
+  "raw": "D. Ye, R. Yu, M. Pan, and Z. Han, ‘‘Federated learning in vehicular edge computing: A selective model aggregation approach,’’ IEEE Access, vol. 8, pp. 23920–23935, 2020, doi: 10.1109/ACCESS.2020.2968399."
+ },
+ {
+  "n": 182,
+  "authors": [
+   "S. Lu",
+   "Y. Yao",
+   "W. Shi"
+  ],
+  "title": "CLONE: Collaborative learning on the edges",
+  "raw": "S. Lu, Y. Yao, and W. Shi, ‘‘CLONE: Collaborative learning on the edges,’’ IEEE Internet Things J., vol. 8, no. 13, pp. 10222–10236, Jul. 2021, doi: 10.1109/JIOT.2020.3030278."
+ },
+ {
+  "n": 183,
+  "authors": [
+   "J. Yang",
+   "C. Fu",
+   "H. Lu"
+  ],
+  "title": "Optimized and federated soft-impute for privacy-preserving tensor completion in cyber-physical-social systems",
+  "raw": "J. Yang, C. Fu, and H. Lu, ‘‘Optimized and federated soft-impute for privacy-preserving tensor completion in cyber-physical-social systems,’’ Inf. Sci., vol. 564, pp. 103–123, Jul. 2021, doi: 10.1016/j.ins.2021.02.028."
+ },
+ {
+  "n": 184,
+  "authors": [
+   "Y. Liu",
+   "Z. Ma",
+   "X. Liu",
+   "S. Ma",
+   "S. Nepal",
+   "R. H. Deng",
+   "K. Ren"
+  ],
+  "title": "Boosting privately: Federated extreme gradient boosting for mobile crowdsensing",
+  "raw": "Y. Liu, Z. Ma, X. Liu, S. Ma, S. Nepal, R. H. Deng, and K. Ren, ‘‘Boosting privately: Federated extreme gradient boosting for mobile crowdsensing,’’ in Proc. IEEE 40th Int. Conf. Distrib. Comput. Syst. (ICDCS), Nov. 2020, pp. 1–11, doi: 10.1109/ICDCS47774.2020.00017."
+ },
+ {
+  "n": 185,
+  "authors": [
+   "X. Zhang",
+   "R. Lu",
+   "J. Shao",
+   "F. Wang",
+   "H. Zhu",
+   "A. A. Ghorbani"
+  ],
+  "title": "FedSky: An efficient and privacy-preserving scheme for federated mobile crowdsensing",
+  "raw": "X. Zhang, R. Lu, J. Shao, F. Wang, H. Zhu, and A. A. Ghorbani, ‘‘FedSky: An efficient and privacy-preserving scheme for federated mobile crowdsensing,’’ IEEE Internet Things J., vol. 9, no. 7, pp. 5344–5356, Apr. 2022, doi: 10.1109/JIOT.2021.3109058."
+ },
+ {
+  "n": 186,
+  "authors": [
+   "J. Payne",
+   "A. Kundu"
+  ],
+  "title": "Towards deep federated defenses against malware in cloud ecosystems",
+  "raw": "J. Payne and A. Kundu, ‘‘Towards deep federated defenses against malware in cloud ecosystems,’’ in Proc. 1st IEEE Int. Conf. Trust, Dec. 2019, pp. 92–100, doi: 10.1109/TPS-ISA48467.2019.00020."
+ },
+ {
+  "n": 187,
+  "authors": [
+   "R. Taheri",
+   "M. Shojafar",
+   "M. Alazab",
+   "R. Tafazolli"
+  ],
+  "title": "Fed-IIoT: A robust federated malware detection architecture in industrial IoT",
+  "raw": "R. Taheri, M. Shojafar, M. Alazab, and R. Tafazolli, ‘‘Fed-IIoT: A robust federated malware detection architecture in industrial IoT,’’ IEEE Trans. Ind. Informat., vol. 17, no. 12, pp. 8442–8452, Dec. 2021, doi: 10.1109/TII.2020.3043458."
+ },
+ {
+  "n": 188,
+  "authors": [
+   "F. Yin",
+   "Z. Lin",
+   "Q. Kong",
+   "Y. Xu",
+   "D. Li",
+   "S. Theodoridis",
+   "S. R. Cui"
+  ],
+  "title": "FedLoc: Federated learning framework for data-driven cooperative localization and location data processing",
+  "raw": "F. Yin, Z. Lin, Q. Kong, Y. Xu, D. Li, S. Theodoridis, and S. R. Cui, ‘‘FedLoc: Federated learning framework for data-driven cooperative localization and location data processing,’’ IEEE Open J. Signal Process., vol. 1, pp. 187–215, 2020. [Online]. Available: https://ieeexplore.ieee.org/document/9250516"
+ },
+ {
+  "n": 189,
+  "authors": [
+   "R. O. Ogundokun",
+   "S. Misra",
+   "R. Maskeliunas",
+   "R. Damasevicius"
+  ],
+  "title": "A review on federated learning and machine learning approaches: Cat- egorization, application areas, and blockchain technology",
+  "raw": "R. O. Ogundokun, S. Misra, R. Maskeliunas, and R. Damasevicius, ‘‘A review on federated learning and machine learning approaches: Cat- egorization, application areas, and blockchain technology,’’ Information, vol. 13, no. 5, p. 263, May 2022, doi: 10.3390/info13050263. 153842 VOLUME 13, 2025 T. Z. Sana et al.: Advancing FL: A SLR of Methods, Challenges, and Applications"
+ },
+ {
+  "n": 190,
+  "authors": [
+   "H. Kaur",
+   "V. Rani",
+   "M. Kumar",
+   "M. Sachdeva",
+   "A. Mittal",
+   "K. Kumar"
+  ],
+  "title": "Federated learning: A comprehensive review of recent advances and applications",
+  "raw": "H. Kaur, V. Rani, M. Kumar, M. Sachdeva, A. Mittal, and K. Kumar, ‘‘Federated learning: A comprehensive review of recent advances and applications,’’ Multimedia Tools Appl., vol. 83, no. 18, pp. 54165–54188, Nov. 2023, doi: 10.1007/s11042-023-17737-0."
+ },
+ {
+  "n": 191,
+  "authors": [
+   "G. D. Govindwar",
+   "S. S. Dhande"
+  ],
+  "title": "A review on federated learning approach in artificial intelligence",
+  "raw": "G. D. Govindwar and S. S. Dhande, ‘‘A review on federated learning approach in artificial intelligence,’’ in Proc. 6th Int. Conf. Comput., Commun., Control Autom. (ICCUBEA, Aug. 2022, pp. 1–5, doi: 10.1109/ICCUBEA54992.2022.10010798."
+ },
+ {
+  "n": 192,
+  "authors": [
+   "W. Liu",
+   "L. Chen",
+   "Y. Chen",
+   "W. Zhang"
+  ],
+  "title": "Accelerating feder- ated learning via momentum gradient descent",
+  "raw": "W. Liu, L. Chen, Y. Chen, and W. Zhang, ‘‘Accelerating feder- ated learning via momentum gradient descent,’’ IEEE Trans. Paral- lel Distrib. Syst., vol. 31, no. 8, pp. 1754–1766, Aug. 2020, doi: 10.1109/TPDS.2020.2975189."
+ },
+ {
+  "n": 193,
+  "authors": [
+   "Advances",
+   "Open Problems in Federated Learning"
+  ],
+  "title": "Advances and Open Problems in Federated Learning. [Online]. Avail- able: https://ieeexplore.ieee.org/document/9464278",
+  "raw": "Advances and Open Problems in Federated Learning. [Online]. Avail- able: https://ieeexplore.ieee.org/document/9464278"
+ },
+ {
+  "n": 194,
+  "authors": [
+   "C. Campolo",
+   "G. Genovese",
+   "G. Singh",
+   "A. Molinaro"
+  ],
+  "title": "Scal- able and interoperable edge-based federated learning in IoT con- texts",
+  "raw": "C. Campolo, G. Genovese, G. Singh, and A. Molinaro, ‘‘Scal- able and interoperable edge-based federated learning in IoT con- texts,’’ Comput. Netw., vol. 223, Mar. 2023, Art. no. 109576, doi: 10.1016/j.comnet.2023.109576."
+ },
+ {
+  "n": 195,
+  "authors": [
+   "M"
+  ],
+  "title": "M. Chen and S. Cui, Communication Efficient Federated Learn- ing for Wireless Networks. Cham, Switzerland: Springer, 2024, doi: 10.1007/978-3-031-51266-7.",
+  "raw": "M. Chen and S. Cui, Communication Efficient Federated Learn- ing for Wireless Networks. Cham, Switzerland: Springer, 2024, doi: 10.1007/978-3-031-51266-7."
+ },
+ {
+  "n": 196,
+  "authors": [
+   "S. M. Azimi-Abarghouyi",
+   "V. Fodor"
+  ],
+  "title": "Scalable hierarchical over-the-air federated learning",
+  "raw": "S. M. Azimi-Abarghouyi and V. Fodor, ‘‘Scalable hierarchical over-the-air federated learning,’’ IEEE Trans. Wireless Commun., vol. 23, no. 8, pp. 8480–8496, Aug. 2024, doi: 10.1109/TWC.2024. 3350923."
+ },
+ {
+  "n": 197,
+  "authors": [
+   "K. M. J. Rahman",
+   "F. Ahmed",
+   "N. Akhter",
+   "M. Hasan",
+   "R. Amin",
+   "K. E. Aziz",
+   "A. K. M. M. Islam",
+   "M. S. H. Mukta",
+   "A. K. M. N. Islam"
+  ],
+  "title": "Challenges, applications and design aspects of federated learning: A survey",
+  "raw": "K. M. J. Rahman, F. Ahmed, N. Akhter, M. Hasan, R. Amin, K. E. Aziz, A. K. M. M. Islam, M. S. H. Mukta, and A. K. M. N. Islam, ‘‘Challenges, applications and design aspects of federated learning: A survey,’’ IEEE Access, vol. 9, pp. 124682–124700, 2021, doi: 10.1109/ACCESS.2021.3111118."
+ },
+ {
+  "n": 198,
+  "authors": [
+   "H. Fang",
+   "Q. Qian"
+  ],
+  "title": "Privacy preserving machine learning with homomorphic encryption and federated learning",
+  "raw": "H. Fang and Q. Qian, ‘‘Privacy preserving machine learning with homomorphic encryption and federated learning,’’ Future Internet, vol. 13, no. 4, p. 94, Apr. 2021, doi: 10.3390/fi13040094."
+ },
+ {
+  "n": 199,
+  "authors": [
+   "S. K. Nahak",
+   "S. K. Acharya",
+   "D. Padhy"
+  ],
+  "title": "Enhanced flood forecasting: Revolutionizing prediction with federated learning",
+  "raw": "S. K. Nahak, S. K. Acharya, and D. Padhy, ‘‘Enhanced flood forecasting: Revolutionizing prediction with federated learning,’’ in Proc. Int. Conf. Smart Comput. Commun., Jan. 2024, pp. 457–467, doi: 10.1007/978-981- 97-1323-3_39."
+ },
+ {
+  "n": 200,
+  "authors": [
+   "B. Gao",
+   "F. Yang",
+   "N. Cui",
+   "K. Xiong",
+   "Y. Lu",
+   "Y. Wang"
+  ],
+  "title": "A federated learning framework for fingerprinting-based indoor localization in multibuilding and multifloor environments",
+  "raw": "B. Gao, F. Yang, N. Cui, K. Xiong, Y. Lu, and Y. Wang, ‘‘A federated learning framework for fingerprinting-based indoor localization in multibuilding and multifloor environments,’’ IEEE Internet Things J., vol. 10, no. 3, pp. 2615–2629, Feb. 2023, doi: 10.1109/JIOT.2022. 3214211."
+ },
+ {
+  "n": 201,
+  "authors": [
+   "A. K. Singh",
+   "A. Blanco-Justicia",
+   "J. Domingo-Ferrer"
+  ],
+  "title": "Fair detection of poisoning attacks in federated learning on non-i.i.d. data",
+  "raw": "A. K. Singh, A. Blanco-Justicia, and J. Domingo-Ferrer, ‘‘Fair detection of poisoning attacks in federated learning on non-i.i.d. data,’’ Data Mining Knowl. Discovery, vol. 37, no. 5, pp. 1998–2023, Jan. 2023, doi: 10.1007/s10618-022-00912-6."
+ },
+ {
+  "n": 202,
+  "authors": [
+   "N. Bouacida",
+   "P. Mohapatra"
+  ],
+  "title": "Vulnerabilities in federated learning",
+  "raw": "N. Bouacida and P. Mohapatra, ‘‘Vulnerabilities in federated learning,’’ IEEE Access, vol. 9, pp. 63229–63249, 2021, doi: 10.1109/ACCESS.2021.3075203."
+ },
+ {
+  "n": 203,
+  "authors": [
+   "S. Vucinich",
+   "Q. Zhu"
+  ],
+  "title": "The current state and challenges of fairness in federated learning",
+  "raw": "S. Vucinich and Q. Zhu, ‘‘The current state and challenges of fairness in federated learning,’’ IEEE Access, vol. 11, pp. 80903–80914, 2023, doi: 10.1109/ACCESS.2023.3295412."
+ },
+ {
+  "n": 204,
+  "authors": [
+   "T. Li",
+   "A. K. Sahu",
+   "A. Talwalkar",
+   "V. Smith"
+  ],
+  "title": "Federated learning: Challenges, methods, and future directions",
+  "raw": "T. Li, A. K. Sahu, A. Talwalkar, and V. Smith, ‘‘Federated learning: Challenges, methods, and future directions,’’ IEEE Signal Process. Mag., vol. 37, no. 3, pp. 50–60, May 2020, doi: 10.1109/MSP.2020. 2975749."
+ },
+ {
+  "n": 205,
+  "authors": [
+   "C. M. Thwal",
+   "K. Thar",
+   "Y. L. Tun",
+   "C. S. Hong"
+  ],
+  "title": "Attention on personalized clinical decision support system: Federated learning approach",
+  "raw": "C. M. Thwal, K. Thar, Y. L. Tun, and C. S. Hong, ‘‘Attention on personalized clinical decision support system: Federated learning approach,’’ in Proc. IEEE Int. Conf. Big Data Smart Comput. (BigComp), Jan. 2021, pp. 141–147, doi: 10.1109/BIGCOMP51126.2021.00035."
+ },
+ {
+  "n": 206,
+  "authors": [
+   "Kitchenham"
+  ],
+  "title": "Kitchenham. (2007). Guidelines for Performing Systematic Literature Reviews in Software Engineering. [Online]. Available: https://www. elsevier.com/_data/promis",
+  "raw": "Kitchenham. (2007). Guidelines for Performing Systematic Literature Reviews in Software Engineering. [Online]. Available: https://www. elsevier.com/_data/promis_misc/525444systematicreviewsguide.pdf"
+ },
+ {
+  "n": 207,
+  "authors": [
+   "D. Tranfield",
+   "D. Denyer",
+   "P. Smart"
+  ],
+  "title": "Towards a methodology for developing evidence-informed management knowledge by means of systematic review",
+  "raw": "D. Tranfield, D. Denyer, and P. Smart, ‘‘Towards a methodology for developing evidence-informed management knowledge by means of systematic review,’’ Brit. J. Manag., vol. 14, pp. 207–222, Sep. 2003. [Online]. Available: https://josephmahoney.web.illinois. edu/BADM504_Fall%202019/6_Tranfield,%20Denyer%20and%20S mart%20(2003).pdf"
+ },
+ {
+  "n": 208,
+  "authors": [
+   "C. Wohlin"
+  ],
+  "title": "Guidelines for snowballing in systematic literature studies and a replication in software engineering",
+  "raw": "C. Wohlin, ‘‘Guidelines for snowballing in systematic literature studies and a replication in software engineering,’’ in Proc. 18th Int. Conf. Eval. Assessment Softw. Eng., May 2014, pp. 1–10, doi: 10.1145/2601248.2601268."
+ },
+ {
+  "n": 209,
+  "authors": [
+   "A. Tariq",
+   "M. A. Serhani",
+   "F. M. Sallabi",
+   "E. S. Barka",
+   "T. Qayyum",
+   "H. M. Khater",
+   "K. A. Shuaib"
+  ],
+  "title": "Trustworthy federated learning: A comprehensive review, architecture, key challenges, and future research prospects",
+  "raw": "A. Tariq, M. A. Serhani, F. M. Sallabi, E. S. Barka, T. Qayyum, H. M. Khater, and K. A. Shuaib, ‘‘Trustworthy federated learning: A comprehensive review, architecture, key challenges, and future research prospects,’’ IEEE Open J. Commun. Soc., vol. 5, pp. 4920–4998, 2024, doi: 10.1109/OJCOMS.2024.3438264."
+ },
+ {
+  "n": 210,
+  "authors": [
+   "C. Meese",
+   "H. Chen",
+   "S. A. Asif",
+   "W. Li",
+   "C.-C. Shen",
+   "M. Nejad"
+  ],
+  "title": "BFRT: Blockchained federated learning for real-time traffic flow prediction",
+  "raw": "C. Meese, H. Chen, S. A. Asif, W. Li, C.-C. Shen, and M. Nejad, ‘‘BFRT: Blockchained federated learning for real-time traffic flow prediction,’’ in Proc. 22nd IEEE Int. Symp. Cluster, Cloud Internet Comput. (CCGrid), Taormina, Italy, May 2022, pp. 317–326, doi: 10.1109/CCGRID54584.2022.00041."
+ },
+ {
+  "n": 211,
+  "authors": [
+   "C. Meese",
+   "H. Chen",
+   "W. Li",
+   "D. Lee",
+   "H. Guo",
+   "C.-C. Shen",
+   "M. Nejad"
+  ],
+  "title": "Adaptive traffic prediction at the ITS edge with online models and blockchain-based federated learning",
+  "raw": "C. Meese, H. Chen, W. Li, D. Lee, H. Guo, C.-C. Shen, and M. Nejad, ‘‘Adaptive traffic prediction at the ITS edge with online models and blockchain-based federated learning,’’ IEEE Trans. Intell. Transp. Syst., vol. 25, no. 9, pp. 10725–10740, Sep. 2024, doi: 10.1109/TITS.2024.3391053."
+ }
+]

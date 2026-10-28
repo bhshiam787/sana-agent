@@ -4,6 +4,7 @@ import { db, t, and, asc, desc, eq, isNull, sql } from "../db.ts";
 import { ask, UsageLimitError } from "../llm.ts";
 import { bump, log } from "../log.ts";
 import { pool } from "../pool.ts";
+import { citationNote } from "../citations.ts";
 import { isWealthy } from "../professors.ts";
 import { applicantProfile, focusBonus, scoring, skill, targets } from "../skills.ts";
 
@@ -92,7 +93,7 @@ export async function profileOne({ p, uni }: Row) {
     try {
       const r = await ask({
         system: `You research university professors for a graduate applicant. Be accurate; never invent facts, URLs or emails.\n\n${skill("profiler")}`,
-        prompt: `Applicant profile:\n${profile}\n\nProfessor to research: ${p.fullName}${uni ? `, ${uni}` : ""}${p.country ? ` (${p.country})` : ""}.\nKnown topics: ${(p.researchAreas ?? []).join(", ") || "unknown"}.\n${p.whyMatch ? `Initial match note: ${p.whyMatch}\n` : ""}${p.recruitingEvidence ? `Funding/recruiting signal seen: ${p.recruitingEvidence}\n` : ""}${p.sourceUrl ? `Found via: ${p.sourceUrl}\n` : ""}Today is ${new Date().toISOString().slice(0, 10)}.`,
+        prompt: `Applicant profile:\n${profile}\n\nProfessor to research: ${p.fullName}${uni ? `, ${uni}` : ""}${p.country ? ` (${p.country})` : ""}.\nKnown topics: ${(p.researchAreas ?? []).join(", ") || "unknown"}.\n${p.whyMatch ? `Initial match note: ${p.whyMatch}\n` : ""}${p.recruitingEvidence ? `Funding/recruiting signal seen: ${p.recruitingEvidence}\n` : ""}${p.sourceUrl ? `Found via: ${p.sourceUrl}\n` : ""}${citationNote(p.fullName)}\nToday is ${new Date().toISOString().slice(0, 10)}.`,
         schema: ProfileOut,
         tools: ["WebSearch", "WebFetch"],
         maxTurns: 25,
