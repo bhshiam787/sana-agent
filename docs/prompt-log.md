@@ -121,3 +121,7 @@ Every prompt given to Claude in this project, newest last. Secrets are redacted 
 ## 2026-10-28 11:24 +06 — bhshiam@B’s MacBook Air
 
 > run this project
+
+## 2026-10-28 11:26 +06 — bhshiam@B’s MacBook Air
+
+> I am trying to undersnatd if I say run this project.. you start looking for professor ? or just run the wbesite
