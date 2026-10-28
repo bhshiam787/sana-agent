@@ -21,6 +21,8 @@ const DossierOut = z.object({
   notTakingStudents: z.boolean().describe("true only with clear evidence they are not taking students now"),
   noColdEmails: z.boolean().describe("true if they explicitly ask prospective students not to email them"),
   sources: z.array(z.string()).max(30),
+  currentEmail: z.string().nullable().describe("Their CURRENT official email if it differs from the one given (e.g. they moved); else null"),
+  currentUniversity: z.string().nullable().describe("Their current university if they moved; else null"),
 });
 
 type Row = { p: typeof t.professors.$inferSelect; uni: string | null };
@@ -48,7 +50,7 @@ export async function researchOne({ p, uni }: Row) {
   try {
     const d = await ask({
       system: `You are a meticulous academic researcher preparing a briefing on one professor's professional public record.\n\n${skill("researcher")}`,
-      prompt: `Applicant (for finding hooks):\n${profile}\n\nProfessor: ${p.fullName}, ${p.title ?? ""} ${uni ? `at ${uni}` : ""} (${p.country ?? "?"}).\nHomepage: ${p.homepage ?? "unknown"} · Lab: ${p.labUrl ?? "unknown"} · Scholar: ${p.scholarUrl ?? "unknown"}\nWhat we know: ${p.summary ?? ""}\n${citationNote(p.fullName)}\nToday is ${new Date().toISOString().slice(0, 10)}.`,
+      prompt: `Applicant (for finding hooks):\n${profile}\n\nProfessor: ${p.fullName}, ${p.title ?? ""} ${uni ? `at ${uni}` : ""} (${p.country ?? "?"}).\nEmail on file: ${p.email ?? "none"} (verify it is current) · Homepage: ${p.homepage ?? "unknown"} · Lab: ${p.labUrl ?? "unknown"} · Scholar: ${p.scholarUrl ?? "unknown"}\nWhat we know: ${p.summary ?? ""}\n${citationNote(p.fullName)}\nToday is ${new Date().toISOString().slice(0, 10)}.`,
       schema: DossierOut,
       tools: ["WebSearch", "WebFetch"],
       maxTurns: 45,
@@ -60,6 +62,10 @@ export async function researchOne({ p, uni }: Row) {
       .set({
         dossier: { ...d, researchedAt: new Date().toISOString() },
         contactInstructions: d.contactInstructions,
+        // People move; the dossier has the freshest official address.
+        ...(d.currentEmail && /@/.test(d.currentEmail) && d.currentEmail.toLowerCase() !== p.email
+          ? { email: d.currentEmail.toLowerCase(), notes: `Email updated from ${p.email} (moved${d.currentUniversity ? ` to ${d.currentUniversity}` : ""})` }
+          : {}),
         ...(blocked
           ? { status: "skipped" as const, notes: d.noColdEmails ? `Asks not to be emailed: ${d.contactInstructions ?? ""}` : `Not taking students: ${d.redFlags.join("; ")}` }
           : {}),
