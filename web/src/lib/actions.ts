@@ -135,7 +135,7 @@ export async function startRun(_prev: string | undefined, form: FormData) {
     detached: true,
     stdio: ["ignore", out, out],
     // A clean environment: drop variables of whatever Claude Code session started this dashboard.
-    env: { ...Object.fromEntries(Object.entries(process.env).filter(([k]) => !/^(CLAUDE_?CODE|CLAUDE_EFFORT|VSCODE_)/.test(k))), RUN_AS: user?.email ?? "" } as NodeJS.ProcessEnv,
+    env: { ...Object.fromEntries(Object.entries(process.env).filter(([k]) => !/^(CLAUDE_?CODE|CLAUDE_EFFORT|VSCODE_)/.test(k))), RUN_AS: user?.email ?? "" } as unknown as NodeJS.ProcessEnv,
   });
   child.unref();
   await new Promise((r) => setTimeout(r, 4000));
