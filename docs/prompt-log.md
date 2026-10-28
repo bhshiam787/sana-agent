@@ -89,3 +89,7 @@ Every prompt given to Claude in this project, newest last. Secrets are redacted 
 ## 2026-10-28 11:10 +06 — bhshiam@B’s MacBook Air
 
 > try , passed the boat
+
+## 2026-10-28 11:11 +06 — bhshiam@B’s MacBook Air
+
+> try again now visible https://scholar.google.com/citations?hl=en&user=hF4wEE4AAAAJ&pagesize=100&view_op=list_works

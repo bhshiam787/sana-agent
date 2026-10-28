@@ -21,19 +21,21 @@ Every claim in an outreach email must be traceable to this file.
 - IELTS 7.0 (2025)
 
 ## Research (state status exactly — never upgrade "under review" or "in preparation")
-Verified 2026-10-28 via Crossref/OpenAlex (DOIs below). Google Scholar: https://scholar.google.com/citations?user=hF4wEE4AAAAJ
+Verified 2026-10-28 via Crossref/OpenAlex and her Google Scholar profile (34 citations, h-index 2,
+i10-index 1; listed interests: Machine Learning, Deep Learning, Artificial Intelligence, IoT,
+Cyber-Physical Systems). Google Scholar: https://scholar.google.com/citations?user=hF4wEE4AAAAJ
 · ResearchGate: https://www.researchgate.net/profile/Tamanna-Sana
 
 ### Published
 1. **Advancing Federated Learning: A Systematic Literature Review of Methods, Challenges, and
-   Applications.** *IEEE Access*, 2025. **First author** (T. Z. Sana, S. Abdulla, A. Nag, A. Das,
+   Applications.** *IEEE Access* 13, 153817–153844, 2025. **First author** (T. Z. Sana, S. Abdulla, A. Nag, A. Das,
    M. M. Hassan, Z. Z. Fiza, A. Karim, S. R. R. Kabir). DOI 10.1109/ACCESS.2025.3605165.
-   ~20 citations by Oct 2026. Covers: recent FL advances and applications; combining FL with other
+   30 citations on Google Scholar by Oct 2026. Covers: recent FL advances and applications; combining FL with other
    ML approaches for performance, privacy preservation and scalability; scalability and resource
    constraints; the future use of FL across industries.
 2. **Sorokh-Poth: A Balanced Bangladeshi Road Vehicle Image Dataset Integrated With a Detection
    System Based On Deep Convolutional Neural Networks.** *International Journal of Research
-   Publications*, 2023. **First author** (T. Z. Sana, S. Islam, N. Hasan, I. Ahmad).
+   Publications* 122(1), 134–148, 2023. 4 citations. **First author** (T. Z. Sana, S. Islam, N. Hasan, I. Ahmad).
    DOI 10.47119/ijrp1001221420234574. She built a balanced dataset of 9,809 annotated smartphone
    images of 10 Bangladeshi vehicle types (autorickshaw, CNG, lagoon, bus, truck, etc.) and a
    ResNet-50 classifier, evaluated with accuracy, precision, recall and F1.
@@ -65,7 +67,7 @@ Anindya Nag, Ayontika Das (both papers 1 and 3).
 ## Skills
 Python, C, MySQL; EDA, statistical analysis, hypothesis testing; experimentation platforms (Kameleoon, AB Tasty, Convert); test automation.
 
-## Candidate research areas (ranked by evidence in CV)
+## Candidate research areas (ranked by evidence; she lists ML, DL, AI, IoT, Cyber-Physical Systems on Scholar)
 1. Machine learning for cybersecurity (phishing, spam detection)
 2. Federated / privacy-preserving learning
 3. Applied deep learning / computer vision
