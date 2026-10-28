@@ -92,6 +92,7 @@ export async function sweepUniversity(u: typeof t.universities.$inferSelect) {
   const tg = targets();
   try {
     const out = await ask({
+      tier: "bulk",
       system:
         "You read university faculty directories to find professors whose research matches a graduate applicant. Use only official university pages for names, titles and emails. Do not guess emails.",
       prompt: `Applicant profile:\n${applicantProfile()}\n\nUniversity: ${u.name} (${u.country})${u.website ? `, ${u.website}` : ""}.\nDepartments to check: ${tg.departments.join(", ")}.\nApplicant topics: ${tg.researchQueries.join("; ")}.\n\nOpen the faculty / people directories of these departments. Return every professor or lecturer (not postdocs or students) whose research clearly matches one of the topics — typically 3–15 people. Note any funding signal you notice (recently hired, new grant, lab expanding, "looking for students").`,

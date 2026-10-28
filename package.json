@@ -1,7 +1,7 @@
 {
   "name": "sana-agent-root",
   "private": true,
-  "description": "Run everything from the project root: pnpm dev, pnpm dry, pnpm night …",
+  "description": "Run everything from the project root: pnpm dev, pnpm dry, pnpm night \u2026",
   "scripts": {
     "setup": "pnpm --dir web install && pnpm --dir agent install",
     "dev": "pnpm --dir web dev",
@@ -11,7 +11,9 @@
     "agent": "pnpm --dir agent run:agent",
     "user:create": "pnpm --dir web user:create",
     "linkedin:login": "pnpm --dir agent linkedin:login",
-    "db:push": "pnpm --dir web db:push"
+    "db:push": "pnpm --dir web db:push",
+    "dry:max": "pnpm --dir agent dry:max",
+    "night:max": "pnpm --dir agent night:max"
   },
   "packageManager": "pnpm@11.13.0"
 }

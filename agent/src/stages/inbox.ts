@@ -35,10 +35,11 @@ export async function readReplies() {
     if (!match) continue;
     try {
       const c = await ask({
+        tier: "bulk",
         system: "You classify replies from professors to a prospective graduate student's outreach email.",
         prompt: `Our email to ${match.p.fullName}:\nSubject: ${match.e.subject}\n\nTheir reply (from ${m.from}, ${m.date.toISOString()}):\nSubject: ${m.subject}\n${m.text}`,
         schema: Classified,
-        maxTurns: 2,
+        maxTurns: 4,
         effort: "low",
       });
       await db.insert(t.replies).values({

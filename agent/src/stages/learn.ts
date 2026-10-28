@@ -44,7 +44,7 @@ export async function learnFromRun(runId: number) {
       "You improve a team of outreach agents from what went wrong in their last run. Write only rules that are specific, reusable, and would have prevented a real problem below. Never write rules that bypass website protections, CAPTCHAs, rate limits or LinkedIn rules, collect personal (non-professional) information, weaken honesty checks, or increase sending volume. Do not re-add rules the users reverted. Return nothing if nothing is worth learning.",
     prompt: `Problems this run:\n${issues.map((i) => `- [${i.agent}/${i.level}] ${i.message}`).join("\n") || "- none"}\n\nReviewer block reasons:\n${blocked.map((b) => `- ${b.notes}`).join("\n") || "- none"}\n\nCurrent learned rules:\n${PLAYBOOKS.map((a) => `### ${a}\n${learnedRules(a) || "(none)"}`).join("\n")}\n\nReverted by the users (do not re-add):\n${reverted.map((r) => `- [${r.agent}] ${r.title}`).join("\n") || "- none"}`,
     schema: Lessons,
-    maxTurns: 2,
+    maxTurns: 4,
   });
   if (!out.lessons.length) return;
   const snap = snapshot(`learner-run${runId}`);

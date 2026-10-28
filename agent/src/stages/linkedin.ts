@@ -14,6 +14,7 @@ export async function scoutLinkedIn() {
   }
   const tg = targets();
   const out = await ask({
+    tier: "bulk",
     system: `You browse LinkedIn in a real, logged-in browser to find funded PhD positions. You are strictly read-only.\n\n${skill("linkedin")}`,
     prompt: `Applicant profile:\n${applicantProfile()}\n\nTopics: ${tg.researchQueries.join("; ")}.\nPage budget: at most ${cfg.linkedinMaxPages} page loads.\nToday is ${new Date().toISOString().slice(0, 10)}.\n\nSearch LinkedIn posts for open funded PhD positions on these topics and return them. If you hit a login wall, CAPTCHA or warning, stop and say so in notes.`,
     schema: PositionsOut,

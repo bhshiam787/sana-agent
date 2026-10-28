@@ -32,6 +32,8 @@ type AskOpts<S extends z.ZodType> = {
   mcpServers?: Record<string, McpServerConfig>;
   maxTurns?: number;
   effort?: "low" | "medium" | "high";
+  /** "bulk" runs on the cheaper bulk model in economy mode. Default "quality". */
+  tier?: "bulk" | "quality";
 };
 
 const LIMIT_RE = /usage limit|rate limit|limit reached|429|overloaded|quota/i;
@@ -99,7 +101,7 @@ async function askNow<S extends z.ZodType>(o: AskOpts<S>, retried = false): Prom
       query({
         prompt: o.prompt,
         options: {
-          model: cfg.model,
+          model: o.tier === "bulk" ? cfg.bulkModel : cfg.qualityModel,
           systemPrompt: o.system,
           cwd: cfg.workDir,
           settingSources: [],

@@ -92,6 +92,7 @@ export async function profileOne({ p, uni }: Row) {
   const profile = applicantProfile();
     try {
       const r = await ask({
+        tier: "bulk",
         system: `You research university professors for a graduate applicant. Be accurate; never invent facts, URLs or emails.\n\n${skill("profiler")}`,
         prompt: `Applicant profile:\n${profile}\n\nProfessor to research: ${p.fullName}${uni ? `, ${uni}` : ""}${p.country ? ` (${p.country})` : ""}.\nKnown topics: ${(p.researchAreas ?? []).join(", ") || "unknown"}.\n${p.whyMatch ? `Initial match note: ${p.whyMatch}\n` : ""}${p.recruitingEvidence ? `Funding/recruiting signal seen: ${p.recruitingEvidence}\n` : ""}${p.sourceUrl ? `Found via: ${p.sourceUrl}\n` : ""}${citationNote(p.fullName)}\nToday is ${new Date().toISOString().slice(0, 10)}.`,
         schema: ProfileOut,

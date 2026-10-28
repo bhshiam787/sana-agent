@@ -211,3 +211,7 @@ Every prompt given to Claude in this project, newest last. Secrets are redacted 
 
 > our last agent run, we burn lots token..
 > qustion : how many agents are working behind the scene ?
+
+## 2026-10-28 12:53 +06 — bhshiam@B’s MacBook Air
+
+> so how can I swith between

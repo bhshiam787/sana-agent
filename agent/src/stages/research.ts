@@ -41,7 +41,7 @@ export async function nextToResearch(inFlight: Set<number>, limit = 1): Promise<
 
 /** Batch mode for `--stages research`. */
 export async function deepResearch() {
-  await pool(await nextToResearch(new Set(), cfg.nightlyEmailCap * 2), cfg.parallel, researchOne);
+  await pool(await nextToResearch(new Set(), Math.min(cfg.nightlyEmailCap * 2, cfg.researchPerRun)), cfg.parallel, researchOne);
 }
 
 /** Builds a deep professional dossier for one shortlisted professor before any email is written. */

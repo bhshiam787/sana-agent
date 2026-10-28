@@ -108,12 +108,16 @@ export const PositionsOut = z.object({
 export async function scoutPositions() {
   const tg = targets();
   const profile = applicantProfile();
+  // Economy mode groups topics into a few sessions; max mode runs one per topic.
+  const n = Math.max(1, Math.min(cfg.positionSessions, tg.researchQueries.length));
+  const groups = Array.from({ length: n }, (_, i) => tg.researchQueries.filter((_, j) => j % n === i).join("; "));
   await Promise.all(
-    tg.researchQueries.map(async (topic) => {
+    groups.map(async (topic) => {
       try {
         const out = await ask({
+          tier: "bulk",
           system: `You find open, funded graduate positions for one applicant.\n\n${skill("scout")}`,
-          prompt: `Applicant profile:\n${profile}\n\nTopic: ${topic}\nAllowed countries (ISO): ${tg.allowCountries.join(", ")}.\nToday is ${today()}.\n\nFind up to 10 currently open, funded PhD (or fully funded masters) positions on this topic in the allowed countries. Check job boards (EURAXESS, university portals, Varbi, AcademicTransfer, Jobbnorge, FindAPhD, jobs.ac.uk, AcademicPositions) and professors' own posts. Verify each by opening the posting. Only working URLs with a future deadline (or open until filled).`,
+          prompt: `Applicant profile:\n${profile}\n\nTopic(s): ${topic}\nAllowed countries (ISO): ${tg.allowCountries.join(", ")}.\nToday is ${today()}.\n\nFind up to 10 currently open, funded PhD (or fully funded masters) positions on this topic in the allowed countries. Check job boards (EURAXESS, university portals, Varbi, AcademicTransfer, Jobbnorge, FindAPhD, jobs.ac.uk, AcademicPositions) and professors' own posts. Verify each by opening the posting. Only working URLs with a future deadline (or open until filled).`,
           schema: PositionsOut,
           tools: ["WebSearch", "WebFetch"],
           maxTurns: 35,
@@ -188,9 +192,10 @@ export async function scoutRecruitingLabs() {
   const tg = targets();
   const profile = applicantProfile();
   await Promise.all(
-    tg.preferCountries.filter(countryAllowed).map(async (cc) => {
+    tg.preferCountries.filter(countryAllowed).slice(0, cfg.labCountries).map(async (cc) => {
       try {
         const out = await ask({
+          tier: "bulk",
           system: `You find professors who are actively recruiting PhD students right now.\n\n${skill("scout")}`,
           prompt: `Applicant profile:\n${profile}\n\nCountry: ${cc}. Topics: ${tg.researchQueries.join("; ")}.\nToday is ${today()}.\n\nFind lab / faculty pages in this country ("prospective students", "open positions", "join our lab", "I am looking for PhD students") updated in the last 12 months on these topics. Return up to 10 professors with quoted evidence and its URL. Only evidence you opened.`,
           schema: LabsOut,

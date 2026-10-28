@@ -101,6 +101,7 @@ const AGENT_DIR = () => `${process.cwd()}/../agent`;
 export async function startRun(_prev: string | undefined, form: FormData) {
   const session = await requireUser();
   const live = form.get("mode") === "live";
+  const runMode = form.get("runMode") === "max" ? "max" : "economy";
   const hours = Math.min(12, Math.max(0.5, Number(form.get("hours") ?? 8)));
   if (live && form.get("confirm") !== "yes") return "Tick the box to confirm a live run sends real emails.";
 
@@ -130,7 +131,7 @@ export async function startRun(_prev: string | undefined, form: FormData) {
   const out = openSync(logFile, "a");
   const { spawn } = await import("node:child_process");
   // caffeinate keeps the Mac awake for the length of the run.
-  const child = spawn("caffeinate", ["-i", "npx", "tsx", "src/run.ts", ...(live ? ["--live"] : []), "--hours", String(hours)], {
+  const child = spawn("caffeinate", ["-i", "npx", "tsx", "src/run.ts", ...(live ? ["--live"] : []), "--mode", runMode, "--hours", String(hours)], {
     cwd: agentDir,
     detached: true,
     stdio: ["ignore", out, out],

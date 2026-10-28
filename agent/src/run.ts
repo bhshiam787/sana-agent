@@ -55,14 +55,21 @@ async function stage<T>(o: {
   run: (item: T) => Promise<void>;
   upstreamDone: () => boolean;
   gate?: () => Promise<boolean>;
+  /** Stop claiming new items after this many (economy-mode per-run caps). */
+  max?: number;
 }) {
   const inFlight = new Set<number>();
+  let claimed = 0;
   let lock = Promise.resolve();
   // Claim under a lock so two workers never take the same item.
   const claim = () => {
     const p = lock.then(async () => {
+      if (o.max != null && claimed >= o.max) return null;
       const item = await o.next(inFlight);
-      if (item) inFlight.add(o.id(item));
+      if (item) {
+        inFlight.add(o.id(item));
+        claimed++;
+      }
       return item;
     });
     lock = p.then(
@@ -83,7 +90,7 @@ async function stage<T>(o: {
       }
       const item = await claim();
       if (!item) {
-        if (o.upstreamDone() && inFlight.size === 0) return;
+        if ((o.upstreamDone() || (o.max != null && claimed >= o.max)) && inFlight.size === 0) return;
         await sleep(20_000);
         continue;
       }
@@ -123,7 +130,7 @@ async function pipeline(runId: number, dryRun: boolean) {
       settle("linkedin", scoutLinkedIn),
       settle("directory", async () => {
         await seedUniversities();
-        await stage({ name: "directory", workers: w(0.3), deadline, next: nextUniversity, id: (u) => u.id, run: sweepUniversity, upstreamDone: () => true });
+        await stage({ name: "directory", workers: w(0.3), deadline, next: nextUniversity, id: (u) => u.id, run: sweepUniversity, upstreamDone: () => true, max: cfg.sweepsPerRun });
       }),
     ]);
     done.finders = true;
@@ -138,6 +145,7 @@ async function pipeline(runId: number, dryRun: boolean) {
     id: (r) => r.p.id,
     run: profileOne,
     upstreamDone: () => done.finders,
+    max: cfg.profilePerRun,
   }).then(() => (done.profile = true));
 
   const research = stage({
@@ -148,6 +156,7 @@ async function pipeline(runId: number, dryRun: boolean) {
     id: (r) => r.p.id,
     run: researchOne,
     upstreamDone: () => done.profile,
+    max: cfg.researchPerRun,
   }).then(() => (done.research = true));
 
   const write = stage({
@@ -304,7 +313,7 @@ async function main() {
   }, 10_000);
   await log(
     "run",
-    `Run #${run.id} started (${dryRun ? "DRY RUN — nothing will be sent" : "LIVE"}), ${stages ? `stages: ${stages.join(", ")}` : `full pipeline, ${cfg.parallel} parallel Claude sessions, ${cfg.runHours}h`}`,
+    `Run #${run.id} started (${dryRun ? "DRY RUN — nothing will be sent" : "LIVE"}), ${stages ? `stages: ${stages.join(", ")}` : `full pipeline, ${cfg.mode.toUpperCase()} mode (${cfg.parallel} parallel, bulk ${cfg.bulkModel}, quality ${cfg.qualityModel}; caps: research ${cfg.profilePerRun}, dossiers ${cfg.researchPerRun}, sweeps ${cfg.sweepsPerRun}), ${cfg.runHours}h`}`,
   );
 
   let status: "completed" | "stopped" | "failed" = "completed";
@@ -338,6 +347,7 @@ async function main() {
   }
 
   const summary = [
+    `${cfg.mode === "max" ? "Max" : "Economy"} mode.`,
     dryRun ? "Dry run: nothing was sent." : null,
     `Found ${stats.professors_found ?? 0} professors and ${stats.positions_found ?? 0} positions; swept ${stats.universities_swept ?? 0} universities.`,
     `Researched ${stats.researched ?? 0} (${stats.shortlisted ?? 0} shortlisted, ${stats.deep_researched ?? 0} deep dossiers).`,

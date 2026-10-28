@@ -43,10 +43,11 @@ In the morning, either user opens the local dashboard and sees what was done.
 | Claude usage | Agent runs locally through the user's Claude Code login (no separate API key). Must save progress and resume if usage limits hit. |
 | "Applied" | Dashboard separates *emailed* vs *formally applied*. Portal applications (fees, rec letters) are marked `needs_manual`, not faked. |
 | Honesty in emails | Every claim must be traceable to `profile/profile.md`. Never upgrade "submitted/under review" to "published". |
-| Parallelism | All finders run at once; profiler, deep researcher and writer share `PARALLEL` (default 16, user has Claude Max) concurrent Claude sessions. (User asked 2026-10-28: "not one task at a time".) |
+| Parallelism | All finders run at once; profiler, deep researcher and writer share `PARALLEL` concurrent Claude sessions (economy 5, max 16). (User asked 2026-10-28: "not one task at a time".) |
 | Deep research ("professor A–Z / mindset") | Per shortlisted professor, a dossier of their **public professional record**: career timeline, research trajectory, current direction, what they value in students, posted contact instructions, communication style, lab culture, recent news, verified hooks with sources, red flags. **No personal life** (family, health, politics, private accounts). Emails must follow posted instructions; "no cold emails" / "not taking students" → skipped. |
 | Email gateway | Gmail via SMTP/IMAP with an **app password** (not Google Cloud OAuth): `GMAIL_USER`, `GMAIL_APP_PASSWORD` in `agent/.env`. |
 | Claude usage cap | At **85% of the claude.ai 5-hour window** (`USAGE_STOP_PERCENT`) the agent **pauses new Claude sessions until the window resets, then resumes automatically** (user 2026-10-28; `RESUME_AFTER_RESET=0` = stop instead). Usage read from SDK `rate_limit_event` + experimental `/usage` API (≤ every 2 min). Paused time doesn't count against `RUN_HOURS`; a refused (429) session pauses and retries once; sending (no Claude) continues during a pause. Tested: simulated 90% → paused → resumed. |
+| Run modes (2026-10-28, after a run burned lots of usage) | **economy** (default): bulk work (finders, faculty sweeps, profiler, inbox) on **claude-sonnet-5-5**, quality work (dossier, writer, reviewer, strategist, learner) on Opus 5.5; 5 parallel; caps per run: positions 3 grouped sessions, labs top 5 countries, 5 faculty sweeps, 30 profiled, 15 dossiers. **max**: everything Opus, 16 parallel, no caps. Switch: dashboard Start form "Mode" dropdown, `pnpm dry` / `pnpm night` (economy) vs `pnpm dry:max` / `pnpm night:max`, or `AGENT_MODE=max`. Any single env (PARALLEL, PROFILE_PER_RUN, RESEARCH_PER_RUN, SWEEPS_PER_RUN, POSITION_SESSIONS, LAB_COUNTRIES, CLAUDE_BULK_MODEL) overrides the preset. Sonnet needs ≥4 maxTurns for structured output. |
 | Dashboard theme | Dark (forced via `data-theme="dark"` on `<html>`). |
 
 ## Repo layout
@@ -152,7 +153,7 @@ positive/ask_cv/apply_formally/no_funding/negative/auto_reply/other), `activity`
 ## Agent (built 2026-10-28)
 **Full run = a pipeline where every stage runs at once** (`agent/src/run.ts`): finders keep
 discovering while earlier finds are profiled, researched, written and sent. One global semaphore
-caps concurrent Claude sessions at `PARALLEL` (default 16; user has Claude Max). Stops starting new work after
+caps concurrent Claude sessions at `PARALLEL` (economy 5 / max 16; see Run modes). Stops starting new work after
 `RUN_HOURS` (default 8); sender continues until the nightly cap.
 
 Order: `inbox` → `strategy` → [pipeline: finders ∥ profile ∥ research ∥ write ∥ send ∥ strategist
