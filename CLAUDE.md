@@ -113,7 +113,7 @@ pooled idle connections still let Neon suspend after ~5 min. Biggest remaining w
 in Singapore (aws-ap-southeast-1, ~60–80 ms) + `pnpm start` instead of `pnpm dev`.
 
 Naming (user 2026-10-28): dashboard labels say **"Why Sana fits"** (not "she"/"Tamanna").
-Brand: **Sana · PhD finder**: logo = white mortarboard with gold tassel on a blue gradient rounded
+Brand: **Sana** (no tagline; "PhD finder" removed 2026-10-28 since masters is a track too): logo = white mortarboard with gold tassel on a blue gradient rounded
 square (`web/src/components/logo.tsx`, favicon `web/src/app/icon.svg`); in sidebar and login page.
 
 ### Gotchas found while building

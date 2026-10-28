@@ -20,14 +20,11 @@ export function LogoMark({ size = 28 }: { size?: number }) {
 }
 
 /** Mark + wordmark for the sidebar and login page. */
-export function Logo({ size = 28, sub = true }: { size?: number; sub?: boolean }) {
+export function Logo({ size = 28 }: { size?: number }) {
   return (
     <span className="inline-flex items-center gap-2.5">
       <LogoMark size={size} />
-      <span className="leading-tight">
-        <span className="block text-[15px] font-semibold tracking-tight">Sana</span>
-        {sub && <span className="block text-[10px] font-medium uppercase tracking-[0.14em] text-muted">PhD finder</span>}
-      </span>
+      <span className="text-[15px] font-semibold tracking-tight">Sana</span>
     </span>
   );
 }
