@@ -1,6 +1,8 @@
 import { requireUser } from "@/lib/session";
 import { logout } from "@/lib/auth";
+import Link from "next/link";
 import { Suspense } from "react";
+import { Logo } from "@/components/logo";
 import { Nav } from "@/components/nav";
 import { NavProgress } from "@/components/nav-progress";
 import { SubmitButton } from "@/components/submit-button";
@@ -14,8 +16,10 @@ export default async function AppLayout({ children }: LayoutProps<"/">) {
       </Suspense>
       <aside className="border-b border-line bg-surface md:sticky md:top-0 md:h-screen md:w-56 md:shrink-0 md:border-r md:border-b-0">
         <div className="flex items-center justify-between px-4 py-4 md:block">
-          <div className="font-semibold">Sana Agent</div>
-          <div className="flex items-center gap-3 text-xs text-muted md:mt-1">
+          <Link href="/" aria-label="Sana home" className="rounded-lg">
+            <Logo />
+          </Link>
+          <div className="flex items-center gap-3 text-xs text-muted md:mt-3">
             Signed in as {user.name}
             <form action={logout} className="md:hidden">
               <SubmitButton className="hover:text-ink" pendingText="Signing out…">Sign out</SubmitButton>

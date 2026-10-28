@@ -2,6 +2,7 @@
 
 import { useActionState } from "react";
 import { login } from "@/lib/auth";
+import { Logo } from "@/components/logo";
 import { LoadingOverlay } from "@/components/loading-overlay";
 import { Spinner } from "@/components/submit-button";
 
@@ -11,7 +12,8 @@ export default function LoginPage() {
     <main className="flex min-h-screen items-center justify-center px-4">
       <form action={action} className="card w-full max-w-sm space-y-4 p-6">
         <div>
-          <h1 className="text-lg font-semibold">Sana Agent</h1>
+          <div className="mb-3"><Logo size={36} /></div>
+          <h1 className="text-lg font-semibold">Sign in</h1>
           <p className="text-sm text-muted">Sign in to see the outreach dashboard.</p>
         </div>
         <label className="block space-y-1">
