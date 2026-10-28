@@ -23,13 +23,29 @@ export function PageHeader({ title, sub, children }: { title: string; sub?: stri
 
 export function Stat({ label, value, hint, href }: { label: string; value: number | string; hint?: string; href?: string }) {
   const body = (
-    <div className={`card h-full p-4 transition ${href ? "hover:-translate-y-0.5 hover:border-hover-line hover:bg-hover" : ""}`}>
-      <div className="text-xs text-muted">{label}</div>
+    <div
+      className={`card relative h-full p-4 transition duration-150 ${
+        href ? "group-hover:border-hover-line group-hover:shadow-[0_0_0_1px_var(--hover-line),0_10px_28px_-14px_var(--accent)]" : ""
+      }`}
+    >
+      {href && (
+        <span aria-hidden className="absolute top-3 right-3 text-sm text-accent opacity-0 transition-opacity group-hover:opacity-100">
+          →
+        </span>
+      )}
+      <div className={`text-xs text-muted ${href ? "transition-colors group-hover:text-accent" : ""}`}>{label}</div>
       <div className="mt-1 text-2xl font-semibold tabular-nums">{value}</div>
       {hint && <div className="mt-1 text-xs text-ink-2">{hint}</div>}
     </div>
   );
-  return href ? <Link href={href}>{body}</Link> : body;
+  // A class keeps the site-wide plain-link hover (blue + underline) off the whole card.
+  return href ? (
+    <Link href={href} className="group block h-full rounded-xl no-underline">
+      {body}
+    </Link>
+  ) : (
+    body
+  );
 }
 
 export function Empty({ children }: { children: React.ReactNode }) {

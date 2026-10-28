@@ -118,6 +118,8 @@ square (`web/src/components/logo.tsx`, favicon `web/src/app/icon.svg`); in sideb
 - `next.config.ts`: `cacheComponents: false` (all data is live) and
   `serverExternalPackages: ["@electric-sql/pglite"]` (else pglite fails inside the bundler).
 - Scripts using top-level await must be `.mts`.
+- Any `<a>` with no class gets the site-wide text-link hover (blue + underline): give block-level links
+  (cards) a class, e.g. Stat cards use `group block` + `group-hover:` border glow/label/arrow.
 - Tailwind v4 has no pointer cursor on buttons by default: `@layer base` in globals.css adds cursor,
   transitions, link/summary/input hover and `:focus-visible` site-wide; `.hover-row` for clickable rows in cards.
 - `pnpm dev` sometimes stops rebuilding globals.css (page code still updates): restart the dev server.

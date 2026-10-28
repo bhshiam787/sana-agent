@@ -245,3 +245,7 @@ Every prompt given to Claude in this project, newest last. Secrets are redacted 
 ## 2026-10-28 13:12 +06 — bhshiam@B’s MacBook Air
 
 > give a logo for sana
+
+## 2026-10-28 13:14 +06 — bhshiam@B’s MacBook Air
+
+> hover effect not looks good

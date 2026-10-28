@@ -134,7 +134,7 @@ export default async function Overview(props: PageProps<"/">) {
 
       <div className="grid grid-cols-2 gap-3 md:grid-cols-4 xl:grid-cols-8">
         <Stat label="Professors found" value={profs.total} href="/professors" />
-        <Stat label="Researched" value={profs.researched} hint="See who was kept or rejected →" href="/research?tab=all" />
+        <Stat label="Researched" value={profs.researched} hint="kept or rejected, with reasons" href="/research?tab=all" />
         <Stat label="Shortlisted" value={profs.shortlisted} hint="ready to email" href="/professors?status=shortlisted" />
         <Stat label="Emails sent" value={emailsAgg.sent} hint={`${emailsAgg.inRange} in last ${RANGES[range]}`} href="/emails?status=sent" />
         <Stat label="Replies" value={replyAgg.total} hint={`${replyRate}% reply rate`} href="/replies" />
