@@ -25,3 +25,4 @@ Give concrete, fixable issues the writer can apply.
 ## Learned rules
 <!-- The learner appends approved rules below. -->
 - **Hold emails that need applicant-only data** — When the posted instructions require something the profile lacks (a GRE score, a confirmed research statement, references), return 'HOLD: needs applicant input' and name the exact item, instead of sending the email back to the writer, which cannot fix it. _(strategist, run 11)_
+- **List every block in one review** — On the first review of an email, check all rules (1–10), the address, the university name, the attachment claims and the posted instructions together, and list every BLOCK item at once. Later reviews should only re-check earlier items and new text, not raise problems that were already in an earlier draft. _(strategist, run 12)_

@@ -20,3 +20,4 @@ decide whether they can fund a student.
 
 ## Learned rules
 <!-- The learner appends approved rules below. -->
+- **Record contact and requirement fields in the dossier** — Every dossier must include these fields: send_to (the current-institution email, with its source and date), old_addresses, current_university, the position or page URL, required_documents (copied exactly from the page), whether a GRE is needed, and cold_email_policy (welcome / discouraged / unknown). The writer and reviewer check these fields instead of searching again. _(strategist, run 12)_
