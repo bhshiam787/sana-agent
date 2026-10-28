@@ -7,6 +7,21 @@ import { Semaphore } from "./sem.ts";
 
 /** Thrown when the Claude plan's usage limit (or rate limit) stops the run. Next run resumes. */
 export class UsageLimitError extends Error {}
+/** Stop pressed on the dashboard: ends the run like a usage stop, but on purpose. */
+export class StopRequested extends UsageLimitError {}
+
+/** Set by the run's control poller from dashboard buttons. */
+export const control = { paused: false, stopRequested: false };
+
+/** Holds new sessions while paused from the dashboard; paused time extends the run. */
+export async function waitIfPaused() {
+  if (control.paused && !control.stopRequested) {
+    const start = Date.now();
+    while (control.paused && !control.stopRequested) await new Promise((r) => setTimeout(r, 5000));
+    pausedTotal += Date.now() - start;
+  }
+  if (control.stopRequested) throw new StopRequested("Stopped from the dashboard");
+}
 
 type AskOpts<S extends z.ZodType> = {
   prompt: string;
@@ -74,6 +89,7 @@ async function waitForBudget() {
 }
 
 async function askNow<S extends z.ZodType>(o: AskOpts<S>, retried = false): Promise<z.infer<S>> {
+  await waitIfPaused();
   await waitForBudget();
   mkdirSync(cfg.workDir, { recursive: true });
   const allowed = [...(o.tools ?? []), ...Object.keys(o.mcpServers ?? {}).map((s) => `mcp__${s}`)];

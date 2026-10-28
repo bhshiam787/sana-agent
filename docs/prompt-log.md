@@ -145,3 +145,11 @@ Every prompt given to Claude in this project, newest last. Secrets are redacted 
 ## 2026-10-28 11:53 +06 — bhshiam@B’s MacBook Air
 
 > currently I am at root folder.. if I give pnpm dev it says package not found.. how can i easily run it
+
+## 2026-10-28 11:55 +06 — bhshiam@B’s MacBook Air
+
+> instead of command line, can I have pwoer in the website to run dy or night.. so I have some button, to take action run/stop/ pause etc
+
+## 2026-10-28 12:04 +06 — bhshiam@B’s MacBook Air
+
+> stop the dry run.. I am getting out of token

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { desc, eq } from "drizzle-orm";
 import { db, t } from "@/db";
+import { AgentControl } from "@/components/agent-control";
 import { Chip, Empty, PageHeader } from "@/components/ui";
 import { fmtDate, label } from "@/lib/format";
 
@@ -21,6 +22,7 @@ export default async function Runs() {
   return (
     <div className="mx-auto max-w-6xl">
       <PageHeader title="Agent runs" sub="Each overnight run: who started it, how long it took, what it did." />
+      <AgentControl />
       <div className="card overflow-x-auto">
         {rows.length === 0 ? (
           <Empty>The agent hasn&apos;t run yet.</Empty>

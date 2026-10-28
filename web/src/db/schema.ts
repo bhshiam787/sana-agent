@@ -66,7 +66,7 @@ export const replyClass = pgEnum("reply_class", [
   "other",
 ]);
 
-export const runStatus = pgEnum("run_status", ["running", "completed", "failed", "stopped"]);
+export const runStatus = pgEnum("run_status", ["running", "paused", "completed", "failed", "stopped"]);
 
 export const learningStatus = pgEnum("learning_status", ["proposed", "approved", "rejected", "applied", "reverted"]);
 
@@ -196,6 +196,9 @@ export const agentRuns = pgTable("agent_runs", {
   machine: text("machine"),
   dryRun: boolean("dry_run").default(false).notNull(),
   status: runStatus("status").default("running").notNull(),
+  // Dashboard → agent commands ("pause" | "resume" | "stop"); the agent polls and clears it.
+  control: text("control"),
+  pid: integer("pid"),
   startedAt: timestamp("started_at", { withTimezone: true }).defaultNow().notNull(),
   endedAt: timestamp("ended_at", { withTimezone: true }),
   stats: jsonb("stats").$type<Record<string, number>>(),

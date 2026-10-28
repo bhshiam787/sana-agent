@@ -2,6 +2,7 @@ import Link from "next/link";
 import { and, desc, eq, gte, isNotNull, lte, sql } from "drizzle-orm";
 import { db, t } from "@/db";
 import { ActivityChart, type Point } from "@/components/activity-chart";
+import { AgentControl } from "@/components/agent-control";
 import { Chip, Empty, PageHeader, Stat, withParams } from "@/components/ui";
 import { daysFromNow, fmtDate, isoDay, label, timeAgo } from "@/lib/format";
 
@@ -97,6 +98,7 @@ export default async function Overview(props: PageProps<"/">) {
   return (
     <div className="mx-auto max-w-7xl">
       <PageHeader title="Overview" sub="Everything the agent has done, and what needs you." />
+      <AgentControl />
 
       {run && (
         <div className="card mb-6 p-4">

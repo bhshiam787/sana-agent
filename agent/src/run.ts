@@ -10,7 +10,7 @@ import os from "node:os";
 import { setTimeout as sleep } from "node:timers/promises";
 import { cfg } from "./config.ts";
 import { db, t, and, eq, sql } from "./db.ts";
-import { pausedMs, planUsage, sessions, UsageLimitError } from "./llm.ts";
+import { control, pausedMs, planUsage, sessions, StopRequested, UsageLimitError, waitIfPaused } from "./llm.ts";
 import { log, setRunId, stats } from "./log.ts";
 import { mailConfigured, verifyMail } from "./mail.ts";
 import { nextUniversity, seedUniversities, sweepUniversity } from "./stages/directory.ts";
@@ -73,7 +73,9 @@ async function stage<T>(o: {
   };
   const worker = async () => {
     // Time paused for the usage window does not count against the run's hours.
-    while (!stopped && Date.now() - pausedMs() < o.deadline) {
+    while (!stopped && !control.stopRequested && Date.now() - pausedMs() < o.deadline) {
+      await waitIfPaused().catch(() => {});
+      if (control.stopRequested) return;
       if (o.gate && !(await o.gate())) {
         if (o.upstreamDone()) return;
         await sleep(30_000);
@@ -162,7 +164,11 @@ async function pipeline(runId: number, dryRun: boolean) {
   // Sender: one email at a time, spaced out, while everything else keeps working.
   const send = (async () => {
     if (dryRun) return;
-    while (!stopped) {
+    while (!stopped && !control.stopRequested) {
+      if (control.paused) {
+        await sleep(10_000);
+        continue;
+      }
       if ((await sentInLast20h()) >= cfg.nightlyEmailCap) {
         await log("sender", `Nightly cap of ${cfg.nightlyEmailCap} reached`);
         return;
@@ -253,7 +259,7 @@ async function main() {
   const [other] = await db
     .select({ id: t.agentRuns.id, machine: t.agentRuns.machine })
     .from(t.agentRuns)
-    .where(and(eq(t.agentRuns.status, "running"), sql`${t.agentRuns.startedAt} > now() - interval '12 hours'`))
+    .where(and(sql`${t.agentRuns.status} in ('running','paused')`, sql`${t.agentRuns.startedAt} > now() - interval '12 hours'`))
     .limit(1);
   if (other && !force) {
     console.error(`Run #${other.id} is already running on ${other.machine}. Wait for it, or pass --force if it crashed.`);
@@ -273,6 +279,29 @@ async function main() {
   const [user] = cfg.runAs ? await db.select({ id: t.users.id }).from(t.users).where(eq(t.users.email, cfg.runAs.toLowerCase())) : [];
   const [run] = await db.insert(t.agentRuns).values({ startedBy: user?.id ?? null, machine: os.hostname().replace(/\.local$/, ""), dryRun }).returning();
   setRunId(run.id);
+  await db.update(t.agentRuns).set({ pid: process.pid }).where(eq(t.agentRuns.id, run.id));
+
+  // Dashboard buttons write agent_runs.control; poll it.
+  const poll = setInterval(async () => {
+    try {
+      const [row] = await db.select({ control: t.agentRuns.control }).from(t.agentRuns).where(eq(t.agentRuns.id, run.id));
+      const cmd = row?.control;
+      if (!cmd) return;
+      await db.update(t.agentRuns).set({ control: null }).where(eq(t.agentRuns.id, run.id));
+      if (cmd === "pause" && !control.paused) {
+        control.paused = true;
+        await db.update(t.agentRuns).set({ status: "paused" }).where(eq(t.agentRuns.id, run.id));
+        await log("run", "Paused from the dashboard: no new work starts; running sessions finish", { level: "warn" });
+      } else if (cmd === "resume" && control.paused) {
+        control.paused = false;
+        await db.update(t.agentRuns).set({ status: "running" }).where(eq(t.agentRuns.id, run.id));
+        await log("run", "Resumed from the dashboard");
+      } else if (cmd === "stop" && !control.stopRequested) {
+        control.stopRequested = true;
+        await log("run", "Stop requested from the dashboard: finishing running sessions, then ending", { level: "warn" });
+      }
+    } catch {}
+  }, 10_000);
   await log(
     "run",
     `Run #${run.id} started (${dryRun ? "DRY RUN — nothing will be sent" : "LIVE"}), ${stages ? `stages: ${stages.join(", ")}` : `full pipeline, ${cfg.parallel} parallel Claude sessions, ${cfg.runHours}h`}`,
@@ -295,7 +324,10 @@ async function main() {
       await strategize(run.id);
     }
   } catch (e) {
-    if (e instanceof UsageLimitError) {
+    if (e instanceof StopRequested) {
+      status = "stopped";
+      error = "Stopped from the dashboard. Progress is saved; the next run continues.";
+    } else if (e instanceof UsageLimitError) {
       status = "stopped";
       error = `Stopped: Claude usage limit reached. Progress is saved; the next run continues. (${e.message})`;
     } else {
@@ -314,7 +346,9 @@ async function main() {
   ]
     .filter(Boolean)
     .join(" ");
-  await db.update(t.agentRuns).set({ status, endedAt: new Date(), stats, summary, error }).where(eq(t.agentRuns.id, run.id));
+  clearInterval(poll);
+  if (control.stopRequested && status === "completed") status = "stopped";
+  await db.update(t.agentRuns).set({ status, endedAt: new Date(), stats, summary, error, control: null }).where(eq(t.agentRuns.id, run.id));
   await log("run", `Run #${run.id} ${status}. ${summary}`);
   process.exit(status === "failed" ? 1 : 0);
 }

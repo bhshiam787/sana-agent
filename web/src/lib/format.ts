@@ -40,6 +40,7 @@ const tone: Record<string, string> = {
   followed_up: "accent",
   apply_formally: "accent",
   running: "accent",
+  paused: "warning",
   shortlisted: "accent",
   needs_manual: "warning",
   proposed: "warning",
@@ -73,3 +74,5 @@ export function daysFromNow(days: number) {
   return new Date(Date.now() + days * 86400000);
 }
 export const isoDay = (d: Date) => d.toISOString().slice(0, 10);
+
+export const minutesSince = (d: Date | string) => (Date.now() - new Date(d).getTime()) / 60000;
