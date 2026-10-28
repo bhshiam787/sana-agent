@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useActionState, useState } from "react";
 import { startRun } from "@/lib/actions";
 import { LoadingOverlay } from "./loading-overlay";
@@ -33,6 +34,7 @@ export function StartRunForm() {
         {pending && <Spinner />}
         {pending ? "Starting the agent…" : mode === "dry" ? "▶ Start dry run" : "▶ Start live run"}
       </button>
+      <Link href="/modes" className="text-xs text-accent hover:underline">Compare modes →</Link>
       {error && <p className="w-full text-sm text-critical">{error}</p>}
       {pending && <LoadingOverlay label="Starting the agent…" />}
     </form>

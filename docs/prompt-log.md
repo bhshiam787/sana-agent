@@ -223,3 +223,7 @@ Every prompt given to Claude in this project, newest last. Secrets are redacted 
 ## 2026-10-28 12:58 +06 — bhshiam@B’s MacBook Air
 
 > where I can find it in the website ?
+
+## 2026-10-28 12:59 +06 — bhshiam@B’s MacBook Air
+
+> a details page where it shows like a table...

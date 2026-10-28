@@ -1,0 +1,42 @@
+{
+  "_note": "Run-mode presets, read by the agent (src/config.ts) and shown on the dashboard's Run modes page. Edit here; env vars still override per run.",
+  "economy": {
+    "label": "Economy",
+    "summary": "Default. Cheapest: Sonnet does the bulk work, small batches.",
+    "parallel": 5,
+    "bulkModel": "claude-sonnet-5-5",
+    "profileModel": "claude-sonnet-5-5",
+    "qualityModel": "claude-opus-5-5",
+    "positionSessions": 3,
+    "labCountries": 5,
+    "sweepsPerRun": 5,
+    "profilePerRun": 30,
+    "researchPerRun": 15
+  },
+  "medium": {
+    "label": "Medium",
+    "summary": "Twice economy's volume; Opus scores professors (who gets emailed).",
+    "parallel": 10,
+    "bulkModel": "claude-sonnet-5-5",
+    "profileModel": "claude-opus-5-5",
+    "qualityModel": "claude-opus-5-5",
+    "positionSessions": 6,
+    "labCountries": 10,
+    "sweepsPerRun": 15,
+    "profilePerRun": 60,
+    "researchPerRun": 30
+  },
+  "max": {
+    "label": "Max",
+    "summary": "Everything on Opus, 16 at once, no caps. Uses by far the most.",
+    "parallel": 16,
+    "bulkModel": "claude-opus-5-5",
+    "profileModel": "claude-opus-5-5",
+    "qualityModel": "claude-opus-5-5",
+    "positionSessions": 99,
+    "labCountries": 99,
+    "sweepsPerRun": 1000,
+    "profilePerRun": 1000,
+    "researchPerRun": 1000
+  }
+}

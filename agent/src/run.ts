@@ -286,7 +286,7 @@ async function main() {
   } else if (mailOn) await verifyMail();
 
   const [user] = cfg.runAs ? await db.select({ id: t.users.id }).from(t.users).where(eq(t.users.email, cfg.runAs.toLowerCase())) : [];
-  const [run] = await db.insert(t.agentRuns).values({ startedBy: user?.id ?? null, machine: os.hostname().replace(/\.local$/, ""), dryRun }).returning();
+  const [run] = await db.insert(t.agentRuns).values({ startedBy: user?.id ?? null, machine: os.hostname().replace(/\.local$/, ""), dryRun, mode: cfg.mode }).returning();
   setRunId(run.id);
   await db.update(t.agentRuns).set({ pid: process.pid }).where(eq(t.agentRuns.id, run.id));
 

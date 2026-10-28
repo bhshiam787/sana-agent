@@ -195,6 +195,7 @@ export const agentRuns = pgTable("agent_runs", {
   startedBy: integer("started_by").references(() => users.id),
   machine: text("machine"),
   dryRun: boolean("dry_run").default(false).notNull(),
+  mode: text("mode"), // economy | medium | max (see agent/modes.json)
   status: runStatus("status").default("running").notNull(),
   // Dashboard → agent commands ("pause" | "resume" | "stop"); the agent polls and clears it.
   control: text("control"),

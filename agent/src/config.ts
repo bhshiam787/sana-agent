@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { config as loadEnv } from "dotenv";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
@@ -20,18 +21,25 @@ const num = (v: string | undefined, d: number) => (v && !Number.isNaN(Number(v))
 const argMode = process.argv.includes("--mode") ? process.argv[process.argv.indexOf("--mode") + 1] : undefined;
 const wanted = argMode ?? process.env.AGENT_MODE;
 export const MODE: "economy" | "medium" | "max" = wanted === "max" || wanted === "medium" ? wanted : "economy";
-const PRESETS = {
-  economy: { parallel: 5, bulkModel: "claude-sonnet-5-5", profileModel: "claude-sonnet-5-5", positionSessions: 3, labCountries: 5, sweepsPerRun: 5, profilePerRun: 30, researchPerRun: 15 },
-  // Twice economy's volume; professor scoring (who gets emailed) on Opus.
-  medium: { parallel: 10, bulkModel: "claude-sonnet-5-5", profileModel: "claude-opus-5-5", positionSessions: 6, labCountries: 10, sweepsPerRun: 15, profilePerRun: 60, researchPerRun: 30 },
-  max: { parallel: 16, bulkModel: "claude-opus-5-5", profileModel: "claude-opus-5-5", positionSessions: 99, labCountries: 99, sweepsPerRun: 1000, profilePerRun: 1000, researchPerRun: 1000 },
-} as const;
+type Preset = {
+  parallel: number;
+  bulkModel: string;
+  profileModel: string;
+  qualityModel: string;
+  positionSessions: number;
+  labCountries: number;
+  sweepsPerRun: number;
+  profilePerRun: number;
+  researchPerRun: number;
+};
+// Shared with the dashboard's Run modes page.
+const PRESETS: Record<typeof MODE, Preset> = JSON.parse(readFileSync(path.join(AGENT_DIR, "modes.json"), "utf8"));
 const P = PRESETS[MODE];
 
 export const cfg = {
   mode: MODE,
   // Dossier, writer, reviewer, strategist, learner: quality matters most.
-  qualityModel: process.env.CLAUDE_MODEL ?? "claude-opus-5-5",
+  qualityModel: process.env.CLAUDE_MODEL ?? P.qualityModel,
   // Finders, faculty sweeps, profiler, inbox classification: high volume.
   bulkModel: process.env.CLAUDE_BULK_MODEL ?? P.bulkModel,
   // Profiler: fit/funding scoring decides who is shortlisted.
