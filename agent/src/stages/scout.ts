@@ -23,7 +23,8 @@ export async function openalex<T>(pathAndQuery: string): Promise<T> {
       await new Promise((r) => setTimeout(r, 5000 * 2 ** attempt));
       continue;
     }
-    throw new Error(`OpenAlex ${res.status} for ${pathAndQuery}`);
+    // Short message: the full URL made unreadable log lines.
+    throw new Error(res.status === 429 ? "OpenAlex rate limit (429)" : `OpenAlex HTTP ${res.status}`);
   }
 }
 
@@ -43,6 +44,7 @@ export async function scoutOpenAlex() {
   const tg = targets();
   const countries = tg.allowCountries.filter(countryAllowed).join("|");
   const candidates = new Set<string>();
+  let limited = 0;
   await Promise.all(
     tg.researchQueries.map(async (q) => {
       try {
@@ -54,10 +56,14 @@ export async function scoutOpenAlex() {
             if (a.author?.id && a.author_position === "last" && a.institutions.some((i) => i.type === "education" && countryAllowed(i.country_code)))
               candidates.add(a.author.id);
       } catch (e) {
-        await log("scout", `OpenAlex search failed for "${q}": ${(e as Error).message}`, { level: "warn" });
+        // One summary line for rate limits instead of one per topic.
+        if ((e as Error).message.includes("429")) limited++;
+        else await log("scout", `OpenAlex search failed for "${q}": ${(e as Error).message}`, { level: "warn" });
       }
     }),
   );
+  if (limited)
+    await log("scout", `OpenAlex rate-limited ${limited} of ${tg.researchQueries.length} searches. Add a free OPENALEX_API_KEY to agent/.env to avoid this.`, { level: "warn" });
   if (!candidates.size) return;
 
   const ids = [...candidates].map((id) => id.replace("https://openalex.org/", ""));

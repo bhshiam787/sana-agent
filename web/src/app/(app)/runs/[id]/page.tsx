@@ -54,18 +54,36 @@ export default async function RunPage(props: PageProps<"/runs/[id]">) {
         ) : (
           <ul className="divide-y divide-line">
             {log.map(({ a, prof }) => (
-              <li key={a.id} className="flex gap-3 px-4 py-2 text-sm">
-                <span className="w-16 shrink-0 text-xs text-muted tabular-nums">
+              <li key={a.id} className="row-hover flex items-start gap-3 px-4 py-2 text-sm">
+                <span className="w-12 shrink-0 pt-0.5 text-xs text-muted tabular-nums">
                   {new Date(a.at).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })}
                 </span>
-                <span className="w-20 shrink-0 text-xs text-muted">{a.agent}</span>
-                <span className={a.level === "error" ? "text-critical" : a.level === "warn" ? "text-ink" : "text-ink-2"}>
-                  {a.level !== "info" && <strong>{a.level.toUpperCase()}: </strong>}
-                  {a.message}
+                <span className="w-20 shrink-0 pt-0.5 text-xs text-muted">{a.agent}</span>
+                {a.level !== "info" && (
+                  <span
+                    className={`shrink-0 rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide ${
+                      a.level === "error" ? "bg-critical/20 text-critical" : "bg-warning/15 text-warning"
+                    }`}
+                  >
+                    {a.level}
+                  </span>
+                )}
+                {/* min-w-0 + overflow-wrap:anywhere so long URLs wrap instead of widening the page */}
+                <div className={`min-w-0 flex-1 [overflow-wrap:anywhere] ${a.level === "error" ? "text-critical" : a.level === "warn" ? "text-ink" : "text-ink-2"}`}>
+                  {a.message.length > 220 ? (
+                    <details>
+                      <summary className="cursor-pointer list-none">
+                        {a.message.slice(0, 200)}… <span className="text-xs text-accent">show more</span>
+                      </summary>
+                      <p className="mt-1">{a.message}</p>
+                    </details>
+                  ) : (
+                    a.message
+                  )}
                   {prof && a.professorId && (
                     <> · <Link href={`/professors/${a.professorId}`} className="text-accent hover:underline">{prof}</Link></>
                   )}
-                </span>
+                </div>
               </li>
             ))}
           </ul>

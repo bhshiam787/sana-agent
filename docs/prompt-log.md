@@ -227,3 +227,7 @@ Every prompt given to Claude in this project, newest last. Secrets are redacted 
 ## 2026-10-28 12:59 +06 — bhshiam@B’s MacBook Air
 
 > a details page where it shows like a table...
+
+## 2026-10-28 13:04 +06 — bhshiam@B’s MacBook Air
+
+> design issue
