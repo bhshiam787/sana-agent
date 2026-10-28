@@ -121,7 +121,7 @@ positive/ask_cv/apply_formally/no_funding/negative/auto_reply/other), `activity`
 ## Agent (built 2026-10-28)
 **Full run = a pipeline where every stage runs at once** (`agent/src/run.ts`): finders keep
 discovering while earlier finds are profiled, researched, written and sent. One global semaphore
-caps concurrent Claude sessions at `PARALLEL` (default 12). Stops starting new work after
+caps concurrent Claude sessions at `PARALLEL` (default 16; user has Claude Max). Stops starting new work after
 `RUN_HOURS` (default 8); sender continues until the nightly cap.
 
 Order: `inbox` → `strategy` → [pipeline: finders ∥ profile ∥ research ∥ write ∥ send ∥ strategist

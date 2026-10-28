@@ -20,7 +20,7 @@ export const cfg = {
   runAs: process.env.RUN_AS ?? "",
   nightlyEmailCap: num(process.env.NIGHTLY_EMAIL_CAP, 20),
   // Claude sessions running at once (finders, profiler, researcher, writer).
-  parallel: num(process.env.PARALLEL, 12),
+  parallel: num(process.env.PARALLEL, 16),
   scoutPerQuery: num(process.env.SCOUT_PER_QUERY, 40),
   profilePerRun: num(process.env.PROFILE_PER_RUN, 40),
   shortlistMin: num(process.env.SHORTLIST_MIN_PRIORITY, 60),
