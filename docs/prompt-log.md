@@ -158,3 +158,7 @@ Every prompt given to Claude in this project, newest last. Secrets are redacted 
 
 > website hover effect looks werid ,make it more highlighted...
 > website seem slow to moving one page to antoher... if not able to fix then add a page loader.. so doesnt seem to looks stuck
+
+## 2026-10-28 12:13 +06 — bhshiam@B’s MacBook Air
+
+> i liked to attache my CV in the email
