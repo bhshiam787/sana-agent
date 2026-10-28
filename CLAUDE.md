@@ -90,10 +90,21 @@ country, fit, recruiting, contacted-date range, sort, paging, CSV export) · Pro
 status/notes) · Positions & deadlines (status editable, ⚠ within 14 days) · Emails sent · Replies
 (filter, mark handled) · Agent runs + run detail log · Learnings (approve/reject) · Useful links.
 
+### UI feedback (2026-10-28)
+Strong hover: `--hover`/`--hover-line` tokens, `.row-hover` (blue tint + left accent edge) on table
+rows and lists, nav active/hover with accent edge, stronger `.btn`/`.btn-ghost`/Stat hovers.
+Loading: `(app)/loading.tsx` skeleton (instant on click), `NavProgress` top bar for filter forms,
+`useLinkStatus` spinner on the clicked nav item. Slowness is mostly `pnpm dev` (compiles each page
+on first visit) + Neon round trips from Bangladesh to us-east-2: use `pnpm start` (production
+build) for daily use.
+
 ### Gotchas found while building
 - `next.config.ts`: `cacheComponents: false` (all data is live) and
   `serverExternalPackages: ["@electric-sql/pglite"]` (else pglite fails inside the bundler).
 - Scripts using top-level await must be `.mts`.
+- Professor names are cleaned on insert (`cleanName` in agent/src/professors.ts): drops "(…)"
+  notes/nicknames, extra names after ; or , and Prof./Dr. prefixes (finders sometimes return
+  "X (supervisor); contact Y").
 - Neon URL uses `sslmode=verify-full` (pg warns on `require`).
 - ESLint `react-hooks/purity` flags `Date.now()` in render: use `daysFromNow()` from `lib/format.ts`.
 - Preview with fake data: `DATABASE_URL=pglite:./.pglite pnpm db:push && pnpm user:create … && pnpm seed:demo && pnpm dev`.

@@ -143,7 +143,7 @@ export default async function Professors(props: PageProps<"/professors">) {
             </thead>
             <tbody className="divide-y divide-line">
               {rows.map(({ p, uni }) => (
-                <tr key={p.id} className="hover:bg-surface-2">
+                <tr key={p.id} className="row-hover">
                   <td className="td">
                     <Link href={`/professors/${p.id}`} className="font-medium hover:underline">
                       {p.fullName}

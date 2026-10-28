@@ -68,7 +68,7 @@ export default async function Positions(props: PageProps<"/positions">) {
             </thead>
             <tbody className="divide-y divide-line">
               {rows.map(({ pos, prof, uni }) => (
-                <tr key={pos.id} className="hover:bg-surface-2">
+                <tr key={pos.id} className="row-hover">
                   <td className="td">
                     <ExtLink href={pos.url}>{pos.title}</ExtLink>
                     <div className="text-xs text-muted">

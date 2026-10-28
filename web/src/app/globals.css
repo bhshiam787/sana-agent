@@ -5,6 +5,8 @@
   --bg: #f6f6f4;
   --surface: #fcfcfb;
   --surface-2: #f0efec;
+  --hover: #e4eefb;
+  --hover-line: #86b6ef;
   --border: #e3e2dd;
   --text: #0b0b0b;
   --text-2: #52514e;
@@ -25,6 +27,8 @@
     --bg: #121211;
     --surface: #1a1a19;
     --surface-2: #232321;
+    --hover: #1f2d40;
+    --hover-line: #3987e5;
     --border: #2f2f2c;
     --text: #f0efec;
     --text-2: #c3c2b7;
@@ -40,6 +44,8 @@
   --bg: #121211;
   --surface: #1a1a19;
   --surface-2: #232321;
+  --hover: #1f2d40;
+  --hover-line: #3987e5;
   --border: #2f2f2c;
   --text: #f0efec;
   --text-2: #c3c2b7;
@@ -54,6 +60,8 @@
   --color-bg: var(--bg);
   --color-surface: var(--surface);
   --color-surface-2: var(--surface-2);
+  --color-hover: var(--hover);
+  --color-hover-line: var(--hover-line);
   --color-line: var(--border);
   --color-ink: var(--text);
   --color-ink-2: var(--text-2);
@@ -79,10 +87,10 @@ body {
   @apply rounded-lg border border-line bg-surface px-3 py-2 text-sm text-ink outline-none focus:border-accent;
 }
 .btn {
-  @apply inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white hover:opacity-90 disabled:opacity-50;
+  @apply inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition hover:brightness-110 hover:shadow-[0_0_0_3px_var(--hover)] disabled:opacity-50;
 }
 .btn-ghost {
-  @apply inline-flex items-center justify-center gap-2 rounded-lg border border-line px-3 py-1.5 text-sm text-ink-2 hover:bg-surface-2;
+  @apply inline-flex items-center justify-center gap-2 rounded-lg border border-line px-3 py-1.5 text-sm text-ink-2 transition-colors hover:border-hover-line hover:bg-hover hover:text-ink disabled:opacity-50;
 }
 .th {
   @apply px-3 py-2 text-left text-xs font-medium uppercase tracking-wide text-muted;
@@ -90,3 +98,29 @@ body {
 .td {
   @apply px-3 py-2.5 text-sm align-top;
 }
+
+/* Table rows and list items: clear highlight with an accent edge. */
+.row-hover {
+  @apply transition-colors hover:bg-hover;
+  box-shadow: inset 3px 0 0 transparent;
+}
+.row-hover:hover {
+  box-shadow: inset 3px 0 0 var(--hover-line);
+}
+
+/* Top progress bar while a page is loading. */
+@keyframes nav-progress {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(250%); }
+}
+.nav-progress {
+  position: fixed; inset: 0 0 auto 0; height: 3px; z-index: 60; overflow: hidden;
+  background: color-mix(in srgb, var(--accent) 25%, transparent);
+}
+.nav-progress::after {
+  content: ""; position: absolute; inset: 0; width: 40%;
+  background: var(--accent); animation: nav-progress 1s ease-in-out infinite;
+}
+/* Shown only if a navigation takes longer than 120 ms. */
+.link-spinner { opacity: 0; animation: fade-in 0s 120ms forwards; }
+@keyframes fade-in { to { opacity: 1; } }

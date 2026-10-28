@@ -70,7 +70,7 @@ export default async function Emails(props: PageProps<"/emails">) {
             </thead>
             <tbody className="divide-y divide-line">
               {rows.map(({ e, prof, replied }) => (
-                <tr key={e.id} className="hover:bg-surface-2">
+                <tr key={e.id} className="row-hover">
                   <td className="td whitespace-nowrap text-xs">{fmtDate(e.sentAt ?? e.createdAt, true)}</td>
                   <td className="td">
                     <Link href={`/professors/${e.professorId}`} className="hover:underline">{prof}</Link>

@@ -195,7 +195,7 @@ export default async function ProfessorPage(props: PageProps<"/professors/[id]">
             ) : (
               <ul className="divide-y divide-line">
                 {papers.map((pp) => (
-                  <li key={pp.id} className="px-4 py-3 text-sm">
+                  <li key={pp.id} className="row-hover px-4 py-3 text-sm">
                     <div className="flex gap-2">
                       {pp.url ? <ExtLink href={pp.url}>{pp.title}</ExtLink> : <span>{pp.title}</span>}
                       <span className="ml-auto shrink-0 text-xs text-muted">{pp.year}</span>
@@ -231,7 +231,7 @@ export default async function ProfessorPage(props: PageProps<"/professors/[id]">
             ) : (
               <ul className="divide-y divide-line">
                 {grants.map((g) => (
-                  <li key={g.id} className="px-4 py-3 text-sm">
+                  <li key={g.id} className="row-hover px-4 py-3 text-sm">
                     <div className="flex items-center gap-2">
                       <span className="font-medium">{g.funder}</span>
                       {g.endDate && g.endDate >= today && <span className="text-xs text-good">● active</span>}
@@ -252,7 +252,7 @@ export default async function ProfessorPage(props: PageProps<"/professors/[id]">
               <h2 className="border-b border-line px-4 py-3 font-medium">Open positions</h2>
               <ul className="divide-y divide-line">
                 {positions.map((pos) => (
-                  <li key={pos.id} className="px-4 py-3 text-sm">
+                  <li key={pos.id} className="row-hover px-4 py-3 text-sm">
                     <ExtLink href={pos.url}>{pos.title}</ExtLink>
                     <div className="mt-1 flex items-center gap-2 text-xs text-muted">
                       Deadline {fmtDate(pos.deadline)} <span className="ml-auto"><Chip status={pos.status} /></span>

@@ -40,7 +40,7 @@ export default async function Runs() {
             </thead>
             <tbody className="divide-y divide-line">
               {rows.map(({ run, by }) => (
-                <tr key={run.id} className="hover:bg-surface-2">
+                <tr key={run.id} className="row-hover">
                   <td className="td whitespace-nowrap">
                     <Link href={`/runs/${run.id}`} className="hover:underline">{fmtDate(run.startedAt, true)}</Link>
                   </td>

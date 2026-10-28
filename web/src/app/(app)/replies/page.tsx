@@ -51,7 +51,7 @@ export default async function Replies(props: PageProps<"/replies">) {
       ) : (
         <ul className="space-y-3">
           {rows.map(({ r, prof, uni }) => (
-            <li key={r.id} className={`card p-4 ${r.handled ? "opacity-60" : ""}`}>
+            <li key={r.id} className={`card p-4 transition-colors hover:border-hover-line ${r.handled ? "opacity-60" : ""}`}>
               <div className="flex flex-wrap items-center gap-2">
                 <Link href={`/professors/${r.professorId}`} className="font-medium hover:underline">{prof}</Link>
                 <span className="text-sm text-muted">{uni}</span>

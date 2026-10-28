@@ -23,7 +23,7 @@ export function PageHeader({ title, sub, children }: { title: string; sub?: stri
 
 export function Stat({ label, value, hint, href }: { label: string; value: number | string; hint?: string; href?: string }) {
   const body = (
-    <div className="card h-full p-4 transition-colors hover:border-accent/50">
+    <div className={`card h-full p-4 transition ${href ? "hover:-translate-y-0.5 hover:border-hover-line hover:bg-hover" : ""}`}>
       <div className="text-xs text-muted">{label}</div>
       <div className="mt-1 text-2xl font-semibold tabular-nums">{value}</div>
       {hint && <div className="mt-1 text-xs text-ink-2">{hint}</div>}

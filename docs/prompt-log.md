@@ -153,3 +153,8 @@ Every prompt given to Claude in this project, newest last. Secrets are redacted 
 ## 2026-10-28 12:04 +06 — bhshiam@B’s MacBook Air
 
 > stop the dry run.. I am getting out of token
+
+## 2026-10-28 12:08 +06 — bhshiam@B’s MacBook Air
+
+> website hover effect looks werid ,make it more highlighted...
+> website seem slow to moving one page to antoher... if not able to fix then add a page loader.. so doesnt seem to looks stuck

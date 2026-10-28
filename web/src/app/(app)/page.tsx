@@ -183,7 +183,7 @@ export default async function Overview(props: PageProps<"/">) {
           ) : (
             <ul className="divide-y divide-line">
               {recentReplies.map(({ r, name }) => (
-                <li key={r.id} className="px-4 py-3">
+                <li key={r.id} className="row-hover px-4 py-3">
                   <div className="flex items-center gap-2">
                     <Link href={`/professors/${r.professorId}`} className="truncate text-sm font-medium hover:underline">
                       {name}
@@ -225,7 +225,7 @@ export default async function Overview(props: PageProps<"/">) {
           ) : (
             <ul className="divide-y divide-line">
               {deadlines.map((p) => (
-                <li key={p.id} className="px-4 py-3 text-sm">
+                <li key={p.id} className="row-hover px-4 py-3 text-sm">
                   <a href={p.url} target="_blank" rel="noreferrer" className="line-clamp-1 hover:underline">
                     {p.title}
                   </a>

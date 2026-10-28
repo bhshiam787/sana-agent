@@ -32,7 +32,16 @@ type NewProfessor = typeof t.professors.$inferInsert;
  * Inserts a professor unless already known by OpenAlex id, email, or same
  * name at the same university. Returns the new id, or null for a duplicate.
  */
+/** "Mina Alishahi (supervisor); contact X" → "Mina Alishahi". */
+export const cleanName = (n: string) =>
+  n
+    .replace(/\s*\([^)]*\)/g, "") // drop "(Panos)", "(supervisor)" but keep the surname after it
+    .split(/[;,\n]| - | – /)[0]
+    .replace(/^((prof(essor)?|dr)\.?\s+)+/i, "")
+    .trim();
+
 export async function addProfessor(p: NewProfessor): Promise<number | null> {
+  p = { ...p, fullName: cleanName(p.fullName) };
   if (!countryAllowed(p.country) && !(p.universityId && (await isWealthy(p.universityId)))) return null;
   const warm = targets().warmContacts.find((w) => w.name.toLowerCase().replace(/[^a-z ]/g, "") === p.fullName.toLowerCase().replace(/[^a-z ]/g, ""));
   if (warm) p = { ...p, status: "skipped", notes: `WARM CONTACT — do not auto-email. ${warm.note}` };
