@@ -1,9 +1,11 @@
+import Form from "next/form";
 import Link from "next/link";
 import { and, asc, eq, sql, type SQL } from "drizzle-orm";
 import { db, t } from "@/db";
 import { setPositionStatus } from "@/lib/actions";
 import { Empty, ExtLink, PageHeader } from "@/components/ui";
 import { daysFromNow, fmtDate, isoDay, label } from "@/lib/format";
+import { SubmitButton } from "@/components/submit-button";
 
 export default async function Positions(props: PageProps<"/positions">) {
   const sp = await props.searchParams;
@@ -30,7 +32,7 @@ export default async function Positions(props: PageProps<"/positions">) {
   return (
     <div className="mx-auto max-w-7xl">
       <PageHeader title="Positions & deadlines" sub="Funded PhD / masters posts and scholarships the agent found." />
-      <form className="card mb-4 flex flex-wrap gap-2 p-3">
+      <Form action="/positions" className="card mb-4 flex flex-wrap gap-2 p-3">
         <select name="status" defaultValue={status} className="input">
           <option value="">Any status</option>
           {t.positionStatus.enumValues.map((s) => (
@@ -47,9 +49,9 @@ export default async function Positions(props: PageProps<"/positions">) {
           <option value="">Open deadlines only</option>
           <option value="all">Include past deadlines</option>
         </select>
-        <button className="btn">Filter</button>
+        <SubmitButton className="btn" pendingText="Filtering…">Filter</SubmitButton>
         <Link href="/positions" className="btn-ghost">Reset</Link>
-      </form>
+      </Form>
 
       <div className="card overflow-x-auto">
         {rows.length === 0 ? (
@@ -95,7 +97,7 @@ export default async function Positions(props: PageProps<"/positions">) {
                           <option key={s} value={s}>{label(s)}</option>
                         ))}
                       </select>
-                      <button className="btn-ghost px-2 py-1 text-xs">Save</button>
+                      <SubmitButton className="btn-ghost px-2 py-1 text-xs" pendingText="Saving">Save</SubmitButton>
                     </form>
                   </td>
                 </tr>

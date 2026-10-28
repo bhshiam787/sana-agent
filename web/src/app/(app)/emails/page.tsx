@@ -1,8 +1,10 @@
+import Form from "next/form";
 import Link from "next/link";
 import { and, desc, eq, gte, lte, sql, type SQL } from "drizzle-orm";
 import { db, t } from "@/db";
 import { Chip, Empty, PageHeader } from "@/components/ui";
 import { fmtDate, label, score } from "@/lib/format";
+import { SubmitButton } from "@/components/submit-button";
 
 export default async function Emails(props: PageProps<"/emails">) {
   const sp = await props.searchParams;
@@ -33,7 +35,7 @@ export default async function Emails(props: PageProps<"/emails">) {
   return (
     <div className="mx-auto max-w-7xl">
       <PageHeader title="Emails sent" sub="Every email the agent wrote, including ones the reviewer blocked." />
-      <form className="card mb-4 flex flex-wrap items-center gap-2 p-3">
+      <Form action="/emails" className="card mb-4 flex flex-wrap items-center gap-2 p-3">
         <select name="status" defaultValue={status ?? ""} className="input">
           <option value="">Any status</option>
           {t.emailStatus.enumValues.map((s) => (
@@ -48,9 +50,9 @@ export default async function Emails(props: PageProps<"/emails">) {
         <input type="date" name="from" defaultValue={from} className="input" />
         <span className="text-muted">–</span>
         <input type="date" name="to" defaultValue={to} className="input" />
-        <button className="btn">Filter</button>
+        <SubmitButton className="btn" pendingText="Filtering…">Filter</SubmitButton>
         <Link href="/emails" className="btn-ghost">Reset</Link>
-      </form>
+      </Form>
 
       <div className="card overflow-x-auto">
         {rows.length === 0 ? (

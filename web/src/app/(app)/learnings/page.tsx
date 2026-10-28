@@ -5,6 +5,7 @@ import { db, t } from "@/db";
 import { decideLearning, revertLearning } from "@/lib/actions";
 import { Chip, Empty, PageHeader } from "@/components/ui";
 import { fmtDate } from "@/lib/format";
+import { SubmitButton } from "@/components/submit-button";
 
 function currentStrategy() {
   try {
@@ -57,8 +58,8 @@ export default async function Learnings() {
                 <div className="font-medium">{l.title}</div>
                 <pre className="mt-2 font-sans text-sm whitespace-pre-wrap text-ink-2">{l.content}</pre>
                 <div className="mt-3 flex gap-2">
-                  <form action={decideLearning.bind(null, l.id, true)}><button className="btn">Approve</button></form>
-                  <form action={decideLearning.bind(null, l.id, false)}><button className="btn-ghost">Reject</button></form>
+                  <form action={decideLearning.bind(null, l.id, true)}><SubmitButton className="btn" pendingText="Applying…">Approve</SubmitButton></form>
+                  <form action={decideLearning.bind(null, l.id, false)}><SubmitButton className="btn-ghost">Reject</SubmitButton></form>
                 </div>
               </li>
             ))}
@@ -83,7 +84,7 @@ export default async function Learnings() {
                 <pre className="mt-2 font-sans text-sm whitespace-pre-wrap text-ink-2">{l.content}</pre>
                 {l.status === "applied" && l.snapshot && (
                   <form action={revertLearning.bind(null, l.id)} className="mt-3">
-                    <button className="btn-ghost text-xs">Revert to before this change (also undoes later changes)</button>
+                    <SubmitButton className="btn-ghost text-xs" pendingText="Reverting…">Revert to before this change (also undoes later changes)</SubmitButton>
                   </form>
                 )}
               </li>

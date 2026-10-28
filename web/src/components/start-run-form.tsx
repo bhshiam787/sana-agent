@@ -2,6 +2,7 @@
 
 import { useActionState, useState } from "react";
 import { startRun } from "@/lib/actions";
+import { Spinner } from "./submit-button";
 
 export function StartRunForm() {
   const [error, action, pending] = useActionState(startRun, undefined);
@@ -22,7 +23,10 @@ export function StartRunForm() {
           <input type="checkbox" name="confirm" value="yes" /> I understand this sends real emails from Tamanna&apos;s Gmail
         </label>
       )}
-      <button className="btn" disabled={pending}>{pending ? "Starting…" : mode === "dry" ? "▶ Start dry run" : "▶ Start live run"}</button>
+      <button className="btn" disabled={pending}>
+        {pending && <Spinner />}
+        {pending ? "Starting the agent…" : mode === "dry" ? "▶ Start dry run" : "▶ Start live run"}
+      </button>
       {error && <p className="w-full text-sm text-critical">{error}</p>}
     </form>
   );

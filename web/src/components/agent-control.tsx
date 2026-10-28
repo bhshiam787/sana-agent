@@ -5,6 +5,7 @@ import { controlRun, forceStopRun } from "@/lib/actions";
 import { Chip } from "@/components/ui";
 import { minutesSince, timeAgo } from "@/lib/format";
 import { StartRunForm } from "./start-run-form";
+import { SubmitButton } from "@/components/submit-button";
 
 /** Start / pause / resume / stop the agent from the dashboard. */
 export async function AgentControl() {
@@ -45,20 +46,20 @@ export async function AgentControl() {
       <div className="mt-3 flex flex-wrap items-center gap-2">
         {run.status === "running" ? (
           <form action={controlRun.bind(null, run.id, "pause")}>
-            <button className="btn-ghost" disabled={!!pending}>⏸ Pause</button>
+            <SubmitButton className="btn-ghost" disabled={!!pending} pendingText="Pausing…">⏸ Pause</SubmitButton>
           </form>
         ) : (
           <form action={controlRun.bind(null, run.id, "resume")}>
-            <button className="btn" disabled={!!pending}>▶ Resume</button>
+            <SubmitButton className="btn" disabled={!!pending} pendingText="Resuming…">▶ Resume</SubmitButton>
           </form>
         )}
         <form action={controlRun.bind(null, run.id, "stop")}>
-          <button className="btn-ghost hover:text-critical" disabled={pending === "stop"}>■ Stop</button>
+          <SubmitButton className="btn-ghost hover:text-critical" disabled={pending === "stop"} pendingText="Stopping…">■ Stop</SubmitButton>
         </form>
         {pending && <span className="text-xs text-muted">“{pending}” sent; the agent picks it up within ~10 seconds (running sessions finish first).</span>}
         {quietMin > 15 && (
           <form action={forceStopRun.bind(null, run.id)} className="ml-auto">
-            <button className="text-xs text-muted hover:text-critical">No activity for {Math.round(quietMin)} min: mark as stopped</button>
+            <SubmitButton className="inline-flex items-center gap-1 text-xs text-muted hover:text-critical">No activity for {Math.round(quietMin)} min: mark as stopped</SubmitButton>
           </form>
         )}
       </div>

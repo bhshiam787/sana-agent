@@ -2,6 +2,7 @@ import { asc } from "drizzle-orm";
 import { db, t } from "@/db";
 import { addLink, deleteLink } from "@/lib/actions";
 import { Empty, PageHeader } from "@/components/ui";
+import { SubmitButton } from "@/components/submit-button";
 
 export default async function Links() {
   const rows = await db.select().from(t.links).orderBy(asc(t.links.category), asc(t.links.title));
@@ -14,7 +15,7 @@ export default async function Links() {
         <input name="title" required placeholder="Title" className="input md:col-span-1" />
         <input name="url" required type="url" placeholder="https://…" className="input md:col-span-2" />
         <input name="category" placeholder="Category (e.g. Scholarships)" className="input" />
-        <button className="btn">Add link</button>
+        <SubmitButton className="btn" pendingText="Adding…">Add link</SubmitButton>
         <input name="notes" placeholder="Notes (optional)" className="input md:col-span-5" />
       </form>
       {rows.length === 0 ? (
@@ -31,7 +32,7 @@ export default async function Links() {
                     {l.notes && <p className="text-xs text-muted">{l.notes}</p>}
                   </div>
                   <form action={deleteLink.bind(null, l.id)}>
-                    <button className="text-xs text-muted hover:text-critical">Remove</button>
+                    <SubmitButton className="inline-flex items-center gap-1 text-xs text-muted hover:text-critical" pendingText="Removing…">Remove</SubmitButton>
                   </form>
                 </li>
               ))}

@@ -2,6 +2,7 @@
 
 import { useActionState } from "react";
 import { login } from "@/lib/auth";
+import { Spinner } from "@/components/submit-button";
 
 export default function LoginPage() {
   const [error, action, pending] = useActionState(login, undefined);
@@ -22,6 +23,7 @@ export default function LoginPage() {
         </label>
         {error && <p className="text-sm text-critical">{error}</p>}
         <button className="btn w-full" disabled={pending}>
+          {pending && <Spinner />}
           {pending ? "Signing in…" : "Sign in"}
         </button>
       </form>

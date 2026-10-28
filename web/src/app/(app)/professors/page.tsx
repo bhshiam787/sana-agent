@@ -1,8 +1,10 @@
+import Form from "next/form";
 import Link from "next/link";
 import { and, asc, desc, eq, gte, ilike, lte, or, sql, type SQL } from "drizzle-orm";
 import { db, t } from "@/db";
 import { Chip, Empty, PageHeader, withParams } from "@/components/ui";
 import { fmtDate, label, score } from "@/lib/format";
+import { SubmitButton } from "@/components/submit-button";
 
 const PAGE = 50;
 const SORTS = {
@@ -77,7 +79,7 @@ export default async function Professors(props: PageProps<"/professors">) {
         </a>
       </PageHeader>
 
-      <form className="card mb-4 grid grid-cols-2 gap-2 p-3 md:grid-cols-4 lg:grid-cols-8">
+      <Form action="/professors" className="card mb-4 grid grid-cols-2 gap-2 p-3 md:grid-cols-4 lg:grid-cols-8">
         <input name="q" defaultValue={f.q} placeholder="Name, university, topic…" className="input col-span-2" />
         <select name="status" defaultValue={f.status ?? ""} className="input">
           <option value="">Any status</option>
@@ -117,12 +119,12 @@ export default async function Professors(props: PageProps<"/professors">) {
           <input type="date" name="to" defaultValue={f.to} className="input min-w-0 flex-1" />
         </div>
         <div className="flex gap-2">
-          <button className="btn flex-1">Filter</button>
+          <SubmitButton className="btn flex-1" pendingText="Filtering…">Filter</SubmitButton>
           <Link href="/professors" className="btn-ghost">
             Reset
           </Link>
         </div>
-      </form>
+      </Form>
 
       <div className="card overflow-x-auto">
         {rows.length === 0 ? (

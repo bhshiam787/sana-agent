@@ -96,8 +96,11 @@ finished (fit scored), same number in the box and pipeline; Skipped shown separa
 ### UI feedback (2026-10-28)
 Strong hover: `--hover`/`--hover-line` tokens, `.row-hover` (blue tint + left accent edge) on table
 rows and lists, nav active/hover with accent edge, stronger `.btn`/`.btn-ghost`/Stat hovers.
-Loading: `(app)/loading.tsx` skeleton (instant on click), `NavProgress` top bar for filter forms,
-`useLinkStatus` spinner on the clicked nav item. Slowness is mostly `pnpm dev` (compiles each page
+Loading: `(app)/loading.tsx` skeleton (instant on click), `NavProgress` top bar for link clicks and
+filter forms, `useLinkStatus` spinner on the clicked nav item. **Every action button** is
+`SubmitButton` (components/submit-button.tsx: spinner + pending text + disabled + the same top bar,
+via `useFormStatus`); filter forms use `next/form` `<Form>`; login and Start run use their own
+`useActionState` pending with `Spinner`. Slowness is mostly `pnpm dev` (compiles each page
 on first visit) + Neon round trips from Bangladesh to us-east-2: use `pnpm start` (production
 build) for daily use.
 

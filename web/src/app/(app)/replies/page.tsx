@@ -1,9 +1,11 @@
+import Form from "next/form";
 import Link from "next/link";
 import { and, desc, eq, inArray, type SQL } from "drizzle-orm";
 import { db, t } from "@/db";
 import { toggleReplyHandled } from "@/lib/actions";
 import { Chip, Empty, PageHeader } from "@/components/ui";
 import { fmtDate, label } from "@/lib/format";
+import { SubmitButton } from "@/components/submit-button";
 
 const GOOD = ["positive", "ask_cv", "apply_formally"] as const;
 
@@ -29,7 +31,7 @@ export default async function Replies(props: PageProps<"/replies">) {
   return (
     <div className="mx-auto max-w-5xl">
       <PageHeader title="Replies" sub="Professor replies, sorted by the agent. Mark them handled once you've acted." />
-      <form className="card mb-4 flex flex-wrap gap-2 p-3">
+      <Form action="/replies" className="card mb-4 flex flex-wrap gap-2 p-3">
         <select name="class" defaultValue={cls} className="input">
           <option value="">All replies</option>
           <option value="positive">Good news (positive / CV / apply)</option>
@@ -42,9 +44,9 @@ export default async function Replies(props: PageProps<"/replies">) {
           <option value="no">Needs action</option>
           <option value="yes">Handled</option>
         </select>
-        <button className="btn">Filter</button>
+        <SubmitButton className="btn" pendingText="Filtering…">Filter</SubmitButton>
         <Link href="/replies" className="btn-ghost">Reset</Link>
-      </form>
+      </Form>
 
       {rows.length === 0 ? (
         <div className="card"><Empty>No replies yet.</Empty></div>
@@ -66,7 +68,7 @@ export default async function Replies(props: PageProps<"/replies">) {
                 <p className="mt-2 text-sm"><span className="font-medium">Suggested next step:</span> {r.suggestedAction}</p>
               )}
               <form action={toggleReplyHandled.bind(null, r.id, !r.handled)} className="mt-3">
-                <button className="btn-ghost text-xs">{r.handled ? "Mark as needing action" : "Mark handled"}</button>
+                <SubmitButton className="btn-ghost text-xs" pendingText="Saving…">{r.handled ? "Mark as needing action" : "Mark handled"}</SubmitButton>
               </form>
             </li>
           ))}

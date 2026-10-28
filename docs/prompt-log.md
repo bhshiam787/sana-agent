@@ -182,3 +182,11 @@ Every prompt given to Claude in this project, newest last. Secrets are redacted 
 ## 2026-10-28 12:21 +06 — bhshiam@B’s MacBook Air
 
 > add proper hover effect site wide
+
+## 2026-10-28 12:25 +06 — bhshiam@B’s MacBook Air
+
+> add proprer loader in evry stage
+
+## 2026-10-28 12:26 +06 — bhshiam@B’s MacBook Air
+
+> not only home page, all action, it sometimes looks page stuck

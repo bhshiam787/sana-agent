@@ -5,6 +5,7 @@ import { db, t } from "@/db";
 import { updateProfessor } from "@/lib/actions";
 import { Chip, Empty, ExtLink } from "@/components/ui";
 import { daysFromNow, fmtDate, isoDay, label, score } from "@/lib/format";
+import { SubmitButton } from "@/components/submit-button";
 
 export default async function ProfessorPage(props: PageProps<"/professors/[id]">) {
   const id = Number((await props.params).id);
@@ -218,7 +219,7 @@ export default async function ProfessorPage(props: PageProps<"/professors/[id]">
               ))}
             </select>
             <textarea name="notes" defaultValue={p.notes ?? ""} rows={5} className="input w-full" placeholder="Anything to remember…" />
-            <button className="btn w-full">Save</button>
+            <SubmitButton className="btn w-full" pendingText="Saving…">Save</SubmitButton>
             <p className="text-xs text-muted">
               Last contacted {fmtDate(p.lastContactedAt)} · follow-up {fmtDate(p.nextFollowUpAt)}
             </p>
