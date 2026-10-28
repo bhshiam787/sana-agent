@@ -206,3 +206,8 @@ Every prompt given to Claude in this project, newest last. Secrets are redacted 
 ## 2026-10-28 12:38 +06 — bhshiam@B’s MacBook Air
 
 > stop the project first
+
+## 2026-10-28 12:49 +06 — bhshiam@B’s MacBook Air
+
+> our last agent run, we burn lots token..
+> qustion : how many agents are working behind the scene ?
