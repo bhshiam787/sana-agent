@@ -113,3 +113,7 @@ Every prompt given to Claude in this project, newest last. Secrets are redacted 
 ## 2026-10-28 11:20 +06 — bhshiam@B’s MacBook Air
 
 > why it is like this ?
+
+## 2026-10-28 11:22 +06 — bhshiam@B’s MacBook Air
+
+> i didnt understand citation part
