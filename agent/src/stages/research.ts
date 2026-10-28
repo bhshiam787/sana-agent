@@ -57,15 +57,24 @@ export async function researchOne({ p, uni }: Row) {
       effort: "high",
     });
     const blocked = d.notTakingStudents || d.noColdEmails;
+    // A moved professor may already exist under the new address (found by another finder).
+    const newEmail = d.currentEmail && /@/.test(d.currentEmail) && d.currentEmail.toLowerCase() !== p.email ? d.currentEmail.toLowerCase() : null;
+    const [dup] = newEmail ? await db.select({ id: t.professors.id }).from(t.professors).where(eq(t.professors.email, newEmail)) : [];
+    if (dup) {
+      await db
+        .update(t.professors)
+        .set({ status: "skipped", notes: `Duplicate: moved${d.currentUniversity ? ` to ${d.currentUniversity}` : ""}; live record is #${dup.id}`, updatedAt: new Date() })
+        .where(eq(t.professors.id, p.id));
+      await log("profiler", `${p.fullName} moved; already tracked as #${dup.id}, this record skipped`, { professorId: p.id });
+      return;
+    }
     await db
       .update(t.professors)
       .set({
         dossier: { ...d, researchedAt: new Date().toISOString() },
         contactInstructions: d.contactInstructions,
         // People move; the dossier has the freshest official address.
-        ...(d.currentEmail && /@/.test(d.currentEmail) && d.currentEmail.toLowerCase() !== p.email
-          ? { email: d.currentEmail.toLowerCase(), notes: `Email updated from ${p.email} (moved${d.currentUniversity ? ` to ${d.currentUniversity}` : ""})` }
-          : {}),
+        ...(newEmail ? { email: newEmail, notes: `Email updated from ${p.email} (moved${d.currentUniversity ? ` to ${d.currentUniversity}` : ""})` } : {}),
         ...(blocked
           ? { status: "skipped" as const, notes: d.noColdEmails ? `Asks not to be emailed: ${d.contactInstructions ?? ""}` : `Not taking students: ${d.redFlags.join("; ")}` }
           : {}),
