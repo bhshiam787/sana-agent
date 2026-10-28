@@ -197,6 +197,14 @@ candidates: ML for cybersecurity, federated/privacy-preserving ML, applied DL/CV
 - [ ] First full `pnpm dry`, read drafts together, then `pnpm night`
 - [ ] Optional: `pnpm linkedin:login` with the separate account, then `LINKEDIN_ENABLED=1`
 
+## Information requested from the user (2026-10-28), to improve the agents
+Must: Tamanna's research statement in her own words · paper PDFs + status of "Deciphering Minds and
+Motion" · target intake + PhD-only vs funded masters OK · final-year project/thesis (title,
+supervisor) · 2–3 of her own emails (voice). Useful: GitHub/Scholar/ORCID links · GRE/TOEFL, IELTS
+expiry · professors already contacted (dedupe) · exclusions (countries/topics/language/visa/min
+stipend) · recommenders. After dry run: her edits to drafts → writer rules. Offered: academic-style
+CV draft (current CV is industry-first with photo).
+
 ## Open issues to raise with the user
 - CV lists the IEEE Access federated-learning review under "Published" but says "Submitted" — fix on CV; emails will say "submitted".
 - The Neon password was pasted in chat; consider rotating it in Neon console at some point and updating `web/.env`.
