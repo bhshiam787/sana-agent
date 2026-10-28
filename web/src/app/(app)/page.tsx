@@ -92,8 +92,8 @@ export default async function Overview(props: PageProps<"/">) {
   // Found and Researched use the same numbers as the boxes above (skipped ones included).
   const reached = [
     { stage: "found", n: profs.total, href: "/professors" },
-    { stage: "researched", n: profs.researched, href: "/research?tab=shortlisted" },
-    ...later.map((s, i) => ({ stage: s, n: later.slice(i).reduce((sum, x) => sum + (byStatus[x] ?? 0), 0), href: `/professors?status=${s}` })),
+    { stage: "researched", n: profs.researched, href: "/research?tab=all" },
+    ...later.map((s, i) => ({ stage: s, n: later.slice(i).reduce((sum, x) => sum + (byStatus[x] ?? 0), 0), href: `/professors?stage=${s}` })),
   ];
   const maxReached = Math.max(1, reached[0].n);
   const replyRate = emailsAgg.sent ? Math.round(((replyAgg.total ?? 0) / (emailsAgg.sent - emailsAgg.followUps || 1)) * 100) : 0;
@@ -134,12 +134,12 @@ export default async function Overview(props: PageProps<"/">) {
 
       <div className="grid grid-cols-2 gap-3 md:grid-cols-4 xl:grid-cols-8">
         <Stat label="Professors found" value={profs.total} href="/professors" />
-        <Stat label="Researched" value={profs.researched} hint="See who was kept or rejected →" href="/research?tab=shortlisted" />
+        <Stat label="Researched" value={profs.researched} hint="See who was kept or rejected →" href="/research?tab=all" />
         <Stat label="Shortlisted" value={profs.shortlisted} hint="ready to email" href="/professors?status=shortlisted" />
-        <Stat label="Emails sent" value={emailsAgg.sent} hint={`${emailsAgg.inRange} in last ${RANGES[range]}`} href="/emails" />
+        <Stat label="Emails sent" value={emailsAgg.sent} hint={`${emailsAgg.inRange} in last ${RANGES[range]}`} href="/emails?status=sent" />
         <Stat label="Replies" value={replyAgg.total} hint={`${replyRate}% reply rate`} href="/replies" />
         <Stat label="Positive replies" value={replyAgg.positive} href="/replies?class=positive" />
-        <Stat label="Formal applications" value={posAgg.applied} hint={`${posAgg.manual} need you`} href="/positions" />
+        <Stat label="Formal applications" value={posAgg.applied} hint={`${posAgg.manual} need you`} href="/positions?status=applied&open=all" />
         <Stat label="Replies to handle" value={replyAgg.unhandled} href="/replies?handled=no" />
       </div>
 
@@ -176,7 +176,7 @@ export default async function Overview(props: PageProps<"/">) {
                 </div>
               </Link>
             ))}
-            <Link href="/research?tab=rejected" className="group hover-row mt-3 flex justify-between border-t border-line pt-3 text-xs text-muted">
+            <Link href="/professors?status=skipped" className="group hover-row mt-3 flex justify-between border-t border-line pt-3 text-xs text-muted">
               <span className="group-hover:text-ink">Skipped (not a fit, duplicate, no email, out of scope, co-author)</span>
               <span className="ml-3 shrink-0 tabular-nums">{profs.skipped}</span>
             </Link>

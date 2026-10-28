@@ -1,6 +1,6 @@
 import Form from "next/form";
 import Link from "next/link";
-import { and, desc, eq, inArray, type SQL } from "drizzle-orm";
+import { and, desc, eq, inArray, sql, type SQL } from "drizzle-orm";
 import { db, t } from "@/db";
 import { toggleReplyHandled } from "@/lib/actions";
 import { Chip, Empty, PageHeader } from "@/components/ui";
@@ -18,6 +18,8 @@ export default async function Replies(props: PageProps<"/replies">) {
   if (cls === "positive") where.push(inArray(t.replies.classification, [...GOOD]));
   else if (cls) where.push(eq(t.replies.classification, cls as (typeof t.replyClass.enumValues)[number]));
   if (handled) where.push(eq(t.replies.handled, handled === "yes"));
+  // "Needs action" matches the Overview box: auto-replies never need action.
+  if (handled === "no") where.push(sql`${t.replies.classification} <> 'auto_reply'`);
 
   const rows = await db
     .select({ r: t.replies, prof: t.professors.fullName, uni: t.universities.name })

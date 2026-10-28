@@ -1,6 +1,6 @@
 import Form from "next/form";
 import Link from "next/link";
-import { and, asc, desc, eq, gte, ilike, lte, or, sql, type SQL } from "drizzle-orm";
+import { and, asc, desc, eq, gte, ilike, inArray, lte, or, sql, type SQL } from "drizzle-orm";
 import { db, t } from "@/db";
 import { Chip, Empty, PageHeader, withParams } from "@/components/ui";
 import { fmtDate, label, score } from "@/lib/format";
@@ -22,6 +22,7 @@ export default async function Professors(props: PageProps<"/professors">) {
   const f = {
     q: p("q"),
     status: p("status"),
+    stage: p("stage"),
     country: p("country"),
     recruiting: p("recruiting"),
     minFit: p("minFit"),
@@ -45,6 +46,14 @@ export default async function Professors(props: PageProps<"/professors">) {
     );
   }
   if (f.status) where.push(eq(t.professors.status, f.status as (typeof t.professorStatus.enumValues)[number]));
+  // Pipeline links: "at or past" a stage, the same way the Overview pipeline counts.
+  const STAGES = ["shortlisted", "emailed", "replied", "positive", "interview", "offer"] as const;
+  if (f.stage && (STAGES as readonly string[]).includes(f.stage)) {
+    const from = STAGES.indexOf(f.stage as (typeof STAGES)[number]);
+    const later = STAGES.slice(from) as string[];
+    if (f.stage === "shortlisted" || f.stage === "emailed") later.push("followed_up");
+    where.push(inArray(t.professors.status, later as (typeof t.professorStatus.enumValues)[number][]));
+  }
   if (f.country) where.push(eq(t.professors.country, f.country));
   if (f.recruiting === "yes") where.push(eq(t.professors.recruiting, true));
   if (f.minFit) where.push(gte(t.professors.fitScore, Number(f.minFit)));

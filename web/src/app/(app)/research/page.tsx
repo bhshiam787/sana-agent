@@ -10,6 +10,11 @@ const CONTACTED = ["shortlisted", "emailed", "followed_up", "replied", "positive
 const DUP = sql`coalesce(${t.professors.notes}, '') like 'Duplicate%'`;
 
 const TABS = {
+  all: {
+    label: "All researched",
+    help: "Everyone the agent finished researching, kept or rejected (the Overview “Researched” number).",
+    where: and(sql`${t.professors.status} <> 'discovered'`, sql`(${t.professors.fitScore} is not null or ${t.professors.status} <> 'skipped')`),
+  },
   shortlisted: {
     label: "Shortlisted",
     help: "Researched and good enough to email (priority ≥ 60 with an official email).",
@@ -39,7 +44,12 @@ const TABS = {
 type Tab = keyof typeof TABS;
 
 /** Plain-language reason for where a professor ended up. */
-function reason(tab: Tab, p: typeof t.professors.$inferSelect) {
+function reason(tab: Tab, p: typeof t.professors.$inferSelect): string {
+  if (tab === "all") {
+    if (p.status === "skipped") return reason("rejected", p);
+    if (p.status === "researched") return reason("kept", p);
+    return reason("shortlisted", p);
+  }
   if (tab === "shortlisted") return p.whyMatch ?? p.summary ?? "";
   if (tab === "kept") {
     if (!p.email) return "No official email found";
@@ -94,8 +104,8 @@ export default async function Research(props: PageProps<"/research">) {
                 <th className="th text-right">Fit</th>
                 <th className="th text-right">Funding</th>
                 <th className="th text-right">Priority</th>
-                <th className="th">{tab === "shortlisted" ? "Why Sana fits" : "Reason"}</th>
-                {tab === "shortlisted" && <th className="th">Status</th>}
+                <th className="th">{tab === "shortlisted" ? "Why Sana fits" : tab === "all" ? "Why Sana fits / reason" : "Reason"}</th>
+                {(tab === "shortlisted" || tab === "all") && <th className="th">Status</th>}
               </tr>
             </thead>
             <tbody className="divide-y divide-line">
@@ -115,7 +125,7 @@ export default async function Research(props: PageProps<"/research">) {
                   <td className="td max-w-xl text-sm text-ink-2">
                     <span className="line-clamp-3">{reason(tab, p)}</span>
                   </td>
-                  {tab === "shortlisted" && (
+                  {(tab === "shortlisted" || tab === "all") && (
                     <td className="td"><Chip status={p.status} /></td>
                   )}
                 </tr>

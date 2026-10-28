@@ -237,3 +237,11 @@ Every prompt given to Claude in this project, newest last. Secrets are redacted 
 > Why she fits
 > 
 > Why Sana fits
+
+## 2026-10-28 13:11 +06 — bhshiam@B’s MacBook Air
+
+> Every link should redirect to the correct page
+
+## 2026-10-28 13:12 +06 — bhshiam@B’s MacBook Air
+
+> give a logo for sana
