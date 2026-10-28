@@ -1,5 +1,5 @@
 {
-  "_note": "Edit freely. Research queries drive professor discovery. Confirm the field with Tamanna, then adjust.",
+  "_note": "Edit freely. allowCountries limits where professors are searched (ISO codes). preferCountries are tried first. wealthyUniversities are swept first and get a funding bonus, even outside allowCountries. Confirm the field with Tamanna, then adjust researchQueries.",
   "researchQueries": [
     "phishing detection deep learning",
     "machine learning for cybersecurity intrusion detection",
@@ -9,10 +9,433 @@
     "online controlled experiments A/B testing",
     "brain-computer interface EEG deep learning"
   ],
+  "grantKeywords": [
+    "phishing",
+    "federated learning",
+    "intrusion detection",
+    "spam detection",
+    "malware detection",
+    "adversarial machine learning",
+    "privacy-preserving machine learning",
+    "usable security",
+    "online experiments",
+    "brain-computer interface"
+  ],
+  "allowCountries": [
+    "US",
+    "CA",
+    "GB",
+    "IE",
+    "DE",
+    "NL",
+    "SE",
+    "NO",
+    "DK",
+    "FI",
+    "IS",
+    "CH",
+    "AT",
+    "BE",
+    "LU",
+    "FR",
+    "IT",
+    "ES",
+    "PT",
+    "AU",
+    "NZ",
+    "JP",
+    "KR",
+    "SG",
+    "HK",
+    "TW",
+    "IL"
+  ],
   "excludeCountries": [],
-  "preferCountries": ["SE", "NO", "DK", "FI", "NL", "CH", "DE", "BE", "AT", "CA", "US", "AU", "JP"],
+  "preferCountries": [
+    "US",
+    "CA",
+    "SE",
+    "NO",
+    "DK",
+    "FI",
+    "NL",
+    "CH",
+    "DE",
+    "BE",
+    "AT",
+    "LU",
+    "IS",
+    "AU",
+    "SG",
+    "GB",
+    "JP",
+    "KR",
+    "HK"
+  ],
+  "universitiesPerCountry": 12,
+  "departments": [
+    "Computer Science",
+    "Electrical and Computer Engineering",
+    "Information Science / Systems",
+    "Data Science",
+    "Cybersecurity",
+    "Human-Computer Interaction"
+  ],
   "minHIndex": 8,
   "maxHIndex": 90,
   "publishedSince": "2024-01-01",
-  "levels": ["phd", "funded masters"]
+  "wealthyUniversities": [
+    {
+      "name": "Massachusetts Institute of Technology",
+      "country": "US"
+    },
+    {
+      "name": "Stanford University",
+      "country": "US"
+    },
+    {
+      "name": "Harvard University",
+      "country": "US"
+    },
+    {
+      "name": "Princeton University",
+      "country": "US"
+    },
+    {
+      "name": "Yale University",
+      "country": "US"
+    },
+    {
+      "name": "California Institute of Technology",
+      "country": "US"
+    },
+    {
+      "name": "Carnegie Mellon University",
+      "country": "US"
+    },
+    {
+      "name": "Columbia University",
+      "country": "US"
+    },
+    {
+      "name": "University of Pennsylvania",
+      "country": "US"
+    },
+    {
+      "name": "Cornell University",
+      "country": "US"
+    },
+    {
+      "name": "University of California, Berkeley",
+      "country": "US"
+    },
+    {
+      "name": "University of Michigan",
+      "country": "US"
+    },
+    {
+      "name": "University of Washington",
+      "country": "US"
+    },
+    {
+      "name": "University of Illinois Urbana-Champaign",
+      "country": "US"
+    },
+    {
+      "name": "Georgia Institute of Technology",
+      "country": "US"
+    },
+    {
+      "name": "University of Texas at Austin",
+      "country": "US"
+    },
+    {
+      "name": "Northwestern University",
+      "country": "US"
+    },
+    {
+      "name": "Duke University",
+      "country": "US"
+    },
+    {
+      "name": "Johns Hopkins University",
+      "country": "US"
+    },
+    {
+      "name": "New York University",
+      "country": "US"
+    },
+    {
+      "name": "University of Southern California",
+      "country": "US"
+    },
+    {
+      "name": "Purdue University",
+      "country": "US"
+    },
+    {
+      "name": "University of California, San Diego",
+      "country": "US"
+    },
+    {
+      "name": "University of California, Los Angeles",
+      "country": "US"
+    },
+    {
+      "name": "University of Wisconsin-Madison",
+      "country": "US"
+    },
+    {
+      "name": "University of Maryland, College Park",
+      "country": "US"
+    },
+    {
+      "name": "Rice University",
+      "country": "US"
+    },
+    {
+      "name": "Brown University",
+      "country": "US"
+    },
+    {
+      "name": "University of Chicago",
+      "country": "US"
+    },
+    {
+      "name": "Virginia Tech",
+      "country": "US"
+    },
+    {
+      "name": "Northeastern University",
+      "country": "US"
+    },
+    {
+      "name": "Arizona State University",
+      "country": "US"
+    },
+    {
+      "name": "University of Toronto",
+      "country": "CA"
+    },
+    {
+      "name": "University of British Columbia",
+      "country": "CA"
+    },
+    {
+      "name": "McGill University",
+      "country": "CA"
+    },
+    {
+      "name": "University of Waterloo",
+      "country": "CA"
+    },
+    {
+      "name": "University of Alberta",
+      "country": "CA"
+    },
+    {
+      "name": "University of Montreal",
+      "country": "CA"
+    },
+    {
+      "name": "McMaster University",
+      "country": "CA"
+    },
+    {
+      "name": "Queen's University",
+      "country": "CA"
+    },
+    {
+      "name": "Simon Fraser University",
+      "country": "CA"
+    },
+    {
+      "name": "University of Calgary",
+      "country": "CA"
+    },
+    {
+      "name": "University of Ottawa",
+      "country": "CA"
+    },
+    {
+      "name": "Western University",
+      "country": "CA"
+    },
+    {
+      "name": "ETH Zurich",
+      "country": "CH"
+    },
+    {
+      "name": "EPFL",
+      "country": "CH"
+    },
+    {
+      "name": "University of Zurich",
+      "country": "CH"
+    },
+    {
+      "name": "University of Oxford",
+      "country": "GB"
+    },
+    {
+      "name": "University of Cambridge",
+      "country": "GB"
+    },
+    {
+      "name": "Imperial College London",
+      "country": "GB"
+    },
+    {
+      "name": "University College London",
+      "country": "GB"
+    },
+    {
+      "name": "University of Edinburgh",
+      "country": "GB"
+    },
+    {
+      "name": "KTH Royal Institute of Technology",
+      "country": "SE"
+    },
+    {
+      "name": "Chalmers University of Technology",
+      "country": "SE"
+    },
+    {
+      "name": "Lund University",
+      "country": "SE"
+    },
+    {
+      "name": "Linköping University",
+      "country": "SE"
+    },
+    {
+      "name": "Norwegian University of Science and Technology",
+      "country": "NO"
+    },
+    {
+      "name": "University of Oslo",
+      "country": "NO"
+    },
+    {
+      "name": "Technical University of Denmark",
+      "country": "DK"
+    },
+    {
+      "name": "University of Copenhagen",
+      "country": "DK"
+    },
+    {
+      "name": "Aarhus University",
+      "country": "DK"
+    },
+    {
+      "name": "Aalto University",
+      "country": "FI"
+    },
+    {
+      "name": "University of Helsinki",
+      "country": "FI"
+    },
+    {
+      "name": "Delft University of Technology",
+      "country": "NL"
+    },
+    {
+      "name": "University of Amsterdam",
+      "country": "NL"
+    },
+    {
+      "name": "Eindhoven University of Technology",
+      "country": "NL"
+    },
+    {
+      "name": "Technical University of Munich",
+      "country": "DE"
+    },
+    {
+      "name": "Karlsruhe Institute of Technology",
+      "country": "DE"
+    },
+    {
+      "name": "RWTH Aachen University",
+      "country": "DE"
+    },
+    {
+      "name": "Saarland University",
+      "country": "DE"
+    },
+    {
+      "name": "Institute of Science and Technology Austria",
+      "country": "AT"
+    },
+    {
+      "name": "TU Wien",
+      "country": "AT"
+    },
+    {
+      "name": "National University of Singapore",
+      "country": "SG"
+    },
+    {
+      "name": "Nanyang Technological University",
+      "country": "SG"
+    },
+    {
+      "name": "Hong Kong University of Science and Technology",
+      "country": "HK"
+    },
+    {
+      "name": "University of Hong Kong",
+      "country": "HK"
+    },
+    {
+      "name": "University of Melbourne",
+      "country": "AU"
+    },
+    {
+      "name": "Australian National University",
+      "country": "AU"
+    },
+    {
+      "name": "University of Sydney",
+      "country": "AU"
+    },
+    {
+      "name": "UNSW Sydney",
+      "country": "AU"
+    },
+    {
+      "name": "Monash University",
+      "country": "AU"
+    },
+    {
+      "name": "University of Tokyo",
+      "country": "JP"
+    },
+    {
+      "name": "KAIST",
+      "country": "KR"
+    },
+    {
+      "name": "Seoul National University",
+      "country": "KR"
+    },
+    {
+      "name": "Weizmann Institute of Science",
+      "country": "IL"
+    },
+    {
+      "name": "Technion – Israel Institute of Technology",
+      "country": "IL"
+    },
+    {
+      "name": "King Abdullah University of Science and Technology",
+      "country": "SA"
+    },
+    {
+      "name": "Mohamed bin Zayed University of Artificial Intelligence",
+      "country": "AE"
+    }
+  ]
 }

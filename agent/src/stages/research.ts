@@ -22,47 +22,56 @@ const DossierOut = z.object({
   sources: z.array(z.string()).max(30),
 });
 
-/** Builds a deep professional dossier for each shortlisted professor before any email is written. */
-export async function deepResearch() {
-  const queue = await db
+type Row = { p: typeof t.professors.$inferSelect; uni: string | null };
+
+/** Shortlisted professors without a dossier, best first. */
+export async function nextToResearch(inFlight: Set<number>, limit = 1): Promise<Row[]> {
+  const rows = await db
     .select({ p: t.professors, uni: t.universities.name })
     .from(t.professors)
     .leftJoin(t.universities, eq(t.universities.id, t.professors.universityId))
     .where(and(eq(t.professors.status, "shortlisted"), isNull(t.professors.dossier)))
     .orderBy(desc(t.professors.priorityScore))
-    .limit(cfg.nightlyEmailCap * 2);
-  const profile = applicantProfile();
+    .limit(limit + inFlight.size);
+  return rows.filter((r) => !inFlight.has(r.p.id)).slice(0, limit);
+}
 
-  await pool(queue, cfg.parallel, async ({ p, uni }) => {
-    try {
-      const d = await ask({
-        system: `You are a meticulous academic researcher preparing a briefing on one professor's professional public record.\n\n${skill("researcher")}`,
-        prompt: `Applicant (for finding hooks):\n${profile}\n\nProfessor: ${p.fullName}, ${p.title ?? ""} ${uni ? `at ${uni}` : ""} (${p.country ?? "?"}).\nHomepage: ${p.homepage ?? "unknown"} · Lab: ${p.labUrl ?? "unknown"} · Scholar: ${p.scholarUrl ?? "unknown"}\nWhat we know: ${p.summary ?? ""}\nToday is ${new Date().toISOString().slice(0, 10)}.`,
-        schema: DossierOut,
-        tools: ["WebSearch", "WebFetch"],
-        maxTurns: 45,
-        effort: "high",
-      });
-      const blocked = d.notTakingStudents || d.noColdEmails;
-      await db
-        .update(t.professors)
-        .set({
-          dossier: { ...d, researchedAt: new Date().toISOString() },
-          contactInstructions: d.contactInstructions,
-          ...(blocked
-            ? { status: "skipped" as const, notes: d.noColdEmails ? `Asks not to be emailed: ${d.contactInstructions ?? ""}` : `Not taking students: ${d.redFlags.join("; ")}` }
-            : {}),
-          updatedAt: new Date(),
-        })
-        .where(eq(t.professors.id, p.id));
-      bump("deep_researched");
-      await log("profiler", `Dossier for ${p.fullName}: ${d.hooks.length} hooks, ${d.sources.length} sources${blocked ? " → skipped (" + (d.noColdEmails ? "no cold emails" : "not taking students") + ")" : ""}`, {
-        professorId: p.id,
-        level: blocked ? "warn" : "info",
-      });
-    } catch (e) {
-      if (e instanceof UsageLimitError) throw e;
-      await log("profiler", `Deep research failed for ${p.fullName}: ${(e as Error).message}`, { level: "warn", professorId: p.id });
-    }
-  });
+/** Batch mode for `--stages research`. */
+export async function deepResearch() {
+  await pool(await nextToResearch(new Set(), cfg.nightlyEmailCap * 2), cfg.parallel, researchOne);
+}
+
+/** Builds a deep professional dossier for one shortlisted professor before any email is written. */
+export async function researchOne({ p, uni }: Row) {
+  const profile = applicantProfile();
+  try {
+    const d = await ask({
+      system: `You are a meticulous academic researcher preparing a briefing on one professor's professional public record.\n\n${skill("researcher")}`,
+      prompt: `Applicant (for finding hooks):\n${profile}\n\nProfessor: ${p.fullName}, ${p.title ?? ""} ${uni ? `at ${uni}` : ""} (${p.country ?? "?"}).\nHomepage: ${p.homepage ?? "unknown"} · Lab: ${p.labUrl ?? "unknown"} · Scholar: ${p.scholarUrl ?? "unknown"}\nWhat we know: ${p.summary ?? ""}\nToday is ${new Date().toISOString().slice(0, 10)}.`,
+      schema: DossierOut,
+      tools: ["WebSearch", "WebFetch"],
+      maxTurns: 45,
+      effort: "high",
+    });
+    const blocked = d.notTakingStudents || d.noColdEmails;
+    await db
+      .update(t.professors)
+      .set({
+        dossier: { ...d, researchedAt: new Date().toISOString() },
+        contactInstructions: d.contactInstructions,
+        ...(blocked
+          ? { status: "skipped" as const, notes: d.noColdEmails ? `Asks not to be emailed: ${d.contactInstructions ?? ""}` : `Not taking students: ${d.redFlags.join("; ")}` }
+          : {}),
+        updatedAt: new Date(),
+      })
+      .where(eq(t.professors.id, p.id));
+    bump("deep_researched");
+    await log("profiler", `Dossier for ${p.fullName}: ${d.hooks.length} hooks, ${d.sources.length} sources${blocked ? " → skipped (" + (d.noColdEmails ? "no cold emails" : "not taking students") + ")" : ""}`, {
+      professorId: p.id,
+      level: blocked ? "warn" : "info",
+    });
+  } catch (e) {
+    if (e instanceof UsageLimitError) throw e;
+    await log("profiler", `Deep research failed for ${p.fullName}: ${(e as Error).message}`, { level: "warn", professorId: p.id });
+  }
 }

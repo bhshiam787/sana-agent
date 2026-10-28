@@ -1,0 +1,11 @@
+{
+  "_note": "Written by the strategist agent. Layered on top of targets.json (which humans own). Every change is snapshotted and can be reverted on the dashboard's Learnings page.",
+  "addQueries": [],
+  "dropQueries": [],
+  "addGrantKeywords": [],
+  "countryPriority": [],
+  "countryBoost": {},
+  "topicBoost": {},
+  "updatedAt": null,
+  "lastAssessment": null
+}

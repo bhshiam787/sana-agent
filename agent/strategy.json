@@ -1,0 +1,25 @@
+{
+  "_note": "Written by the strategist agent. Layered on top of targets.json (which humans own). Every change is snapshotted and can be reverted on the dashboard's Learnings page.",
+  "addQueries": [],
+  "dropQueries": [],
+  "addGrantKeywords": [],
+  "countryPriority": [],
+  "countryBoost": {
+    "SE": 2,
+    "NO": 2,
+    "DK": 2,
+    "FI": 2,
+    "NL": 2,
+    "CH": 2,
+    "DE": 1
+  },
+  "topicBoost": {
+    "phishing detection": 3,
+    "spam detection": 2,
+    "federated learning": 2,
+    "intrusion detection": 1,
+    "adversarial machine learning": 1
+  },
+  "updatedAt": "2026-10-28T05:02:07.150Z",
+  "lastAssessment": "There is almost no usable data yet. 233 candidates were found, but only 2 were researched, none shortlisted and none emailed, so no topic or country trend can be trusted. Infrastructure caused most of the losses. OpenAlex returned 429 rate-limit errors and blocked university-list discovery for 22 allowed countries plus KAUST, MBZUAI and Technion. The profiler crashed with an invalid --json-schema error (a code fix is needed, not a playbook change). A null .replace() TypeError also aborted the run. Sourcing is lopsided: 140 of 233 candidates are in the US, mostly from NSF grants, and the one US profile scored only 9 on funding. About 40 candidates sit in countries that are neither allowed nor known to fund PhDs well (CN, IN, BD, EG, ZA, GR, etc.). The one Norway profile scored better on funding (32), but its research areas were socio-technical and GDPR work, a weak match for an applicant whose strongest evidence is ML for phishing and spam and federated learning. Next step: keep the topics, apply small reversible boosts to countries with salaried PhD posts and to her core topics, and add rules for rate limits, country filtering and US funding checks."
+}

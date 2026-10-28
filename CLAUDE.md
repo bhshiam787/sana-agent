@@ -119,35 +119,59 @@ positive/ask_cv/apply_formally/no_funding/negative/auto_reply/other), `activity`
 `learnings` (proposed skill changes), `links`.
 
 ## Agent (built 2026-10-28)
-Stage order in one run: `inbox` → `learn-apply` → finders in parallel (`scout` OpenAlex senior
-authors, `positions` web search for funded posts, `labs` recruiting lab pages, `linkedin` read-only
-if `LINKEDIN_ENABLED=1`) → `profile` (parallel; web research + fit + scores; shortlist if priority
-≥ `SHORTLIST_MIN_PRIORITY` and an official email exists) → `research` (parallel dossier for
-shortlisted) → `followups` → `write` (parallel; writer → code checks → strict reviewer, up to 3
-rounds; must reach score ≥ 88 or zero issues, else blocked) → `send` (spaced 4–11 min, nightly
-cap, one initial + one follow-up per professor, CV attached) → `learn` (propose ≤3 playbook rules +
-scoring re-weights for approval on the dashboard's Learnings page).
+**Full run = a pipeline where every stage runs at once** (`agent/src/run.ts`): finders keep
+discovering while earlier finds are profiled, researched, written and sent. One global semaphore
+caps concurrent Claude sessions at `PARALLEL` (default 12). Stops starting new work after
+`RUN_HOURS` (default 8); sender continues until the nightly cap.
 
-Safety rails: live mode refuses to run until a completed dry run has drafted emails; Claude usage
-limit → run marked `stopped`, everything saved, next run continues; all LLM sessions are
-`permissionMode: dontAsk` with only WebSearch/WebFetch (or Playwright MCP for LinkedIn) allowed;
-project hooks are not loaded inside the agent (`settingSources: []`).
+Order: `inbox` → `strategy` → [pipeline: finders ∥ profile ∥ research ∥ write ∥ send ∥ strategist
+every 90 min] → `inbox` → `learn` (learner + reweight) → `strategy`.
+
+Finders (all parallel):
+- **Track A, advertised ("circulars")**: `positions` (one web session per topic: EURAXESS, Varbi,
+  AcademicTransfer, Jobbnorge, FindAPhD, jobs.ac.uk…), `labs` (one session per preferred country:
+  "we are recruiting" pages), `linkedin` (read-only, optional).
+- **Track B, silent funding**: `scout` (OpenAlex senior authors), `nsf` (active NSF grants by short
+  keyword → PI + email; 112 grants / 102 professors on first run), `directory` (top universities per
+  country + the wealthy list, swept department by department; wealthy first).
+- Profiler adds a **recently hired** signal (startup funds) and a **wealthy university** bonus.
+
+Self-improvement (user asked 2026-10-28 for autonomous authority, no approval):
+- **Strategist** (`stages/strategist.ts`) reads DB aggregates (by country, source, topic, positions,
+  grants, problems, blocks, replies) and decides: add/drop topics, grant keywords, country order,
+  country/topic priority boosts (±10), playbook rules. Writes `agent/strategy.json` (layered over
+  human-owned `targets.json`) and Learned-rules sections.
+- **Learner** (`stages/learn.ts`) turns each run's failures into rules; **reweight** shifts scoring
+  weights from reply outcomes (≥30 outcomes).
+- Guardrails: only the "## Learned rules" section of a playbook is editable (above it is locked);
+  every change snapshots files to `agent/skills/history/` and is recorded in `learnings` (status
+  `applied`); dashboard **Learnings & strategy** page shows current focus and has Revert (restores
+  snapshot, marks it and later changes `reverted`; learner won't re-add reverted rules).
+
+Countries: `allowCountries` = wealthy, funding countries (US, CA, GB, IE, Western Europe, Nordics,
+AU, NZ, JP, KR, SG, HK, TW, IL). `preferCountries` puts **US and Canada first** (user: "USA, Canada
+give lots of funding"), then salaried-PhD Europe. `wealthyUniversities` (85: MIT…Toronto, ETH, KAUST,
+MBZUAI…) are allowed even outside the list, swept first, +15 funding.
+
+Safety rails: live mode needs a completed dry run that drafted emails; only one run at a time
+across machines (`--force` if a crashed run is stuck); Claude usage limit → `stopped`, resumes next
+run; LLM sessions are `dontAsk` with only WebSearch/WebFetch (Playwright MCP for LinkedIn).
 
 ### How to run (in `agent/`)
 ```bash
 pnpm install
-cp .env.example .env              # fill GMAIL_APP_PASSWORD, RUN_AS
-pnpm dry                          # everything except sending; read drafts on the dashboard
+cp .env.example .env              # GMAIL_APP_PASSWORD, RUN_AS, OPENALEX_API_KEY
+pnpm dry                          # full pipeline, sends nothing; read drafts on the dashboard
 pnpm night                        # live; caffeinate keeps the Mac awake
-pnpm run:agent --stages inbox     # any subset of stages
-pnpm linkedin:login               # once, sign in to the separate LinkedIn account
+pnpm run:agent --stages nsf,directory --hours 2   # any subset, batch mode
+pnpm linkedin:login               # once, separate LinkedIn account
 ```
+Without `OPENALEX_API_KEY` OpenAlex returns 429 after ~100 calls (shared free budget).
 
-### Tested so far (2026-10-28, against Neon)
-- OpenAlex scout: 115 professors added.
-- Profiler on 2 (Oladunni, Abomhara): accurate emails, papers, fit reasoning (~70 s each).
-- Deep research + writer + reviewer on Abomhara: 16 sources, 4 hooks, draft review 88. Test drafts
-  were deleted; nothing has been sent. Gmail/IMAP, LinkedIn and the full `pnpm dry` not yet run.
+### Tested (2026-10-28, against Neon; nothing sent)
+OpenAlex 115 profs · NSF 102 profs · directory sweeps Princeton + Cornell (8 each, real emails,
+grant signals) · profiler 2 · dossier+draft (review 88, deleted) · strategist run 9 (boosts + 5
+rules). 49 leftover out-of-country candidates marked skipped; 182 in research queue.
 
 ## Applicant summary (details in profile/profile.md)
 BSc CSE, East Delta University (CGPA 3.81/4.00), IELTS 7.0. Research: federated learning review
@@ -162,13 +186,14 @@ candidates: ML for cybersecurity, federated/privacy-preserving ML, applied DL/CV
 - [x] Project memory hooks + root git repo (needs private GitHub remote to sync)
 - [x] Dashboard: all pages built, type-checked, linted, production build OK, tested in browser with demo data (2026-10-28)
 - [x] 13 starter links seeded into Neon (position boards, scholarships, research tools)
-- [ ] Create the two user accounts (`pnpm user:create`) — needs emails + passwords from the user
+- [x] User login created: bhsam787@gmail.com (user chose the password). Tamanna's login still to create.
 - [ ] Add private GitHub remote so memory syncs between machines
 - [ ] Confirm Tamanna's target field(s) and countries to exclude
 - [ ] Add her papers to `profile/papers/`; recommend an academic-style CV variant (current CV is industry-style)
 - [x] Agent built: 10 agents/stages, playbooks, parallelism, deep research dossier, learner (2026-10-28)
 - [x] Dashboard shows dossier on professor page; site is dark
-- [ ] Tamanna: Gmail app password into `agent/.env`; `RUN_AS` set
+- [x] Pipeline parallelism, Track A/B finders, wealthy universities, strategist + autonomous learner (2026-10-28)
+- [ ] Tamanna: Gmail app password into `agent/.env`; `RUN_AS` set; free OpenAlex API key
 - [ ] First full `pnpm dry`, read drafts together, then `pnpm night`
 - [ ] Optional: `pnpm linkedin:login` with the separate account, then `LINKEDIN_ENABLED=1`
 

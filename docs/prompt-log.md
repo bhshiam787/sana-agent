@@ -32,3 +32,41 @@ Every prompt given to Claude in this project, newest last. Secrets are redacted 
 > also linkedin is not only the sole professior finder, you will  run multiple agents for finding , multiple way to find professor .. not like that you are doing one task at a time , it will make slowert hte process..
 > 
 > make agent or skills or something else i dont know, which is analysing power , researching power , a professor mind set, last pevious year his history, find A-Z of the professor life history, and using cluade power alanyse and research against him.. then undestnad the professor physcology, and matching it we need to write in our email , so he can undestand that I am a genuine student.. not just random mailer...
+
+## 2026-10-28 10:40 +06 — bhshiam@B’s MacBook Air
+
+> our target is mainly first world country who has fundings, basically it will be worldwide...
+> first need to findout running circular given by professor... then parally we need to traget some countries who might not have circular in public...  going to universty professor list then find individual people is he slient giving funding, but not made int public.. we have to lots of parllel multi task.. maybe 10-20 parallel task running... with sub agents and all.. so no work should geet pused aeverything is running
+
+## 2026-10-28 10:43 +06 — bhshiam@B’s MacBook Air
+
+> how did you understand we need to find from which country ?
+
+## 2026-10-28 10:46 +06 — bhshiam@B’s MacBook Air
+
+> in additon we need to give the prrioty of wealthy univeristy who give fundings all over the world,
+
+## 2026-10-28 10:46 +06 — bhshiam@B’s MacBook Air
+
+> USA , canda give lots of funding I heard
+
+## 2026-10-28 10:53 +06 — bhshiam@B’s MacBook Air
+
+> create another agent or soemthing who has the power or skill set to learn by himself.. for example you are doing lots of reasearch and lots of things.. a agent is there who is watching ever everything... he findout that the lots of funding is available in Cyber security .. its an example, that agent should upate our system that now we need to work cycber security first,, it couldbe be country , for example usa lots of funding, then focus usa.. 
+> 
+> mainly take descions what to do...
+> also its another job is to , always make all of the agents up to date.. by facing different sitatuation.. so our agent doesnt fall behind .. for example doing reasearch it faces some situation, based on the situation he should have authority to self learning, and update our agents and make our local agents so much skill full
+
+## 2026-10-28 10:59 +06 — bhshiam@B’s MacBook Air
+
+> create a user for me
+
+## 2026-10-28 11:01 +06 — bhshiam@B’s MacBook Air
+
+> no delete that user...
+> create bhsam787@gmail.com
+> 78289840
+
+## 2026-10-28 11:02 +06 — bhshiam@B’s MacBook Air
+
+> how to run this project

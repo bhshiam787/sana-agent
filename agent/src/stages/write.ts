@@ -84,29 +84,41 @@ async function draftAndReview(p: Prof, kind: "initial" | "follow_up", previous?:
   return { draft: draft!, review };
 }
 
-/** Drafts emails for the best shortlisted professors, up to tonight's cap. */
-export async function writeEmails() {
+/** How many more initial emails fit under tonight's cap (sent in the last 20h + waiting drafts). */
+export async function writeRoom() {
   const [{ sentToday }] = await db
     .select({ sentToday: sql<number>`count(*)::int` })
     .from(t.emails)
     .where(and(eq(t.emails.status, "sent"), sql`${t.emails.sentAt} > now() - interval '20 hours'`));
-  const pending = await db.select({ id: t.emails.professorId }).from(t.emails).where(inArray(t.emails.status, ["draft", "sent"]));
-  const skip = new Set(pending.map((r) => r.id));
-  const room = Math.max(0, cfg.nightlyEmailCap - sentToday - (await countDrafts()));
-  if (!room) return;
+  return Math.max(0, cfg.nightlyEmailCap - sentToday - (await countDrafts()));
+}
 
-  const queue = (
-    await db
-      .select()
-      .from(t.professors)
-      .where(and(eq(t.professors.status, "shortlisted"), isNotNull(t.professors.dossier)))
-      .orderBy(desc(t.professors.priorityScore))
-      .limit(room * 2)
-  ).filter((p) => p.email && !skip.has(p.id));
+/** Researched, shortlisted professors with an email and no email yet, best first. */
+export async function nextToWrite(inFlight: Set<number>, limit = 1) {
+  const rows = await db
+    .select()
+    .from(t.professors)
+    .where(
+      and(
+        eq(t.professors.status, "shortlisted"),
+        isNotNull(t.professors.dossier),
+        isNotNull(t.professors.email),
+        sql`not exists (select 1 from emails e where e.professor_id = ${t.professors.id} and e.status in ('draft','sent'))`,
+      ),
+    )
+    .orderBy(desc(t.professors.priorityScore))
+    .limit(limit + inFlight.size);
+  return rows.filter((p) => !inFlight.has(p.id)).slice(0, limit);
+}
 
-  let made = 0;
-  await pool(queue, cfg.parallel, async (p) => {
-    if (made >= room) return;
+/** Batch mode for `--stages write`. */
+export async function writeEmails() {
+  const room = await writeRoom();
+  if (room) await pool(await nextToWrite(new Set(), room), cfg.parallel, writeOne);
+}
+
+/** Writer → code checks → reviewer for one professor; stores a draft or a blocked email. */
+export async function writeOne(p: Prof) {
     try {
       const { draft, review } = await draftAndReview(p, "initial");
       const ok = review.pass && review.score >= 75;
@@ -121,7 +133,6 @@ export async function writeEmails() {
         reviewScore: review.score,
         reviewNotes: review.issues.join(" | ") || null,
       });
-      if (ok) made++;
       bump(ok ? "drafts_ready" : "blocked_by_reviewer");
       await log(ok ? "writer" : "reviewer", ok ? `Draft ready for ${p.fullName} (review ${review.score})` : `Blocked email to ${p.fullName}: ${review.issues.join("; ")}`, {
         professorId: p.id,
@@ -132,7 +143,6 @@ export async function writeEmails() {
       if (e instanceof UsageLimitError) throw e;
       await log("writer", `Failed on ${p.fullName}: ${(e as Error).message}`, { level: "warn", professorId: p.id });
     }
-  });
 }
 
 async function countDrafts() {

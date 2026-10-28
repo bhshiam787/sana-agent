@@ -4,7 +4,8 @@ import { db, t, and, asc, desc, eq, isNull, sql } from "../db.ts";
 import { ask, UsageLimitError } from "../llm.ts";
 import { bump, log } from "../log.ts";
 import { pool } from "../pool.ts";
-import { applicantProfile, scoring, skill, targets } from "../skills.ts";
+import { isWealthy } from "../professors.ts";
+import { applicantProfile, focusBonus, scoring, skill, targets } from "../skills.ts";
 
 const ProfileOut = z.object({
   found: z.boolean().describe("false if the person could not be identified confidently"),
@@ -29,6 +30,7 @@ const ProfileOut = z.object({
   fitScore: z.number().min(0).max(100).describe("How well the applicant fits this lab's current work"),
   whyMatch: z.string().describe("2-4 sentences: the concrete overlap between the applicant and this professor"),
   fundingEvidenceScore: z.number().min(0).max(100).describe("Evidence they can fund a student now"),
+  recentlyHired: z.boolean().describe("Started as faculty at this university within about 2 years (new hires usually have startup funds for students)"),
 });
 
 export function computeScores(p: {
@@ -39,44 +41,58 @@ export function computeScores(p: {
   country: string | null;
   title: string | null;
   hIndex: number | null;
+  recentlyHired?: boolean;
+  wealthyUniversity?: boolean;
+  areas?: string[];
 }) {
   const s = scoring();
   const salaried = p.country ? s.salariedPhdCountries.includes(p.country) : false;
-  const funding = Math.min(100, p.fundingEvidence * 0.6 + Math.min(p.activeGrants, 3) * 10 + (p.recruiting ? 15 : 0) + (salaried ? 10 : 0));
+  const funding = Math.min(100, p.fundingEvidence * 0.6 + Math.min(p.activeGrants, 3) * 10 + (p.recruiting ? 15 : 0) + (salaried ? 10 : 0) + (p.recentlyHired ? 20 : 0) + (p.wealthyUniversity ? 15 : 0));
   let reply = 30;
   if (/assistant/i.test(p.title ?? "")) reply += s.replyBonus.assistantProfessor;
   else if (/associate/i.test(p.title ?? "")) reply += s.replyBonus.associateProfessor;
   if (p.recruiting) reply += s.replyBonus.recruiting;
   if (p.hIndex != null && p.hIndex >= 10 && p.hIndex <= 40) reply += s.replyBonus.hIndexSweetSpot;
+  if (p.recentlyHired) reply += 10;
   reply = Math.min(100, reply);
   const w = s.weights;
-  const priority = p.fit * w.fit + funding * w.funding + reply * w.reply;
+  const priority = p.fit * w.fit + funding * w.funding + reply * w.reply + focusBonus(p.country, p.areas ?? null);
   return { funding: Math.round(funding), reply: Math.round(reply), priority: Math.round(priority) };
 }
 
-/** Researches discovered professors one by one (recruiting first, then by h-index). */
-export async function profileProfessors() {
+type Row = { p: typeof t.professors.$inferSelect; uni: string | null };
+
+/** Next professors to research: recruiting first, funded-PhD countries, then smaller labs. */
+export async function nextToProfile(inFlight: Set<number>, limit = 1): Promise<Row[]> {
   const prefer = targets().preferCountries;
-  const queue = await db
+  const rows = await db
     .select({ p: t.professors, uni: t.universities.name })
     .from(t.professors)
     .leftJoin(t.universities, eq(t.universities.id, t.professors.universityId))
     .where(eq(t.professors.status, "discovered"))
     .orderBy(
       desc(t.professors.recruiting),
-      // Countries where PhDs are reliably funded first, then smaller labs (likelier to reply).
+      desc(sql`exists (select 1 from universities u where u.id = ${t.professors.universityId} and u.wealthy)`),
       desc(prefer.length ? sql`${t.professors.country} in (${sql.join(prefer.map((c) => sql`${c}`), sql`, `)})` : sql`false`),
       sql`${t.professors.hIndex} asc nulls last`,
       asc(t.professors.id),
     )
-    .limit(cfg.profilePerRun);
+    .limit(limit + inFlight.size);
+  return rows.filter((r) => !inFlight.has(r.p.id)).slice(0, limit);
+}
 
+/** Batch mode for `--stages profile`. */
+export async function profileProfessors() {
+  await pool(await nextToProfile(new Set(), cfg.profilePerRun), cfg.parallel, profileOne);
+}
+
+/** Web research + fit + scores for one professor. */
+export async function profileOne({ p, uni }: Row) {
   const profile = applicantProfile();
-  await pool(queue, cfg.parallel, async ({ p, uni }) => {
     try {
       const r = await ask({
         system: `You research university professors for a graduate applicant. Be accurate; never invent facts, URLs or emails.\n\n${skill("profiler")}`,
-        prompt: `Applicant profile:\n${profile}\n\nProfessor to research: ${p.fullName}${uni ? `, ${uni}` : ""}${p.country ? ` (${p.country})` : ""}.\nKnown topics: ${(p.researchAreas ?? []).join(", ") || "unknown"}.\n${p.sourceUrl ? `Found via: ${p.sourceUrl}\n` : ""}Today is ${new Date().toISOString().slice(0, 10)}.`,
+        prompt: `Applicant profile:\n${profile}\n\nProfessor to research: ${p.fullName}${uni ? `, ${uni}` : ""}${p.country ? ` (${p.country})` : ""}.\nKnown topics: ${(p.researchAreas ?? []).join(", ") || "unknown"}.\n${p.whyMatch ? `Initial match note: ${p.whyMatch}\n` : ""}${p.recruitingEvidence ? `Funding/recruiting signal seen: ${p.recruitingEvidence}\n` : ""}${p.sourceUrl ? `Found via: ${p.sourceUrl}\n` : ""}Today is ${new Date().toISOString().slice(0, 10)}.`,
         schema: ProfileOut,
         tools: ["WebSearch", "WebFetch"],
         maxTurns: 25,
@@ -90,7 +106,7 @@ export async function profileProfessors() {
 
       const year = new Date().getFullYear();
       const activeGrants = r.grants.filter((g) => (g.endYear ?? 0) >= year).length;
-      const sc = computeScores({ fit: r.fitScore, fundingEvidence: r.fundingEvidenceScore, activeGrants, recruiting: r.recruiting || p.recruiting, country: p.country, title: r.title, hIndex: p.hIndex });
+      const sc = computeScores({ fit: r.fitScore, fundingEvidence: r.fundingEvidenceScore, activeGrants, recruiting: r.recruiting || p.recruiting, country: p.country, title: r.title, hIndex: p.hIndex, recentlyHired: r.recentlyHired, areas: r.researchAreas, wealthyUniversity: p.universityId ? await isWealthy(p.universityId) : false });
       const email = r.email?.trim().toLowerCase() || null;
       const emailTaken = email
         ? (await db.select({ id: t.professors.id }).from(t.professors).where(and(eq(t.professors.email, email), sql`${t.professors.id} <> ${p.id}`))).length > 0
@@ -113,7 +129,7 @@ export async function profileProfessors() {
             whyMatch: r.whyMatch,
             recentPapers: r.recentPapers.filter((x) => (x.year ?? 0) >= year - 2).length,
             recruiting: r.recruiting || p.recruiting,
-            recruitingEvidence: r.recruitingEvidence ?? p.recruitingEvidence,
+            recruitingEvidence: [r.recruitingEvidence ?? p.recruitingEvidence, r.recentlyHired ? "Recently hired (likely startup funds)" : null].filter(Boolean).join(" · ") || null,
             fitScore: r.fitScore,
             fundingScore: sc.funding,
             replyScore: sc.reply,
@@ -146,7 +162,6 @@ export async function profileProfessors() {
       if (e instanceof UsageLimitError) throw e;
       await log("profiler", `Failed on ${p.fullName}: ${(e as Error).message}`, { level: "warn", professorId: p.id });
     }
-  });
 }
 
 /** Recompute priority from stored scores after the scoring weights change. */
@@ -154,7 +169,7 @@ export async function rescoreAll() {
   const w = scoring().weights;
   const rows = await db.select().from(t.professors).where(and(sql`${t.professors.fitScore} is not null`, isNull(t.professors.lastContactedAt)));
   for (const p of rows) {
-    const priority = Math.round(p.fitScore! * w.fit + (p.fundingScore ?? 0) * w.funding + (p.replyScore ?? 0) * w.reply);
+    const priority = Math.round(p.fitScore! * w.fit + (p.fundingScore ?? 0) * w.funding + (p.replyScore ?? 0) * w.reply + focusBonus(p.country, p.researchAreas));
     const status = p.status === "researched" && p.email && priority >= cfg.shortlistMin ? "shortlisted" : p.status;
     await db.update(t.professors).set({ priorityScore: priority, status }).where(eq(t.professors.id, p.id));
   }

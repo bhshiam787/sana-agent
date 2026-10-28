@@ -20,7 +20,7 @@ export const cfg = {
   runAs: process.env.RUN_AS ?? "",
   nightlyEmailCap: num(process.env.NIGHTLY_EMAIL_CAP, 20),
   // Claude sessions running at once (finders, profiler, researcher, writer).
-  parallel: num(process.env.PARALLEL, 4),
+  parallel: num(process.env.PARALLEL, 12),
   scoutPerQuery: num(process.env.SCOUT_PER_QUERY, 40),
   profilePerRun: num(process.env.PROFILE_PER_RUN, 40),
   shortlistMin: num(process.env.SHORTLIST_MIN_PRIORITY, 60),
@@ -29,6 +29,9 @@ export const cfg = {
   linkedinEnabled: process.env.LINKEDIN_ENABLED === "1",
   linkedinMaxPages: num(process.env.LINKEDIN_MAX_PAGES, 40),
   openalexMailto: process.env.OPENALEX_MAILTO ?? "",
+  openalexApiKey: process.env.OPENALEX_API_KEY ?? "",
+  // Stop starting new work after this many hours (sending continues to the cap).
+  runHours: num(process.env.RUN_HOURS, 8),
   cvPath: path.join(ROOT, "profile/Tamanna_Zubairi_Sana_CV.pdf"),
   profilePath: path.join(ROOT, "profile/profile.md"),
   targetsPath: path.join(AGENT_DIR, "targets.json"),

@@ -1,0 +1,11 @@
+{
+  "_note": "priority = fit*w.fit + funding*w.funding + reply*w.reply (weights sum to 1). The learner proposes changes from reply outcomes; approved changes are written here.",
+  "weights": { "fit": 0.5, "funding": 0.3, "reply": 0.2 },
+  "salariedPhdCountries": ["SE", "NO", "DK", "FI", "NL", "CH", "DE", "BE", "AT", "LU"],
+  "replyBonus": {
+    "assistantProfessor": 20,
+    "associateProfessor": 10,
+    "recruiting": 25,
+    "hIndexSweetSpot": 10
+  }
+}

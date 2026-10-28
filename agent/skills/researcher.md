@@ -32,3 +32,5 @@ Every claim needs a source. If you can't verify something, leave it out.
 
 ## Learned rules
 <!-- The learner appends approved rules below. -->
+- **US funding evidence must be concrete** — For US professors, rate funding high only with an active grant (end date after Fall 2027) where they are PI or co-PI at their current institution, or an explicit lab or department statement that they are recruiting funded PhD students for 2027. A department that 'typically funds students' counts as weak evidence. Record the grant ID and end date. _(strategist, run 9)_
+- **Score fit against core ML-security evidence** — Score fit mainly on overlap with the applicant's evidenced work: deep learning for phishing and spam detection, federated learning, and CNN-based computer vision. Groups doing purely legal, policy, ethics or social-science security work (e.g. GDPR compliance, technology acceptance) get no more than moderate fit unless they also run ML or data-driven projects. _(strategist, run 9)_

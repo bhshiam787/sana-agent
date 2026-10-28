@@ -3,6 +3,7 @@ import { mkdirSync } from "node:fs";
 import { z } from "zod";
 import { cfg } from "./config.ts";
 import { bump } from "./log.ts";
+import { Semaphore } from "./sem.ts";
 
 /** Thrown when the Claude plan's usage limit (or rate limit) stops the run. Next run resumes. */
 export class UsageLimitError extends Error {}
@@ -24,7 +25,14 @@ const LIMIT_RE = /usage limit|rate limit|limit reached|429|overloaded|quota/i;
  * One Claude Code session that must end with JSON matching `schema`.
  * Runs on the local Claude Code login; project settings/hooks are not loaded.
  */
-export async function ask<S extends z.ZodType>(o: AskOpts<S>): Promise<z.infer<S>> {
+export function ask<S extends z.ZodType>(o: AskOpts<S>): Promise<z.infer<S>> {
+  return sessions.run(() => askNow(o));
+}
+
+// Every Claude session in the process shares this cap (PARALLEL).
+export const sessions = new Semaphore(cfg.parallel);
+
+async function askNow<S extends z.ZodType>(o: AskOpts<S>): Promise<z.infer<S>> {
   mkdirSync(cfg.workDir, { recursive: true });
   const allowed = [...(o.tools ?? []), ...Object.keys(o.mcpServers ?? {}).map((s) => `mcp__${s}`)];
   let result: Awaited<ReturnType<typeof firstResult>>;

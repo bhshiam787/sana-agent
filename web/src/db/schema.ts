@@ -68,7 +68,7 @@ export const replyClass = pgEnum("reply_class", [
 
 export const runStatus = pgEnum("run_status", ["running", "completed", "failed", "stopped"]);
 
-export const learningStatus = pgEnum("learning_status", ["proposed", "approved", "rejected", "applied"]);
+export const learningStatus = pgEnum("learning_status", ["proposed", "approved", "rejected", "applied", "reverted"]);
 
 export const users = pgTable("users", {
   id: serial("id").primaryKey(),
@@ -88,6 +88,11 @@ export const universities = pgTable(
     rank: integer("rank"),
     website: text("website"),
     fundingNotes: text("funding_notes"), // e.g. "PhD = salaried employee, ~€3,000/mo"
+    // Faculty-directory sweep (finds professors who never advertise).
+    // Large endowment / known for fully funding PhDs: swept first, funding bonus.
+    wealthy: boolean("wealthy").default(false).notNull(),
+    sweptAt: timestamp("swept_at", { withTimezone: true }),
+    sweepNotes: text("sweep_notes"),
   },
   (t) => [uniqueIndex("universities_name_country").on(t.name, t.country)],
 );
@@ -258,7 +263,8 @@ export const learnings = pgTable("learnings", {
   runId: integer("run_id").references(() => agentRuns.id, { onDelete: "set null" }),
   agent: text("agent").notNull(),
   title: text("title").notNull(),
-  content: text("content").notNull(), // the proposed skill change
+  content: text("content").notNull(), // the change and why
+  snapshot: text("snapshot"), // repo-relative folder with the files as they were before; used to revert
   status: learningStatus("status").default("proposed").notNull(),
   createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
   decidedAt: timestamp("decided_at", { withTimezone: true }),
