@@ -15,6 +15,21 @@ import {
 
 // Shared by the dashboard and the overnight agent. Keep enums in sync with agent/.
 
+/** Deep research on a shortlisted professor's public professional record. */
+export type Dossier = {
+  careerTimeline: { year: string; event: string }[];
+  researchTrajectory: string;
+  currentDirection: string;
+  valuesInStudents: string;
+  communicationStyle: string;
+  labCulture: string;
+  recentNews: string[];
+  hooks: { point: string; source: string }[];
+  redFlags: string[];
+  sources: string[];
+  researchedAt: string;
+};
+
 export const professorStatus = pgEnum("professor_status", [
   "discovered", // found, not yet researched
   "researched", // profile, papers, grants collected
@@ -103,6 +118,8 @@ export const professors = pgTable(
     fundingScore: real("funding_score"), // 0-100
     replyScore: real("reply_score"), // 0-100
     priorityScore: real("priority_score"), // weighted combination
+    dossier: jsonb("dossier").$type<Dossier>(), // deep professional research, see Dossier
+    contactInstructions: text("contact_instructions"), // what they ask prospective students to do
     status: professorStatus("status").default("discovered").notNull(),
     source: text("source"), // openalex, linkedin, euraxess, google ...
     sourceUrl: text("source_url"),

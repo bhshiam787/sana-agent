@@ -20,3 +20,6 @@ function connect(): NodePgDatabase<typeof schema> {
 const globalForDb = globalThis as unknown as { db?: ReturnType<typeof connect> };
 export const db = (globalForDb.db ??= connect());
 export * as t from "./schema";
+
+// Query helpers re-exported so the agent uses this same drizzle copy.
+export * from "drizzle-orm";

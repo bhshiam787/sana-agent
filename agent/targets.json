@@ -1,0 +1,18 @@
+{
+  "_note": "Edit freely. Research queries drive professor discovery. Confirm the field with Tamanna, then adjust.",
+  "researchQueries": [
+    "phishing detection deep learning",
+    "machine learning for cybersecurity intrusion detection",
+    "federated learning privacy-preserving",
+    "federated learning security attacks",
+    "spam detection multilingual machine learning",
+    "online controlled experiments A/B testing",
+    "brain-computer interface EEG deep learning"
+  ],
+  "excludeCountries": [],
+  "preferCountries": ["SE", "NO", "DK", "FI", "NL", "CH", "DE", "BE", "AT", "CA", "US", "AU", "JP"],
+  "minHIndex": 8,
+  "maxHIndex": 90,
+  "publishedSince": "2024-01-01",
+  "levels": ["phd", "funded masters"]
+}

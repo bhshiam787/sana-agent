@@ -43,6 +43,10 @@ In the morning, either user opens the local dashboard and sees what was done.
 | Claude usage | Agent runs locally through the user's Claude Code login (no separate API key). Must save progress and resume if usage limits hit. |
 | "Applied" | Dashboard separates *emailed* vs *formally applied*. Portal applications (fees, rec letters) are marked `needs_manual`, not faked. |
 | Honesty in emails | Every claim must be traceable to `profile/profile.md`. Never upgrade "submitted/under review" to "published". |
+| Parallelism | All finders run at once; profiler, deep researcher and writer run `PARALLEL` (default 4) Claude sessions concurrently. (User asked 2026-10-28: "not one task at a time".) |
+| Deep research ("professor A–Z / mindset") | Per shortlisted professor, a dossier of their **public professional record**: career timeline, research trajectory, current direction, what they value in students, posted contact instructions, communication style, lab culture, recent news, verified hooks with sources, red flags. **No personal life** (family, health, politics, private accounts). Emails must follow posted instructions; "no cold emails" / "not taking students" → skipped. |
+| Email gateway | Gmail via SMTP/IMAP with an **app password** (not Google Cloud OAuth): `GMAIL_USER`, `GMAIL_APP_PASSWORD` in `agent/.env`. |
+| Dashboard theme | Dark (forced via `data-theme="dark"` on `<html>`). |
 
 ## Repo layout
 ```
@@ -63,7 +67,18 @@ Sana Agent/
 │   └── scripts/           ← create-user, seed-links (real starter links), seed-demo (pglite only)
 ├── docs/prompt-log.md     ← every prompt, auto-appended by hook (secrets redacted)
 ├── .claude/               ← settings.json + hooks (memory sync)
-└── agent/                 ← overnight agent (NOT BUILT YET)
+└── agent/                 ← overnight agent (Claude Agent SDK, TypeScript, run with tsx)
+    ├── src/run.ts         ← orchestrator: stages, run record, dry-run gate, usage-limit stop
+    ├── src/llm.ts         ← ask(): one Claude Code session → zod-validated JSON (settingSources: [])
+    ├── src/pool.ts        ← bounded parallelism
+    ├── src/stages/        ← scout (OpenAlex + web positions + recruiting labs), linkedin,
+    │                         profile (+scoring), research (dossier), write (writer+reviewer),
+    │                         send, inbox, learn
+    ├── src/mail.ts        ← nodemailer SMTP send (CV attached) + imapflow inbox read
+    ├── skills/*.md        ← playbooks injected into prompts; learner appends approved rules
+    ├── skills/scoring.json← priority weights; learner proposes re-weighting from outcomes
+    ├── targets.json       ← research queries, preferred/excluded countries, h-index window
+    └── .env               ← Gmail app password etc. (git-ignored; see .env.example)
 ```
 
 ### Dashboard pages (web/src/app/(app)/)
@@ -103,13 +118,36 @@ summary), `emails` (draft/sent/failed/blocked, review score), `replies` (classif
 positive/ask_cv/apply_formally/no_funding/negative/auto_reply/other), `activity` (per-agent log),
 `learnings` (proposed skill changes), `links`.
 
-## Agent design (planned)
-Orchestrator + subagents: **Scout** (discover) → **Profiler** (papers, grants, recruiting signals)
-→ **Scorer** (fit, funding, reply likelihood → priority) → **Writer** (email in her voice) →
-**Reviewer** (quality gate: names, real paper, real connection, length, no filler, CV attached) →
-**Sender** (Gmail API, spaced out, nightly cap) → **Inbox Watcher** (classify replies) →
-**Learner** (writes learnings, adjusts scoring weights from reply outcomes; skill edits logged to
-`learnings` table).
+## Agent (built 2026-10-28)
+Stage order in one run: `inbox` → `learn-apply` → finders in parallel (`scout` OpenAlex senior
+authors, `positions` web search for funded posts, `labs` recruiting lab pages, `linkedin` read-only
+if `LINKEDIN_ENABLED=1`) → `profile` (parallel; web research + fit + scores; shortlist if priority
+≥ `SHORTLIST_MIN_PRIORITY` and an official email exists) → `research` (parallel dossier for
+shortlisted) → `followups` → `write` (parallel; writer → code checks → strict reviewer, up to 3
+rounds; must reach score ≥ 88 or zero issues, else blocked) → `send` (spaced 4–11 min, nightly
+cap, one initial + one follow-up per professor, CV attached) → `learn` (propose ≤3 playbook rules +
+scoring re-weights for approval on the dashboard's Learnings page).
+
+Safety rails: live mode refuses to run until a completed dry run has drafted emails; Claude usage
+limit → run marked `stopped`, everything saved, next run continues; all LLM sessions are
+`permissionMode: dontAsk` with only WebSearch/WebFetch (or Playwright MCP for LinkedIn) allowed;
+project hooks are not loaded inside the agent (`settingSources: []`).
+
+### How to run (in `agent/`)
+```bash
+pnpm install
+cp .env.example .env              # fill GMAIL_APP_PASSWORD, RUN_AS
+pnpm dry                          # everything except sending; read drafts on the dashboard
+pnpm night                        # live; caffeinate keeps the Mac awake
+pnpm run:agent --stages inbox     # any subset of stages
+pnpm linkedin:login               # once, sign in to the separate LinkedIn account
+```
+
+### Tested so far (2026-10-28, against Neon)
+- OpenAlex scout: 115 professors added.
+- Profiler on 2 (Oladunni, Abomhara): accurate emails, papers, fit reasoning (~70 s each).
+- Deep research + writer + reviewer on Abomhara: 16 sources, 4 hooks, draft review 88. Test drafts
+  were deleted; nothing has been sent. Gmail/IMAP, LinkedIn and the full `pnpm dry` not yet run.
 
 ## Applicant summary (details in profile/profile.md)
 BSc CSE, East Delta University (CGPA 3.81/4.00), IELTS 7.0. Research: federated learning review
@@ -128,8 +166,11 @@ candidates: ML for cybersecurity, federated/privacy-preserving ML, applied DL/CV
 - [ ] Add private GitHub remote so memory syncs between machines
 - [ ] Confirm Tamanna's target field(s) and countries to exclude
 - [ ] Add her papers to `profile/papers/`; recommend an academic-style CV variant (current CV is industry-style)
-- [ ] Build agent (Claude Agent SDK / `claude -p`), Gmail API auth, browser (Playwright MCP) setup
-- [ ] Dry-run night, then live
+- [x] Agent built: 10 agents/stages, playbooks, parallelism, deep research dossier, learner (2026-10-28)
+- [x] Dashboard shows dossier on professor page; site is dark
+- [ ] Tamanna: Gmail app password into `agent/.env`; `RUN_AS` set
+- [ ] First full `pnpm dry`, read drafts together, then `pnpm night`
+- [ ] Optional: `pnpm linkedin:login` with the separate account, then `LINKEDIN_ENABLED=1`
 
 ## Open issues to raise with the user
 - CV lists the IEEE Access federated-learning review under "Published" but says "Submitted" — fix on CV; emails will say "submitted".

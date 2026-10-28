@@ -97,6 +97,60 @@ export default async function ProfessorPage(props: PageProps<"/professors/[id]">
             )}
           </section>
 
+          {p.dossier && (
+            <section className="card p-4">
+              <h2 className="mb-3 font-medium">Deep research</h2>
+              {p.contactInstructions && (
+                <p className="mb-3 rounded-lg border border-warning/50 bg-warning/10 p-3 text-sm">
+                  <span className="font-medium">Their instructions for applicants:</span> {p.contactInstructions}
+                </p>
+              )}
+              <dl className="space-y-3 text-sm">
+                {[
+                  ["Where they're heading", p.dossier.currentDirection],
+                  ["Research trajectory", p.dossier.researchTrajectory],
+                  ["What they value in students", p.dossier.valuesInStudents],
+                  ["How they write", p.dossier.communicationStyle],
+                  ["Lab culture", p.dossier.labCulture],
+                ].map(([k, v]) => (
+                  <div key={k}>
+                    <dt className="text-xs text-muted">{k}</dt>
+                    <dd className="whitespace-pre-line text-ink-2">{v}</dd>
+                  </div>
+                ))}
+              </dl>
+              {p.dossier.hooks.length > 0 && (
+                <>
+                  <h3 className="mt-4 mb-1 text-sm font-medium">Talking points used in emails</h3>
+                  <ul className="list-disc space-y-1 pl-5 text-sm text-ink-2">
+                    {p.dossier.hooks.map((h) => (
+                      <li key={h.point}>{h.point} <ExtLink href={h.source}>source</ExtLink></li>
+                    ))}
+                  </ul>
+                </>
+              )}
+              {p.dossier.careerTimeline.length > 0 && (
+                <details className="mt-4">
+                  <summary className="cursor-pointer text-sm font-medium">Career timeline</summary>
+                  <ul className="mt-2 space-y-1 text-sm text-ink-2">
+                    {p.dossier.careerTimeline.map((c) => (
+                      <li key={c.year + c.event}><span className="text-muted tabular-nums">{c.year}</span> · {c.event}</li>
+                    ))}
+                  </ul>
+                </details>
+              )}
+              {p.dossier.redFlags.length > 0 && (
+                <p className="mt-4 text-sm"><span className="font-medium">⚠ Watch out:</span> <span className="text-ink-2">{p.dossier.redFlags.join(" · ")}</span></p>
+              )}
+              <details className="mt-3">
+                <summary className="cursor-pointer text-xs text-muted">{p.dossier.sources.length} sources · researched {fmtDate(p.dossier.researchedAt)}</summary>
+                <ul className="mt-2 space-y-0.5 text-xs">
+                  {p.dossier.sources.map((s) => <li key={s} className="truncate"><ExtLink href={s}>{s}</ExtLink></li>)}
+                </ul>
+              </details>
+            </section>
+          )}
+
           <section className="card">
             <h2 className="border-b border-line px-4 py-3 font-medium">Emails & replies</h2>
             {thread.length === 0 ? (
