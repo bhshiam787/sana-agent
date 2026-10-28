@@ -249,3 +249,7 @@ Every prompt given to Claude in this project, newest last. Secrets are redacted 
 ## 2026-10-28 13:14 +06 — bhshiam@B’s MacBook Air
 
 > hover effect not looks good
+
+## 2026-10-28 13:19 +06 — bhshiam@B’s MacBook Air
+
+> are we only finding , phd ?
