@@ -182,3 +182,21 @@ body {
 .hover-row {
   @apply -mx-2 block rounded-md px-2 py-1 transition-colors hover:bg-hover;
 }
+
+/* Full-screen wait overlay (navigation and actions). */
+.loading-overlay {
+  position: fixed; inset: 0; z-index: 70;
+  display: flex; align-items: center; justify-content: center;
+  background: color-mix(in srgb, var(--bg) 55%, transparent);
+  backdrop-filter: blur(2px);
+  opacity: 0; animation: fade-in 0.15s 150ms forwards;
+  cursor: progress;
+}
+.loading-overlay-bar {
+  position: relative; display: block; width: 100%; height: 4px; overflow: hidden; border-radius: 9999px;
+  background: color-mix(in srgb, var(--accent) 20%, transparent);
+}
+.loading-overlay-bar::after {
+  content: ""; position: absolute; inset: 0; width: 40%; border-radius: 9999px;
+  background: var(--accent); animation: nav-progress 1s ease-in-out infinite;
+}

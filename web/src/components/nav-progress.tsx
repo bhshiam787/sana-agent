@@ -2,6 +2,7 @@
 
 import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { LoadingOverlay } from "./loading-overlay";
 
 /**
  * Thin bar at the top from the moment an internal link is clicked or a filter
@@ -18,7 +19,8 @@ export function NavProgress() {
 
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
-      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      // Not checking defaultPrevented: next/link cancels the native navigation itself.
+      if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
       const a = (e.target as HTMLElement).closest("a");
       if (!a || a.target === "_blank" || a.hasAttribute("download")) return;
       const url = new URL(a.href, location.href);
@@ -46,5 +48,5 @@ export function NavProgress() {
     return () => clearTimeout(id);
   }, [busy]);
 
-  return busy ? <div className="nav-progress" role="progressbar" aria-label="Loading page" /> : null;
+  return busy ? <LoadingOverlay /> : null;
 }

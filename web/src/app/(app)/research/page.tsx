@@ -53,12 +53,11 @@ export default async function Research(props: PageProps<"/research">) {
   const tab: Tab = typeof sp.tab === "string" && sp.tab in TABS ? (sp.tab as Tab) : "shortlisted";
 
   const [counts, rows] = await Promise.all([
-    Promise.all(
-      (Object.keys(TABS) as Tab[]).map(async (k) => {
-        const [{ n }] = await db.select({ n: sql<number>`count(*)::int` }).from(t.professors).where(TABS[k].where);
-        return [k, n] as const;
-      }),
-    ),
+    // All tab counts in one round trip (each query to Neon costs ~280 ms).
+    db
+      .select(Object.fromEntries((Object.keys(TABS) as Tab[]).map((k) => [k, sql<number>`count(*) filter (where ${TABS[k].where})::int`])) as Record<Tab, SQL<number>>)
+      .from(t.professors)
+      .then(([row]) => Object.entries(row) as [Tab, number][]),
     db
       .select({ p: t.professors, uni: t.universities.name })
       .from(t.professors)

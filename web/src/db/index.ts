@@ -13,7 +13,13 @@ function connect(): NodePgDatabase<typeof schema> {
     // Same query API; cast so callers see one type.
     return drizzlePglite(url!.slice("pglite:".length), { schema }) as unknown as NodePgDatabase<typeof schema>;
   }
-  const pool = new Pool({ connectionString: url, max: 5 });
+  // Neon is far away (~280 ms per round trip, ~2 s per new TLS connection), so keep
+  // connections open instead of the default 10 s idle close, and allow a page's
+  // queries to run side by side.
+  // Idle connections go through Neon's pooler, so they do not keep the compute
+  // awake: Neon still suspends after ~5 min without queries (free-tier hours).
+  // No keep-warm pings on purpose.
+  const pool = new Pool({ connectionString: url, max: 12, idleTimeoutMillis: 10 * 60_000, keepAlive: true });
   return drizzlePg(pool, { schema });
 }
 

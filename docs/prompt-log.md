@@ -190,3 +190,15 @@ Every prompt given to Claude in this project, newest last. Secrets are redacted 
 ## 2026-10-28 12:26 +06 — bhshiam@B’s MacBook Air
 
 > not only home page, all action, it sometimes looks page stuck
+
+## 2026-10-28 12:33 +06 — bhshiam@B’s MacBook Air
+
+> I dont want loader like that...
+> actuall a loder or porgress bar as a overlay so it measn , I have to wait for laoding...
+> 
+> 
+> another thing, why the site seems slow ? is it for we are runnig it from local ? or code issue ?
+
+## 2026-10-28 12:35 +06 — bhshiam@B’s MacBook Air
+
+> if db doesnt get sleep, I will lose 100hrs free very fast from neon..

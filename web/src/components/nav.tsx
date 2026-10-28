@@ -1,6 +1,6 @@
 "use client";
 
-import Link, { useLinkStatus } from "next/link";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const items = [
@@ -14,14 +14,6 @@ const items = [
   { href: "/learnings", label: "Learnings" },
   { href: "/links", label: "Useful links" },
 ];
-
-/** Spinner next to the clicked item while its page loads (hidden for fast loads). */
-function Pending() {
-  const { pending } = useLinkStatus();
-  return pending ? (
-    <span aria-hidden className="link-spinner ml-auto inline-block h-3 w-3 animate-spin rounded-full border-2 border-accent border-t-transparent" />
-  ) : null;
-}
 
 export function Nav() {
   const path = usePathname();
@@ -40,7 +32,6 @@ export function Nav() {
             }`}
           >
             {i.label}
-            <Pending />
           </Link>
         );
       })}

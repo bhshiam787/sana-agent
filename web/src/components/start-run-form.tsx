@@ -2,6 +2,7 @@
 
 import { useActionState, useState } from "react";
 import { startRun } from "@/lib/actions";
+import { LoadingOverlay } from "./loading-overlay";
 import { Spinner } from "./submit-button";
 
 export function StartRunForm() {
@@ -28,6 +29,7 @@ export function StartRunForm() {
         {pending ? "Starting the agent…" : mode === "dry" ? "▶ Start dry run" : "▶ Start live run"}
       </button>
       {error && <p className="w-full text-sm text-critical">{error}</p>}
+      {pending && <LoadingOverlay label="Starting the agent…" />}
     </form>
   );
 }

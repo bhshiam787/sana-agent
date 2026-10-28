@@ -96,13 +96,18 @@ finished (fit scored), same number in the box and pipeline; Skipped shown separa
 ### UI feedback (2026-10-28)
 Strong hover: `--hover`/`--hover-line` tokens, `.row-hover` (blue tint + left accent edge) on table
 rows and lists, nav active/hover with accent edge, stronger `.btn`/`.btn-ghost`/Stat hovers.
-Loading: `(app)/loading.tsx` skeleton (instant on click), `NavProgress` top bar for link clicks and
-filter forms, `useLinkStatus` spinner on the clicked nav item. **Every action button** is
-`SubmitButton` (components/submit-button.tsx: spinner + pending text + disabled + the same top bar,
-via `useFormStatus`); filter forms use `next/form` `<Form>`; login and Start run use their own
-`useActionState` pending with `Spinner`. Slowness is mostly `pnpm dev` (compiles each page
-on first visit) + Neon round trips from Bangladesh to us-east-2: use `pnpm start` (production
-build) for daily use.
+Loading (user 2026-10-28: "an overlay so I know I have to wait"): `LoadingOverlay` (dim + blur,
+centre card, spinner, progress bar, appears after 150 ms) for page navigation (`NavProgress`, link
+clicks + GET filter forms; must NOT check `defaultPrevented` because next/link prevents default) and
+for every action (`SubmitButton` via `useFormStatus`, login, Start run). No skeleton `loading.tsx`
+and no per-link spinner: the old page stays under the overlay until the new one is ready.
+
+Speed (measured 2026-10-28): Neon is in us-east-2, ~280 ms per round trip from Bangladesh, ~2.2 s per
+new TLS connection. Fixed: pg Pool `max 12, idleTimeoutMillis 10 min, keepAlive` (the default 10 s
+idle close reconnected on almost every click); Research counts in one query. Warm loads now 0.5–2 s
+(were 4–15 s). **No keep-warm pings**: the user is on Neon's free tier (~100 compute-hours) and
+pooled idle connections still let Neon suspend after ~5 min. Biggest remaining win: a Neon project
+in Singapore (aws-ap-southeast-1, ~60–80 ms) + `pnpm start` instead of `pnpm dev`.
 
 ### Gotchas found while building
 - `next.config.ts`: `cacheComponents: false` (all data is live) and

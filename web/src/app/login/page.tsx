@@ -2,6 +2,7 @@
 
 import { useActionState } from "react";
 import { login } from "@/lib/auth";
+import { LoadingOverlay } from "@/components/loading-overlay";
 import { Spinner } from "@/components/submit-button";
 
 export default function LoginPage() {
@@ -27,6 +28,7 @@ export default function LoginPage() {
           {pending ? "Signing in…" : "Sign in"}
         </button>
       </form>
+      {pending && <LoadingOverlay label="Signing in…" />}
     </main>
   );
 }
