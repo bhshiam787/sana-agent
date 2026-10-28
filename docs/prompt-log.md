@@ -202,3 +202,7 @@ Every prompt given to Claude in this project, newest last. Secrets are redacted 
 ## 2026-10-28 12:35 +06 — bhshiam@B’s MacBook Air
 
 > if db doesnt get sleep, I will lose 100hrs free very fast from neon..
+
+## 2026-10-28 12:38 +06 — bhshiam@B’s MacBook Air
+
+> stop the project first

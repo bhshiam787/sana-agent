@@ -223,7 +223,7 @@ confirmation; targets.json topics refocused to match (BCI dropped, A/B kept as c
 - [x] Dashboard: all pages built, type-checked, linted, production build OK, tested in browser with demo data (2026-10-28)
 - [x] 13 starter links seeded into Neon (position boards, scholarships, research tools)
 - [x] User login created: bhsam787@gmail.com (user chose the password). Tamanna's login still to create.
-- [ ] Add private GitHub remote so memory syncs between machines
+- [x] Private GitHub remote added (bhshiam787/sana-agent); memory syncs between machines
 - [x] Field: AI/ML + cybersecurity + data science (user) → focused as secure & trustworthy ML
 - [ ] Tamanna to confirm/edit the draft research statement in profile/profile.md
 - [ ] Add her papers to `profile/papers/`; recommend an academic-style CV variant (current CV is industry-style)
@@ -247,8 +247,9 @@ confirmation; targets.json topics refocused to match (BCI dropped, A/B kept as c
   (CDU, AU), Md. Mehedi Hassan (funded PhD at UniSA), Anindya Nag, Ayontika Das.
 
 ## Git
-Single repo at the project root (the scaffold's `web/.git` was removed on day 1). **No remote yet**:
-user wants everything pushed to one GitHub repo; needs a private repo URL (gh CLI not installed).
+Single repo at the project root (the scaffold's `web/.git` was removed on day 1). Remote:
+**https://github.com/bhshiam787/sana-agent.git** (private; published from VS Code 2026-10-28). The
+memory hooks pull on session start and push memory paths at the end of each turn.
 
 ## Information requested from the user (2026-10-28), to improve the agents
 Must: Tamanna's confirmation of the draft research statement · paper PDFs (optional; metadata+abstracts
