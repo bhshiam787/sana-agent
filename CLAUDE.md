@@ -200,6 +200,22 @@ confirmation; targets.json topics refocused to match (BCI dropped, A/B kept as c
 - [ ] First full `pnpm dry`, read drafts together, then `pnpm night`
 - [ ] Optional: `pnpm linkedin:login` with the separate account, then `LINKEDIN_ENABLED=1`
 
+## Her papers (2026-10-28)
+- `profile/papers/Sana2025_Advancing_Federated_Learning_IEEE_Access.pdf` downloaded (open access,
+  CC-BY, via the visible browser). Sorokh-Poth PDF needs a manual download; the CRC/River chapter
+  is paywalled.
+- `profile/papers/fl_review_references.json`: 211 references parsed with `unpdf`.
+  `agent/src/citations.ts` matches professors (surname + first initial) → "she cited your work"
+  hook in profiler/researcher/writer prompts; researcher must confirm same person; reviewer blocks
+  unsupported claims. 41/233 collected professors matched (some false positives on common surnames).
+- **Warm contacts** (`targets.json → warmContacts`, never auto-emailed; addProfessor marks them
+  skipped): Shahab Abdulla (UniSQ, AU; recruiting PhD students per his bio, top lead), Asif Karim
+  (CDU, AU), Md. Mehedi Hassan (funded PhD at UniSA), Anindya Nag, Ayontika Das.
+
+## Git
+Single repo at the project root (the scaffold's `web/.git` was removed on day 1). **No remote yet**:
+user wants everything pushed to one GitHub repo; needs a private repo URL (gh CLI not installed).
+
 ## Information requested from the user (2026-10-28), to improve the agents
 Must: Tamanna's confirmation of the draft research statement · paper PDFs (optional; metadata+abstracts
 already verified) · target intake + PhD-only vs funded masters OK · final-year project/thesis (title,
