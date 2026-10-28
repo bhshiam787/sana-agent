@@ -109,3 +109,7 @@ Every prompt given to Claude in this project, newest last. Secrets are redacted 
 ## 2026-10-28 11:18 +06 — bhshiam@B’s MacBook Air
 
 > I want everything to push one git repository, maybe here two git  initiated
+
+## 2026-10-28 11:20 +06 — bhshiam@B’s MacBook Air
+
+> why it is like this ?
