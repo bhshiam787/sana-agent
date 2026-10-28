@@ -141,3 +141,7 @@ Every prompt given to Claude in this project, newest last. Secrets are redacted 
 ## 2026-10-28 11:49 +06 — bhshiam@B’s MacBook Air
 
 > when the 5 hour limit resetes then it resuemes
+
+## 2026-10-28 11:53 +06 — bhshiam@B’s MacBook Air
+
+> currently I am at root folder.. if I give pnpm dev it says package not found.. how can i easily run it

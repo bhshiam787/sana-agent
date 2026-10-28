@@ -98,6 +98,11 @@ status/notes) · Positions & deadlines (status editable, ⚠ within 14 days) · 
 - ESLint `react-hooks/purity` flags `Date.now()` in render: use `daysFromNow()` from `lib/format.ts`.
 - Preview with fake data: `DATABASE_URL=pglite:./.pglite pnpm db:push && pnpm user:create … && pnpm seed:demo && pnpm dev`.
 
+## Quick start (from the project root)
+`pnpm setup` (install both) · `pnpm dev` (dashboard, http://localhost:3000) · `pnpm dry` (agent dry
+run) · `pnpm night` (live) · `pnpm agent --stages …` · `pnpm user:create <email> <name> <pw>` ·
+`pnpm db:push`. Root `package.json` just forwards to `web/` and `agent/` with `pnpm --dir`.
+
 ## Web app — how to run
 ```bash
 cd web

@@ -7,14 +7,19 @@
   ],
   "dropQueries": [
     "causal inference online experiments",
-    "vertical federated learning fraud detection"
+    "vertical federated learning fraud detection",
+    "privacy-preserving machine learning secure aggregation differential privacy PhD position",
+    "security and privacy of machine learning PhD vacancy Europe"
   ],
   "addGrantKeywords": [
     "social engineering",
     "scam detection",
     "secure aggregation",
     "robust machine learning",
-    "LLM security"
+    "LLM security",
+    "membership inference",
+    "vertical federated learning",
+    "trustworthy machine learning"
   ],
   "countryPriority": [
     "US",
@@ -45,8 +50,9 @@
     "NL": 2,
     "CH": 2,
     "DE": 2,
+    "CA": 2,
     "AU": 1,
-    "CA": 1
+    "HK": 1
   },
   "topicBoost": {
     "phishing detection": 3,
@@ -54,9 +60,12 @@
     "federated learning": 2,
     "privacy-preserving machine learning": 2,
     "secure aggregation": 2,
+    "differential privacy": 2,
+    "trustworthy machine learning": 1,
     "intrusion detection": 1,
-    "adversarial machine learning": 1
+    "adversarial machine learning": 1,
+    "fraud detection": 1
   },
-  "updatedAt": "2026-10-28T05:49:11.249Z",
-  "lastAssessment": "The pipeline now produces results: 40 candidates are shortlisted, but none has been emailed. DE has the strongest funding evidence (funding 84, 15 recruiting), with CA (fit 73, funding 77), NL (funding 91) and the Nordics close behind. Where candidates come from matters a lot. Lab pages and job portals gave 28 shortlisted out of 85 (avg fit 69), while NSF grants gave 1 out of 217 and OpenAlex gave 0 out of 115. Of the hot areas, privacy-preserving ML, secure aggregation for FL, DP and adversarial robustness fit her FL review and are well funded and recruiting. Machine unlearning and watermarking are funded too, but her own work does not support them. The main bottleneck is now writing, not finding candidates. The Yiwei Lu email was blocked four times for the same fixable problems: an old address, the university not named, attachments claimed but not sent, and a promised research statement that is still a draft. The Rui Hu email is blocked on applicant data the profile does not have (GRE, a confirmed statement). The next moves are small: fix the writer and reviewer loop, lean on lab-page and job-portal sourcing, and raise DE and CA slightly."
+  "updatedAt": "2026-10-28T05:53:08.762Z",
+  "lastAssessment": "Finding candidates is going fine: 40 are shortlisted, and lab pages and job portals still give almost all of them (28 of 87, avg fit 69). Nothing has gone out yet, though. Gmail is still not set up, so this is a dry run, and every draft so far has been blocked. The blocks fall into two kinds. Some are repeat mistakes that the run-11 writer rules should now prevent (Yiwei Lu was drafted 4 times and got new BLOCK items at each review). Others need data only Tamanna can give: a confirmed research statement and her GRE status (Rui Hu). A lot of effort is also being wasted. OpenAlex hit about 25 rate-limit (429) errors this run and has produced 0 shortlisted out of 115. Two scout searches and one writer job ran out of turns and lost their work. CA still has the best fit-and-funding mix (fit 73, funding 77), and DE, NL and the Nordics have the strongest salaried-funding evidence. KR, JP and CH have recruiting signals but nobody has researched them yet. So the next moves are small: stop wasting OpenAlex calls, keep each search within its turn budget, have the writer draft first for candidates that need no extra applicant input, have the reviewer list all blocks in one pass, and ask Tamanna to confirm her research statement and GRE status."
 }
