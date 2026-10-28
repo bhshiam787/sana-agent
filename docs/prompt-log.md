@@ -166,3 +166,7 @@ Every prompt given to Claude in this project, newest last. Secrets are redacted 
 ## 2026-10-28 12:15 +06 — bhshiam@B’s MacBook Air
 
 > what it defines ?
+
+## 2026-10-28 12:17 +06 — bhshiam@B’s MacBook Air
+
+> so you found 531 and later you will do research against those then this research number 117 will get increased
