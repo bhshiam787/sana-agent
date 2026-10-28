@@ -162,3 +162,7 @@ Every prompt given to Claude in this project, newest last. Secrets are redacted 
 ## 2026-10-28 12:13 +06 — bhshiam@B’s MacBook Air
 
 > i liked to attache my CV in the email
+
+## 2026-10-28 12:15 +06 — bhshiam@B’s MacBook Air
+
+> what it defines ?
