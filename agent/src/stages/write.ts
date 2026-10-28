@@ -44,8 +44,8 @@ export function codeChecks(d: z.infer<typeof Draft>, p: Prof): string[] {
   if (words < 110 || words > 270) issues.push(`Body is ${words} words; keep it between 150 and 230.`);
   if (last && !d.body.includes(last)) issues.push(`Greeting must use the professor's last name "${last}".`);
   if (/\[[^\]]*\]|<[^>]+>|TODO|Professor X|\{\{/i.test(d.subject + d.body)) issues.push("Contains a placeholder.");
-  if (/(published|accepted)[^.]{0,80}(IEEE Access|PLOS ONE)|(IEEE Access|PLOS ONE)[^.]{0,40}(published|accepted)/i.test(d.body))
-    issues.push("IEEE Access paper is submitted and PLOS ONE paper is under review; do not call them published/accepted.");
+  if (/(published|accepted|appeared)[^.]{0,80}PLOS ONE|PLOS ONE[^.]{0,40}(published|accepted)/i.test(d.body))
+    issues.push("The PLOS ONE phishing paper is under review; do not call it published/accepted.");
   if (d.subject.length > 110) issues.push("Subject too long.");
   return issues;
 }

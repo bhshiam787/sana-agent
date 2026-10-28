@@ -78,3 +78,14 @@ Every prompt given to Claude in this project, newest last. Secrets are redacted 
 ## 2026-10-28 11:06 +06 — bhshiam@B’s MacBook Air
 
 > what else information you need for training puposes ?
+
+## 2026-10-28 11:08 +06 — bhshiam@B’s MacBook Air
+
+> https://www.researchgate.net/profile/Tamanna-Sana
+> https://scholar.google.com/citations?user=hF4wEE4AAAAJ&hl=en
+> 
+> take my resaearch paper
+
+## 2026-10-28 11:10 +06 — bhshiam@B’s MacBook Air
+
+> try , passed the boat

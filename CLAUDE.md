@@ -174,9 +174,10 @@ grant signals) · profiler 2 · dossier+draft (review 88, deleted) · strategist
 rules). 49 leftover out-of-country candidates marked skipped; 182 in research queue.
 
 ## Applicant summary (details in profile/profile.md)
-BSc CSE, East Delta University (CGPA 3.81/4.00), IELTS 7.0. Research: federated learning review
-(submitted IEEE Access), CNN-LSTM phishing detection (under review PLOS ONE), Bangladeshi vehicle
-image dataset + CNN detection (published 2023), brain-signal decoding. Industry: E-commerce/CRO
+BSc CSE, East Delta University (CGPA 3.81/4.00), IELTS 7.0. Published: federated learning
+systematic review (IEEE Access 2025, first author, ~20 citations), Sorokh-Poth vehicle dataset +
+ResNet-50 (IJRP 2023, first author), brain-signal/HAR book chapter (River/CRC 2025, 4th author).
+Under review: CNN-LSTM phishing detection (PLOS ONE). Scholar: user=hF4wEE4AAAAJ. Industry: E-commerce/CRO
 manager (50+ A/B tests), SQA engineer. **Target research field not yet confirmed by user** —
 candidates: ML for cybersecurity, federated/privacy-preserving ML, applied DL/CV, HCI/experimentation.
 
@@ -198,13 +199,13 @@ candidates: ML for cybersecurity, federated/privacy-preserving ML, applied DL/CV
 - [ ] Optional: `pnpm linkedin:login` with the separate account, then `LINKEDIN_ENABLED=1`
 
 ## Information requested from the user (2026-10-28), to improve the agents
-Must: Tamanna's research statement in her own words · paper PDFs + status of "Deciphering Minds and
-Motion" · target intake + PhD-only vs funded masters OK · final-year project/thesis (title,
+Must: Tamanna's research statement in her own words · paper PDFs (optional; metadata+abstracts
+already verified) · target intake + PhD-only vs funded masters OK · final-year project/thesis (title,
 supervisor) · 2–3 of her own emails (voice). Useful: GitHub/Scholar/ORCID links · GRE/TOEFL, IELTS
 expiry · professors already contacted (dedupe) · exclusions (countries/topics/language/visa/min
 stipend) · recommenders. After dry run: her edits to drafts → writer rules. Offered: academic-style
 CV draft (current CV is industry-first with photo).
 
 ## Open issues to raise with the user
-- CV lists the IEEE Access federated-learning review under "Published" but says "Submitted" — fix on CV; emails will say "submitted".
+- (Resolved 2026-10-28) The IEEE Access FL review IS published (2025, first author, DOI 10.1109/ACCESS.2025.3605165). Her CV wording "Submitted to IEEE Access" under "Published" is outdated; suggest updating the CV to the DOI.
 - The Neon password was pasted in chat; consider rotating it in Neon console at some point and updating `web/.env`.
