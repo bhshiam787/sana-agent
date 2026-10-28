@@ -174,3 +174,7 @@ Every prompt given to Claude in this project, newest last. Secrets are redacted 
 ## 2026-10-28 12:18 +06 — bhshiam@B’s MacBook Air
 
 > on here , why its 54 ?
+
+## 2026-10-28 12:20 +06 — bhshiam@B’s MacBook Air
+
+> still looks noisy.... I want to see which are rejected , wich are kept... why rejected details in single page

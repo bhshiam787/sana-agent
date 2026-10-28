@@ -88,7 +88,10 @@ pipeline funnel, latest replies, follow-ups due, upcoming deadlines) · Professo
 country, fit, recruiting, contacted-date range, sort, paging, CSV export) · Professor detail
 (scores, summary, why-match, email+reply thread, papers, grants, positions, activity, editable
 status/notes) · Positions & deadlines (status editable, ⚠ within 14 days) · Emails sent · Replies
-(filter, mark handled) · Agent runs + run detail log · Learnings (approve/reject) · Useful links.
+(filter, mark handled) · Agent runs + run detail log · Learnings (approve/reject) · Useful links ·
+**Research results** (`/research`, tabs: Shortlisted / Kept, not shortlisted / Rejected after research /
+Skipped before research / Duplicates, each with a plain reason). Overview "Researched" = profiler
+finished (fit scored), same number in the box and pipeline; Skipped shown separately.
 
 ### UI feedback (2026-10-28)
 Strong hover: `--hover`/`--hover-line` tokens, `.row-hover` (blue tint + left accent edge) on table
