@@ -43,7 +43,7 @@ In the morning, either user opens the local dashboard and sees what was done.
 | Claude usage | Agent runs locally through the user's Claude Code login (no separate API key). Must save progress and resume if usage limits hit. |
 | "Applied" | Dashboard separates *emailed* vs *formally applied*. Portal applications (fees, rec letters) are marked `needs_manual`, not faked. |
 | Honesty in emails | Every claim must be traceable to `profile/profile.md`. Never upgrade "submitted/under review" to "published". |
-| Parallelism | All finders run at once; profiler, deep researcher and writer run `PARALLEL` (default 4) Claude sessions concurrently. (User asked 2026-10-28: "not one task at a time".) |
+| Parallelism | All finders run at once; profiler, deep researcher and writer share `PARALLEL` (default 16, user has Claude Max) concurrent Claude sessions. (User asked 2026-10-28: "not one task at a time".) |
 | Deep research ("professor A–Z / mindset") | Per shortlisted professor, a dossier of their **public professional record**: career timeline, research trajectory, current direction, what they value in students, posted contact instructions, communication style, lab culture, recent news, verified hooks with sources, red flags. **No personal life** (family, health, politics, private accounts). Emails must follow posted instructions; "no cold emails" / "not taking students" → skipped. |
 | Email gateway | Gmail via SMTP/IMAP with an **app password** (not Google Cloud OAuth): `GMAIL_USER`, `GMAIL_APP_PASSWORD` in `agent/.env`. |
 | Dashboard theme | Dark (forced via `data-theme="dark"` on `<html>`). |
