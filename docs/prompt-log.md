@@ -170,3 +170,7 @@ Every prompt given to Claude in this project, newest last. Secrets are redacted 
 ## 2026-10-28 12:17 +06 — bhshiam@B’s MacBook Air
 
 > so you found 531 and later you will do research against those then this research number 117 will get increased
+
+## 2026-10-28 12:18 +06 — bhshiam@B’s MacBook Air
+
+> on here , why its 54 ?

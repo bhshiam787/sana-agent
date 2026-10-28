@@ -22,7 +22,10 @@ export default async function Overview(props: PageProps<"/">) {
       db
         .select({
           total: count,
-          researched: sql<number>`count(*) filter (where ${t.professors.status} <> 'discovered')::int`,
+          // Researched = the profiler finished them (scored), whether kept or rejected afterwards.
+          researched: sql<number>`count(*) filter (where ${t.professors.status} <> 'discovered' and (${t.professors.fitScore} is not null or ${t.professors.status} <> 'skipped'))::int`,
+          rejected: sql<number>`count(*) filter (where ${t.professors.status} = 'skipped' and ${t.professors.fitScore} is not null)::int`,
+          skipped: sql<number>`count(*) filter (where ${t.professors.status} = 'skipped')::int`,
           shortlisted: sql<number>`count(*) filter (where ${t.professors.status} = 'shortlisted')::int`,
         })
         .from(t.professors),
@@ -84,12 +87,14 @@ export default async function Overview(props: PageProps<"/">) {
 
   const byStatus = Object.fromEntries(funnel.map((f) => [f.status, f.n]));
   // followed_up is a side state, not a stage every reply passes through.
-  const stages = ["discovered", "researched", "shortlisted", "emailed", "replied", "positive", "interview", "offer"];
+  const later = ["shortlisted", "emailed", "replied", "positive", "interview", "offer"];
   // Cumulative: a professor at "replied" has also passed every earlier stage.
-  const reached = stages.map((s, i) => ({
-    stage: s,
-    n: stages.slice(i).reduce((sum, x) => sum + (byStatus[x] ?? 0), 0),
-  }));
+  // Found and Researched use the same numbers as the boxes above (skipped ones included).
+  const reached = [
+    { stage: "found", n: profs.total, href: "/professors" },
+    { stage: "researched", n: profs.researched, href: "/professors?minFit=0" },
+    ...later.map((s, i) => ({ stage: s, n: later.slice(i).reduce((sum, x) => sum + (byStatus[x] ?? 0), 0), href: `/professors?status=${s}` })),
+  ];
   const maxReached = Math.max(1, reached[0].n);
   const replyRate = emailsAgg.sent ? Math.round(((replyAgg.total ?? 0) / (emailsAgg.sent - emailsAgg.followUps || 1)) * 100) : 0;
   const run = lastRun[0];
@@ -129,7 +134,7 @@ export default async function Overview(props: PageProps<"/">) {
 
       <div className="grid grid-cols-2 gap-3 md:grid-cols-4 xl:grid-cols-8">
         <Stat label="Professors found" value={profs.total} href="/professors" />
-        <Stat label="Researched" value={profs.researched} href="/professors?status=researched" />
+        <Stat label="Researched" value={profs.researched} hint={`${profs.researched - profs.rejected} kept · ${profs.rejected} rejected`} href="/professors?minFit=0" />
         <Stat label="Shortlisted" value={profs.shortlisted} hint="ready to email" href="/professors?status=shortlisted" />
         <Stat label="Emails sent" value={emailsAgg.sent} hint={`${emailsAgg.inRange} in last ${RANGES[range]}`} href="/emails" />
         <Stat label="Replies" value={replyAgg.total} hint={`${replyRate}% reply rate`} href="/replies" />
@@ -161,7 +166,7 @@ export default async function Overview(props: PageProps<"/">) {
           <h2 className="mb-3 font-medium">Pipeline</h2>
           <div className="space-y-2">
             {reached.map((r) => (
-              <Link key={r.stage} href={`/professors?status=${r.stage}`} className="group block">
+              <Link key={r.stage} href={r.href} className="group block">
                 <div className="flex justify-between text-xs">
                   <span className="text-ink-2 group-hover:text-ink">{label(r.stage)}</span>
                   <span className="tabular-nums">{r.n}</span>
@@ -171,6 +176,10 @@ export default async function Overview(props: PageProps<"/">) {
                 </div>
               </Link>
             ))}
+            <Link href="/professors?status=skipped" className="group mt-3 flex justify-between border-t border-line pt-3 text-xs text-muted">
+              <span className="group-hover:text-ink">Skipped (not a fit, duplicate, no email, out of scope, co-author)</span>
+              <span className="ml-3 shrink-0 tabular-nums">{profs.skipped}</span>
+            </Link>
           </div>
         </section>
       </div>
