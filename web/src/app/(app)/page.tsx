@@ -166,7 +166,7 @@ export default async function Overview(props: PageProps<"/">) {
           <h2 className="mb-3 font-medium">Pipeline</h2>
           <div className="space-y-2">
             {reached.map((r) => (
-              <Link key={r.stage} href={r.href} className="group block">
+              <Link key={r.stage} href={r.href} className="group hover-row">
                 <div className="flex justify-between text-xs">
                   <span className="text-ink-2 group-hover:text-ink">{label(r.stage)}</span>
                   <span className="tabular-nums">{r.n}</span>
@@ -176,7 +176,7 @@ export default async function Overview(props: PageProps<"/">) {
                 </div>
               </Link>
             ))}
-            <Link href="/research?tab=rejected" className="group mt-3 flex justify-between border-t border-line pt-3 text-xs text-muted">
+            <Link href="/research?tab=rejected" className="group hover-row mt-3 flex justify-between border-t border-line pt-3 text-xs text-muted">
               <span className="group-hover:text-ink">Skipped (not a fit, duplicate, no email, out of scope, co-author)</span>
               <span className="ml-3 shrink-0 tabular-nums">{profs.skipped}</span>
             </Link>

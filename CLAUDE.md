@@ -105,6 +105,9 @@ build) for daily use.
 - `next.config.ts`: `cacheComponents: false` (all data is live) and
   `serverExternalPackages: ["@electric-sql/pglite"]` (else pglite fails inside the bundler).
 - Scripts using top-level await must be `.mts`.
+- Tailwind v4 has no pointer cursor on buttons by default: `@layer base` in globals.css adds cursor,
+  transitions, link/summary/input hover and `:focus-visible` site-wide; `.hover-row` for clickable rows in cards.
+- `pnpm dev` sometimes stops rebuilding globals.css (page code still updates): restart the dev server.
 - Professor names are cleaned on insert (`cleanName` in agent/src/professors.ts): drops "(…)"
   notes/nicknames, extra names after ; or , and Prof./Dr. prefixes (finders sometimes return
   "X (supervisor); contact Y").

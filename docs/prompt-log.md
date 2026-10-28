@@ -178,3 +178,7 @@ Every prompt given to Claude in this project, newest last. Secrets are redacted 
 ## 2026-10-28 12:20 +06 — bhshiam@B’s MacBook Air
 
 > still looks noisy.... I want to see which are rejected , wich are kept... why rejected details in single page
+
+## 2026-10-28 12:21 +06 — bhshiam@B’s MacBook Air
+
+> add proper hover effect site wide
