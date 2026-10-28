@@ -32,7 +32,26 @@ export function ask<S extends z.ZodType>(o: AskOpts<S>): Promise<z.infer<S>> {
 // Every Claude session in the process shares this cap (PARALLEL).
 export const sessions = new Semaphore(cfg.parallel);
 
+/** Latest claude.ai plan utilization (percent, 0-100) seen in any session. */
+export const planUsage: { fiveHour: number | null; resetsAt: number | null; checkedAt: number } = { fiveHour: null, resetsAt: null, checkedAt: 0 };
+
+function noteUsage(utilization: number | null | undefined, resetsAt?: number | string | null) {
+  if (utilization == null) return;
+  // Session events may report a 0-1 fraction; /usage reports 0-100.
+  planUsage.fiveHour = utilization <= 1 ? utilization * 100 : utilization;
+  if (resetsAt != null) planUsage.resetsAt = typeof resetsAt === "string" ? Date.parse(resetsAt) : resetsAt < 1e12 ? resetsAt * 1000 : resetsAt;
+}
+
+/** Refuses new sessions once the 5-hour window passes USAGE_STOP_PERCENT; in-flight sessions finish. */
+function checkBudget() {
+  if (planUsage.fiveHour != null && planUsage.fiveHour >= cfg.usageStopPercent) {
+    const reset = planUsage.resetsAt ? ` (window resets ${new Date(planUsage.resetsAt).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })})` : "";
+    throw new UsageLimitError(`5-hour Claude usage at ${Math.round(planUsage.fiveHour)}%, stop threshold ${cfg.usageStopPercent}%${reset}`);
+  }
+}
+
 async function askNow<S extends z.ZodType>(o: AskOpts<S>): Promise<z.infer<S>> {
+  checkBudget();
   mkdirSync(cfg.workDir, { recursive: true });
   const allowed = [...(o.tools ?? []), ...Object.keys(o.mcpServers ?? {}).map((s) => `mcp__${s}`)];
   let result: Awaited<ReturnType<typeof firstResult>>;
@@ -75,7 +94,15 @@ function jsonSchema(schema: z.ZodType) {
 }
 
 async function firstResult(q: ReturnType<typeof query>) {
+  // Ask for plan utilization at most every 2 minutes (experimental SDK API; events also report it).
+  if (Date.now() - planUsage.checkedAt > 120_000) {
+    planUsage.checkedAt = Date.now();
+    q.usage_EXPERIMENTAL_MAY_CHANGE_DO_NOT_RELY_ON_THIS_API_YET({ skipBehaviors: true })
+      .then((u) => noteUsage(u.rate_limits?.five_hour?.utilization, u.rate_limits?.five_hour?.resets_at))
+      .catch(() => {});
+  }
   for await (const m of q) {
+    if (m.type === "rate_limit_event" && m.rate_limit_info.rateLimitType === "five_hour") noteUsage(m.rate_limit_info.utilization, m.rate_limit_info.resetsAt);
     if (m.type === "result") return m as Extract<typeof m, { type: "result" }> & { api_error_status?: number | null; result?: string };
   }
   throw new Error("Claude session ended without a result");

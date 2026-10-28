@@ -133,3 +133,7 @@ Every prompt given to Claude in this project, newest last. Secrets are redacted 
 ## 2026-10-28 11:43 +06 — bhshiam@B’s MacBook Air
 
 > what is this ?
+
+## 2026-10-28 11:46 +06 — bhshiam@B’s MacBook Air
+
+> if 5 hour session usage limit hits 85% then stop

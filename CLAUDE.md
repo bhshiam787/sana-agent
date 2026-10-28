@@ -46,6 +46,7 @@ In the morning, either user opens the local dashboard and sees what was done.
 | Parallelism | All finders run at once; profiler, deep researcher and writer share `PARALLEL` (default 16, user has Claude Max) concurrent Claude sessions. (User asked 2026-10-28: "not one task at a time".) |
 | Deep research ("professor A–Z / mindset") | Per shortlisted professor, a dossier of their **public professional record**: career timeline, research trajectory, current direction, what they value in students, posted contact instructions, communication style, lab culture, recent news, verified hooks with sources, red flags. **No personal life** (family, health, politics, private accounts). Emails must follow posted instructions; "no cold emails" / "not taking students" → skipped. |
 | Email gateway | Gmail via SMTP/IMAP with an **app password** (not Google Cloud OAuth): `GMAIL_USER`, `GMAIL_APP_PASSWORD` in `agent/.env`. |
+| Claude usage cap | Stop starting new Claude sessions when the claude.ai **5-hour window reaches 85%** (`USAGE_STOP_PERCENT`, user 2026-10-28). Read from SDK `rate_limit_event` + experimental `/usage` API (checked ≤ every 2 min); in-flight sessions finish, run ends `stopped`, next run resumes. Progress line shows it. |
 | Dashboard theme | Dark (forced via `data-theme="dark"` on `<html>`). |
 
 ## Repo layout
@@ -200,7 +201,7 @@ confirmation; targets.json topics refocused to match (BCI dropped, A/B kept as c
 - [x] Dashboard shows dossier on professor page; site is dark
 - [x] Pipeline parallelism, Track A/B finders, wealthy universities, strategist + autonomous learner (2026-10-28)
 - [ ] Tamanna: Gmail app password into `agent/.env`; `RUN_AS` set; free OpenAlex API key
-- [~] First full dry run started 2026-10-28 11:24 (run #10, 2h, 16 parallel, started as bhsam787@gmail.com; log `agent/state/dry-run.log`). Next: read drafts together, then `pnpm night` (needs Gmail).
+- [~] Dry run #10 (11:24) made 10 drafts, then was stopped by hand to add the 85% usage guard; run #11 restarted 1.5h with it (log `agent/state/dry-run.log`). Fixes from #10: only the CV is attached; max 2 blocked drafts per professor; deep research corrects moved professors' emails / skips duplicates. Next: read drafts together, then `pnpm night` (needs Gmail).
 - [ ] Optional: `pnpm linkedin:login` with the separate account, then `LINKEDIN_ENABLED=1`
 
 ## Her papers (2026-10-28)

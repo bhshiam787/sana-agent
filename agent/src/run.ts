@@ -10,7 +10,7 @@ import os from "node:os";
 import { setTimeout as sleep } from "node:timers/promises";
 import { cfg } from "./config.ts";
 import { db, t, and, eq, sql } from "./db.ts";
-import { sessions, UsageLimitError } from "./llm.ts";
+import { planUsage, sessions, UsageLimitError } from "./llm.ts";
 import { log, setRunId, stats } from "./log.ts";
 import { mailConfigured, verifyMail } from "./mail.ts";
 import { nextUniversity, seedUniversities, sweepUniversity } from "./stages/directory.ts";
@@ -186,7 +186,7 @@ async function pipeline(runId: number, dryRun: boolean) {
 
   // Progress line every 10 minutes so the terminal shows it is alive.
   const ticker = setInterval(() => {
-    console.log(`[progress] Claude sessions ${sessions.active}/${cfg.parallel} · ${Object.entries(stats).map(([k, v]) => `${k} ${v}`).join(" · ")}`);
+    console.log(`[progress] Claude sessions ${sessions.active}/${cfg.parallel} · 5h usage ${planUsage.fiveHour == null ? "?" : Math.round(planUsage.fiveHour) + "%"} · ${Object.entries(stats).map(([k, v]) => `${k} ${v}`).join(" · ")}`);
   }, 600_000);
   try {
     await Promise.all([finders, profile, research, write, send, replan]);
