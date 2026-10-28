@@ -94,7 +94,7 @@ export default async function Research(props: PageProps<"/research">) {
                 <th className="th text-right">Fit</th>
                 <th className="th text-right">Funding</th>
                 <th className="th text-right">Priority</th>
-                <th className="th">{tab === "shortlisted" ? "Why she fits" : "Reason"}</th>
+                <th className="th">{tab === "shortlisted" ? "Why Sana fits" : "Reason"}</th>
                 {tab === "shortlisted" && <th className="th">Status</th>}
               </tr>
             </thead>

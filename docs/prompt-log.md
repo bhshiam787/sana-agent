@@ -231,3 +231,9 @@ Every prompt given to Claude in this project, newest last. Secrets are redacted 
 ## 2026-10-28 13:04 +06 — bhshiam@B’s MacBook Air
 
 > design issue
+
+## 2026-10-28 13:08 +06 — bhshiam@B’s MacBook Air
+
+> Why she fits
+> 
+> Why Sana fits

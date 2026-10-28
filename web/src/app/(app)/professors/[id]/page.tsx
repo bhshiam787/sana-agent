@@ -86,7 +86,7 @@ export default async function ProfessorPage(props: PageProps<"/professors/[id]">
             ) : null}
             {p.whyMatch && (
               <>
-                <h3 className="mt-4 mb-1 text-sm font-medium">Why Tamanna fits</h3>
+                <h3 className="mt-4 mb-1 text-sm font-medium">Why Sana fits</h3>
                 <p className="text-sm whitespace-pre-line text-ink-2">{p.whyMatch}</p>
               </>
             )}

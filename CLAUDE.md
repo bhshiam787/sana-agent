@@ -110,6 +110,8 @@ idle close reconnected on almost every click); Research counts in one query. War
 pooled idle connections still let Neon suspend after ~5 min. Biggest remaining win: a Neon project
 in Singapore (aws-ap-southeast-1, ~60–80 ms) + `pnpm start` instead of `pnpm dev`.
 
+Naming (user 2026-10-28): dashboard labels say **"Why Sana fits"** (not "she"/"Tamanna").
+
 ### Gotchas found while building
 - `next.config.ts`: `cacheComponents: false` (all data is live) and
   `serverExternalPackages: ["@electric-sql/pglite"]` (else pglite fails inside the bundler).
