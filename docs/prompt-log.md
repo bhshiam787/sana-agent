@@ -219,3 +219,7 @@ Every prompt given to Claude in this project, newest last. Secrets are redacted 
 ## 2026-10-28 12:56 +06 — bhshiam@B’s MacBook Air
 
 > make another medium...
+
+## 2026-10-28 12:58 +06 — bhshiam@B’s MacBook Air
+
+> where I can find it in the website ?
