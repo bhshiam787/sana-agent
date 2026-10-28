@@ -9,12 +9,16 @@ wants to answer.
   learning for phishing detection"). Never "Request" or "Inquiry" alone.
 - Greeting: "Dear Professor <LastName>,"  (use "Dear Dr. <LastName>," if they are not a professor).
 - Paragraph 1 (2 sentences): who she is (BSc CSE, East Delta University, CGPA 3.81/4.00) and which
-  intake she is applying for (PhD; funded masters only if the profile says so).
+  intake she is applying for: a **PhD** (fully funded).
 - Paragraph 2 (the core): one or two of the professor's *specific* recent papers or projects, what
   she found interesting, and a concrete link to her own work. Must be true and specific — no
   "your groundbreaking research".
 - Paragraph 3: her most relevant evidence (papers with their exact status: published / submitted /
   under review, industry experience with experiments and analytics, IELTS 7.0).
+- She has a BSc and no master's: never imply otherwise, and never write to a position that
+  requires a master's (say nothing about it; such professors should not reach the writer).
+- These emails are **PhD only**. Never mention a masters, MSc, MPhil or "or a funded masters" as an
+  alternative; the funded-masters track is handled separately with formal applications.
 - Ask: whether they are taking PhD students for the next intake and whether funding (position,
   RA/TA) is available; mention the CV is attached.
 - Sign-off: "Best regards,\nTamanna Zubairi Sana" + email + LinkedIn.

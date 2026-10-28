@@ -10,7 +10,12 @@ Every claim in an outreach email must be traceable to this file.
 - Based in: Chattogram, Bangladesh
 
 ## Target
-- Level: PhD preferred; masters only if fully funded
+- Level: **two separate tracks** (user 2026-10-28): (1) PhD via professor outreach, PhD-only emails;
+  (2) **fully funded masters** (full tuition + living stipend) via scholarships / funded programmes,
+  formal applications only, never mixed into PhD emails.
+- Eligibility: **BSc only, no master's**. Direct PhD works mainly in the US and Canada (also some
+  AU/UK/KR/SG); most European PhDs (FI, SE, NL, DE, CH, DK, NO) require a master's, so for Europe the
+  funded-masters track is the route.
 - Funding: full tuition + stipend/salary + health insurance required
 - Countries: any
 - Field (user, 2026-10-28): "mainly AI related, Python, machine learning, cyber security, data science,

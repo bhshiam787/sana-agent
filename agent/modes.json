@@ -11,7 +11,8 @@
     "labCountries": 5,
     "sweepsPerRun": 5,
     "profilePerRun": 30,
-    "researchPerRun": 15
+    "researchPerRun": 15,
+    "mastersSessions": 2
   },
   "medium": {
     "label": "Medium",
@@ -24,7 +25,8 @@
     "labCountries": 10,
     "sweepsPerRun": 15,
     "profilePerRun": 60,
-    "researchPerRun": 30
+    "researchPerRun": 30,
+    "mastersSessions": 3
   },
   "max": {
     "label": "Max",
@@ -37,6 +39,7 @@
     "labCountries": 99,
     "sweepsPerRun": 1000,
     "profilePerRun": 1000,
-    "researchPerRun": 1000
+    "researchPerRun": 1000,
+    "mastersSessions": 4
   }
 }

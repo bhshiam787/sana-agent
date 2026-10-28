@@ -15,6 +15,7 @@ type Preset = {
   sweepsPerRun: number;
   profilePerRun: number;
   researchPerRun: number;
+  mastersSessions?: number;
 };
 const MODES = ["economy", "medium", "max"] as const;
 
@@ -35,6 +36,7 @@ export default function Modes() {
     { label: "Dossiers, email writing, reviewer, strategist", help: "Where quality matters most", value: (x) => model(x.qualityModel) },
     { label: "Job-board searches", help: "Sessions searching EURAXESS, FindAPhD, university portals…", value: (x) => (x.positionSessions >= 99 ? "1 per topic" : `${x.positionSessions} (topics grouped)`) },
     { label: "Recruiting-lab countries", help: "Countries searched for “we are recruiting” pages", value: (x) => (x.labCountries >= 99 ? "all preferred" : `top ${x.labCountries}`) },
+    { label: "Funded-masters searches", help: "Scholarships and fully funded programmes (never emailed)", value: (x) => String(x.mastersSessions ?? "—") },
     { label: "University staff-list sweeps per run", help: "Universities whose faculty pages are read", value: (x) => cap(x.sweepsPerRun) },
     { label: "Professors researched per run", help: "Profiler limit", value: (x) => cap(x.profilePerRun) },
     { label: "Deep dossiers per run", help: "Full background research before writing", value: (x) => cap(x.researchPerRun) },

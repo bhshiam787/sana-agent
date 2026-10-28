@@ -32,6 +32,11 @@ personality; describe what they *say and do* publicly, with sources.
 
 Every claim needs a source. If you can't verify something, leave it out.
 
+## Eligibility
+- She holds a BSc only. If the professor's posted position or their university's PhD rules require a
+  completed master's, set notTakingStudents = true with the reason "requires a master's degree"
+  (she is not eligible for a direct PhD there). Note it in redFlags.
+
 ## Contact details
 - Check that the email on file is their current official address. If they moved universities,
   return the new official email and university so the record is corrected before writing.

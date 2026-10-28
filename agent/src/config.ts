@@ -31,6 +31,7 @@ type Preset = {
   sweepsPerRun: number;
   profilePerRun: number;
   researchPerRun: number;
+  mastersSessions: number;
 };
 // Shared with the dashboard's Run modes page.
 const PRESETS: Record<typeof MODE, Preset> = JSON.parse(readFileSync(path.join(AGENT_DIR, "modes.json"), "utf8"));
@@ -48,6 +49,8 @@ export const cfg = {
   labCountries: num(process.env.LAB_COUNTRIES, P.labCountries),
   sweepsPerRun: num(process.env.SWEEPS_PER_RUN, P.sweepsPerRun),
   researchPerRun: num(process.env.RESEARCH_PER_RUN, P.researchPerRun),
+  // Funded-masters track (scholarships / funded programmes; never emailed).
+  mastersSessions: num(process.env.MASTERS_SESSIONS, P.mastersSessions),
   gmailUser: process.env.GMAIL_USER ?? "",
   gmailAppPassword: (process.env.GMAIL_APP_PASSWORD ?? "").replace(/\s+/g, ""),
   senderName: process.env.SENDER_NAME ?? "Tamanna Zubairi Sana",

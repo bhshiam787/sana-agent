@@ -253,3 +253,7 @@ Every prompt given to Claude in this project, newest last. Secrets are redacted 
 ## 2026-10-28 13:19 +06 — bhshiam@B’s MacBook Air
 
 > are we only finding , phd ?
+
+## 2026-10-28 13:23 +06 — bhshiam@B’s MacBook Air
+
+> aslo masters I want , but it must be funded...  but dont mix emaile metionion phd and masters together

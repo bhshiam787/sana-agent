@@ -19,13 +19,14 @@ import { readReplies } from "./stages/inbox.ts";
 import { learnFromRun, reweight } from "./stages/learn.ts";
 import { strategize } from "./stages/strategist.ts";
 import { scoutLinkedIn } from "./stages/linkedin.ts";
+import { scoutFundedMasters } from "./stages/masters.ts";
 import { nextToProfile, profileOne, profileProfessors } from "./stages/profile.ts";
 import { deepResearch, nextToResearch, researchOne } from "./stages/research.ts";
 import { scoutOpenAlex, scoutPositions, scoutRecruitingLabs } from "./stages/scout.ts";
 import { countReadyDrafts, sendDrafts, sendGap, sendNext, sentInLast20h } from "./stages/send.ts";
 import { nextToWrite, writeEmails, writeFollowUps, writeOne, writeRoom } from "./stages/write.ts";
 
-const FINDERS = ["scout", "nsf", "positions", "labs", "linkedin", "directory"] as const;
+const FINDERS = ["scout", "nsf", "positions", "labs", "masters", "linkedin", "directory"] as const;
 const ALL = ["inbox", "strategy", ...FINDERS, "profile", "research", "followups", "write", "send", "learn"] as const;
 type Stage = (typeof ALL)[number];
 
@@ -127,6 +128,7 @@ async function pipeline(runId: number, dryRun: boolean) {
       settle("nsf", scoutNsfGrants),
       settle("positions", scoutPositions),
       settle("labs", scoutRecruitingLabs),
+      settle("masters", scoutFundedMasters),
       settle("linkedin", scoutLinkedIn),
       settle("directory", async () => {
         await seedUniversities();
@@ -221,6 +223,7 @@ async function batch(stages: Stage[], runId: number, dryRun: boolean) {
     ["nsf", scoutNsfGrants],
     ["positions", scoutPositions],
     ["labs", scoutRecruitingLabs],
+    ["masters", scoutFundedMasters],
     ["linkedin", scoutLinkedIn],
     [
       "directory",
@@ -349,7 +352,7 @@ async function main() {
   const summary = [
     `${cfg.mode[0].toUpperCase()}${cfg.mode.slice(1)} mode.`,
     dryRun ? "Dry run: nothing was sent." : null,
-    `Found ${stats.professors_found ?? 0} professors and ${stats.positions_found ?? 0} positions; swept ${stats.universities_swept ?? 0} universities.`,
+    `Found ${stats.professors_found ?? 0} professors, ${stats.positions_found ?? 0} PhD positions and ${stats.masters_found ?? 0} funded masters options; swept ${stats.universities_swept ?? 0} universities.`,
     `Researched ${stats.researched ?? 0} (${stats.shortlisted ?? 0} shortlisted, ${stats.deep_researched ?? 0} deep dossiers).`,
     dryRun ? `${stats.would_send ?? 0} emails drafted and waiting.` : `Sent ${stats.emails_sent ?? 0} emails and ${stats.follow_ups_sent ?? 0} follow-ups.`,
     `Reviewer blocked ${stats.blocked_by_reviewer ?? 0}. New replies: ${stats.replies_received ?? 0}.`,

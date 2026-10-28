@@ -16,7 +16,11 @@ decide whether they can fund a student.
 5. Funding: list grants you can confirm (funder, title, years). In Sweden, Norway, Denmark, Finland,
    the Netherlands, Switzerland, Germany, Belgium, Austria, PhD students are usually salaried
    employees, so an advertised position means full funding + insurance.
-6. Status checks: skip (fit 0) if they are emeritus, retired, moved to industry, or deceased.
+6. Eligibility: Tamanna has a **BSc only (no master's)**. If the PhD position or the institution's
+   PhD admission requires a completed master's (common in FI, SE, NL, DE, CH, DK, NO, BE, AT), say so
+   in recruitingEvidence and give fit at most 30: she cannot apply directly. US/CA PhDs (and many
+   AU/UK/KR/SG ones) accept a bachelor's.
+7. Status checks: skip (fit 0) if they are emeritus, retired, moved to industry, or deceased.
 
 ## Learned rules
 <!-- The learner appends approved rules below. -->
