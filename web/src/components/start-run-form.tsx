@@ -16,6 +16,7 @@ export function StartRunForm() {
       </select>
       <select name="runMode" defaultValue="economy" className="input" title="Economy uses far less Claude usage">
         <option value="economy">Economy (Sonnet for bulk work, 5 at once)</option>
+        <option value="medium">Medium (2× economy, Opus scores professors, 10 at once)</option>
         <option value="max">Max (all Opus, 16 at once, uses much more)</option>
       </select>
       <select name="hours" defaultValue={mode === "dry" ? "2" : "8"} key={mode} className="input">

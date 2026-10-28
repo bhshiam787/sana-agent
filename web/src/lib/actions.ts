@@ -101,7 +101,7 @@ const AGENT_DIR = () => `${process.cwd()}/../agent`;
 export async function startRun(_prev: string | undefined, form: FormData) {
   const session = await requireUser();
   const live = form.get("mode") === "live";
-  const runMode = form.get("runMode") === "max" ? "max" : "economy";
+  const runMode = ["medium", "max"].includes(String(form.get("runMode"))) ? String(form.get("runMode")) : "economy";
   const hours = Math.min(12, Math.max(0.5, Number(form.get("hours") ?? 8)));
   if (live && form.get("confirm") !== "yes") return "Tick the box to confirm a live run sends real emails.";
 

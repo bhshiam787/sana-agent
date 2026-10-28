@@ -13,7 +13,9 @@
     "linkedin:login": "pnpm --dir agent linkedin:login",
     "db:push": "pnpm --dir web db:push",
     "dry:max": "pnpm --dir agent dry:max",
-    "night:max": "pnpm --dir agent night:max"
+    "night:max": "pnpm --dir agent night:max",
+    "dry:medium": "pnpm --dir agent dry:medium",
+    "night:medium": "pnpm --dir agent night:medium"
   },
   "packageManager": "pnpm@11.13.0"
 }

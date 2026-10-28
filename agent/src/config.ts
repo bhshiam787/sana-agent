@@ -13,14 +13,18 @@ const num = (v: string | undefined, d: number) => (v && !Number.isNaN(Number(v))
 
 /**
  * Run modes. "economy" (default) uses Sonnet for bulk work, fewer parallel
- * sessions and per-run caps; "max" is the original all-Opus, uncapped setup.
- * Pick with `--mode max` or AGENT_MODE=max; any single env var below still overrides.
+ * sessions and per-run caps; "medium" doubles the volume and scores professors
+ * on Opus; "max" is the original all-Opus, uncapped setup.
+ * Pick with `--mode medium|max` or AGENT_MODE; any single env var below still overrides.
  */
 const argMode = process.argv.includes("--mode") ? process.argv[process.argv.indexOf("--mode") + 1] : undefined;
-export const MODE: "economy" | "max" = (argMode ?? process.env.AGENT_MODE) === "max" ? "max" : "economy";
+const wanted = argMode ?? process.env.AGENT_MODE;
+export const MODE: "economy" | "medium" | "max" = wanted === "max" || wanted === "medium" ? wanted : "economy";
 const PRESETS = {
-  economy: { parallel: 5, bulkModel: "claude-sonnet-5-5", positionSessions: 3, labCountries: 5, sweepsPerRun: 5, profilePerRun: 30, researchPerRun: 15 },
-  max: { parallel: 16, bulkModel: "claude-opus-5-5", positionSessions: 99, labCountries: 99, sweepsPerRun: 1000, profilePerRun: 1000, researchPerRun: 1000 },
+  economy: { parallel: 5, bulkModel: "claude-sonnet-5-5", profileModel: "claude-sonnet-5-5", positionSessions: 3, labCountries: 5, sweepsPerRun: 5, profilePerRun: 30, researchPerRun: 15 },
+  // Twice economy's volume; professor scoring (who gets emailed) on Opus.
+  medium: { parallel: 10, bulkModel: "claude-sonnet-5-5", profileModel: "claude-opus-5-5", positionSessions: 6, labCountries: 10, sweepsPerRun: 15, profilePerRun: 60, researchPerRun: 30 },
+  max: { parallel: 16, bulkModel: "claude-opus-5-5", profileModel: "claude-opus-5-5", positionSessions: 99, labCountries: 99, sweepsPerRun: 1000, profilePerRun: 1000, researchPerRun: 1000 },
 } as const;
 const P = PRESETS[MODE];
 
@@ -30,6 +34,8 @@ export const cfg = {
   qualityModel: process.env.CLAUDE_MODEL ?? "claude-opus-5-5",
   // Finders, faculty sweeps, profiler, inbox classification: high volume.
   bulkModel: process.env.CLAUDE_BULK_MODEL ?? P.bulkModel,
+  // Profiler: fit/funding scoring decides who is shortlisted.
+  profileModel: process.env.CLAUDE_PROFILE_MODEL ?? P.profileModel,
   positionSessions: num(process.env.POSITION_SESSIONS, P.positionSessions),
   labCountries: num(process.env.LAB_COUNTRIES, P.labCountries),
   sweepsPerRun: num(process.env.SWEEPS_PER_RUN, P.sweepsPerRun),

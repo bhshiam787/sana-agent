@@ -313,7 +313,7 @@ async function main() {
   }, 10_000);
   await log(
     "run",
-    `Run #${run.id} started (${dryRun ? "DRY RUN — nothing will be sent" : "LIVE"}), ${stages ? `stages: ${stages.join(", ")}` : `full pipeline, ${cfg.mode.toUpperCase()} mode (${cfg.parallel} parallel, bulk ${cfg.bulkModel}, quality ${cfg.qualityModel}; caps: research ${cfg.profilePerRun}, dossiers ${cfg.researchPerRun}, sweeps ${cfg.sweepsPerRun}), ${cfg.runHours}h`}`,
+    `Run #${run.id} started (${dryRun ? "DRY RUN — nothing will be sent" : "LIVE"}), ${stages ? `stages: ${stages.join(", ")}` : `full pipeline, ${cfg.mode.toUpperCase()} mode (${cfg.parallel} parallel, bulk ${cfg.bulkModel}, profiler ${cfg.profileModel}, quality ${cfg.qualityModel}; caps: research ${cfg.profilePerRun}, dossiers ${cfg.researchPerRun}, sweeps ${cfg.sweepsPerRun}), ${cfg.runHours}h`}`,
   );
 
   let status: "completed" | "stopped" | "failed" = "completed";
@@ -347,7 +347,7 @@ async function main() {
   }
 
   const summary = [
-    `${cfg.mode === "max" ? "Max" : "Economy"} mode.`,
+    `${cfg.mode[0].toUpperCase()}${cfg.mode.slice(1)} mode.`,
     dryRun ? "Dry run: nothing was sent." : null,
     `Found ${stats.professors_found ?? 0} professors and ${stats.positions_found ?? 0} positions; swept ${stats.universities_swept ?? 0} universities.`,
     `Researched ${stats.researched ?? 0} (${stats.shortlisted ?? 0} shortlisted, ${stats.deep_researched ?? 0} deep dossiers).`,
