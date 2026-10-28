@@ -178,8 +178,9 @@ BSc CSE, East Delta University (CGPA 3.81/4.00), IELTS 7.0. Published: federated
 systematic review (IEEE Access 2025, first author, ~20 citations), Sorokh-Poth vehicle dataset +
 ResNet-50 (IJRP 2023, first author), brain-signal/HAR book chapter (River/CRC 2025, 4th author).
 Under review: CNN-LSTM phishing detection (PLOS ONE). Scholar: user=hF4wEE4AAAAJ. Industry: E-commerce/CRO
-manager (50+ A/B tests), SQA engineer. **Target research field not yet confirmed by user** —
-candidates: ML for cybersecurity, federated/privacy-preserving ML, applied DL/CV, HCI/experimentation.
+manager (50+ A/B tests), SQA engineer. **Direction (2026-10-28): secure & trustworthy ML** (ML for cybersecurity + privacy-preserving/FL +
+adversarial robustness + LLM security). Draft research statement in profile.md awaits Tamanna's
+confirmation; targets.json topics refocused to match (BCI dropped, A/B kept as causal inference).
 
 ## Status / next steps
 - [x] Plan agreed
@@ -189,7 +190,8 @@ candidates: ML for cybersecurity, federated/privacy-preserving ML, applied DL/CV
 - [x] 13 starter links seeded into Neon (position boards, scholarships, research tools)
 - [x] User login created: bhsam787@gmail.com (user chose the password). Tamanna's login still to create.
 - [ ] Add private GitHub remote so memory syncs between machines
-- [ ] Confirm Tamanna's target field(s) and countries to exclude
+- [x] Field: AI/ML + cybersecurity + data science (user) → focused as secure & trustworthy ML
+- [ ] Tamanna to confirm/edit the draft research statement in profile/profile.md
 - [ ] Add her papers to `profile/papers/`; recommend an academic-style CV variant (current CV is industry-style)
 - [x] Agent built: 10 agents/stages, playbooks, parallelism, deep research dossier, learner (2026-10-28)
 - [x] Dashboard shows dossier on professor page; site is dark
@@ -199,7 +201,7 @@ candidates: ML for cybersecurity, federated/privacy-preserving ML, applied DL/CV
 - [ ] Optional: `pnpm linkedin:login` with the separate account, then `LINKEDIN_ENABLED=1`
 
 ## Information requested from the user (2026-10-28), to improve the agents
-Must: Tamanna's research statement in her own words · paper PDFs (optional; metadata+abstracts
+Must: Tamanna's confirmation of the draft research statement · paper PDFs (optional; metadata+abstracts
 already verified) · target intake + PhD-only vs funded masters OK · final-year project/thesis (title,
 supervisor) · 2–3 of her own emails (voice). Useful: GitHub/Scholar/ORCID links · GRE/TOEFL, IELTS
 expiry · professors already contacted (dedupe) · exclusions (countries/topics/language/visa/min

@@ -13,7 +13,30 @@ Every claim in an outreach email must be traceable to this file.
 - Level: PhD preferred; masters only if fully funded
 - Funding: full tuition + stipend/salary + health insurance required
 - Countries: any
-- Field / research interests: TO CONFIRM — candidates inferred from CV below
+- Field (user, 2026-10-28): "mainly AI related, Python, machine learning, cyber security, data science,
+  different models of AI".
+- Focused direction: **secure and trustworthy machine learning** (see the research statement below).
+
+## Research statement (DRAFT, proposed 2026-10-28; Tamanna to confirm or edit)
+Writer: use this for the applicant's interests and framing. Use only the factual claims in the
+Research section for evidence.
+
+I want to do research on secure and trustworthy machine learning: AI systems that defend against
+cyber threats while protecting the people whose data they learn from. My work so far comes from both
+sides: detecting attacks with deep learning (a CNN-LSTM model for phishing detection, now under
+review, and ongoing work on multilingual SMS spam), and protecting data during training (my
+first-author systematic review of federated learning in IEEE Access, now cited 30 times). In a PhD I
+would like to bring these together, for example by building detectors for phishing, fraud and
+malicious content that can be trained across organisations without sharing raw data, that stay
+robust when attackers adapt, and that can explain their decisions. I am also interested in the new
+security problems that large language models create, such as AI-generated phishing and attacks on
+LLM-based systems. My industry work running 50+ controlled A/B experiments has given me a habit of
+rigorous, data-driven evaluation that I want to bring to this research.
+
+Topic priority: (1) ML for cybersecurity (phishing, spam, fraud, intrusion, malware);
+(2) privacy-preserving / federated learning; (3) adversarial robustness, explainable security ML;
+(4) LLM security; (5) secondary: applied deep learning / data science, causal inference and
+experimentation.
 
 ## Education
 - BSc Computer Science & Engineering, East Delta University, 2017–2021, CGPA 3.81/4.00

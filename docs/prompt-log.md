@@ -93,3 +93,11 @@ Every prompt given to Claude in this project, newest last. Secrets are redacted 
 ## 2026-10-28 11:11 +06 — bhshiam@B’s MacBook Air
 
 > try again now visible https://scholar.google.com/citations?hl=en&user=hF4wEE4AAAAJ&pagesize=100&view_op=list_works
+
+## 2026-10-28 11:14 +06 — bhshiam@B’s MacBook Air
+
+> The biggest gap is still her own research statement: a paragraph or two on what she wants to work on in a PhD. With that, the agents can target professors by her stated direction instead of guessing from her CV.
+> 
+> ==> Mainly AI related, python, machine learing, cyber secrutiy, data science, differetn modle of AI etc ..
+> 
+> is it helpful? and soemthing relabant , I am not aware of everything

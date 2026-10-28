@@ -3,11 +3,14 @@
   "researchQueries": [
     "phishing detection deep learning",
     "machine learning for cybersecurity intrusion detection",
+    "spam fraud detection machine learning",
     "federated learning privacy-preserving",
     "federated learning security attacks",
-    "spam detection multilingual machine learning",
-    "online controlled experiments A/B testing",
-    "brain-computer interface EEG deep learning"
+    "adversarial machine learning robustness",
+    "explainable AI for cybersecurity",
+    "large language model security prompt injection",
+    "AI-generated phishing detection",
+    "causal inference online experiments"
   ],
   "grantKeywords": [
     "phishing",
@@ -15,11 +18,13 @@
     "intrusion detection",
     "spam detection",
     "malware detection",
+    "fraud detection",
     "adversarial machine learning",
     "privacy-preserving machine learning",
-    "usable security",
-    "online experiments",
-    "brain-computer interface"
+    "differential privacy",
+    "AI security",
+    "trustworthy AI",
+    "usable security"
   ],
   "allowCountries": [
     "US",
