@@ -109,6 +109,8 @@ export async function nextToWrite(inFlight: Set<number>, limit = 1) {
         isNotNull(t.professors.dossier),
         isNotNull(t.professors.email),
         sql`not exists (select 1 from emails e where e.professor_id = ${t.professors.id} and e.status in ('draft','sent'))`,
+        // Stop retrying after two blocked drafts; a human should look at those.
+        sql`(select count(*) from emails e where e.professor_id = ${t.professors.id} and e.status = 'blocked') < 2`,
       ),
     )
     .orderBy(desc(t.professors.priorityScore))
